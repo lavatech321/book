@@ -1,0 +1,127 @@
+
+\begin{flushleft}
+
+	
+	\begin{itemize}
+		\item The increment(++) and decrement(--) operators are unary operators.
+		\item They are used to increment or decrement the value of a variable by 1.
+		\item \textbf{Increment Operator (++):} Used in two ways:
+		\begin{itemize}
+			\item \textbf{Prefix (++var)}: Variable is incremented first and then used in the expression.
+			\bigskip
+			\codeblock{
+				int a = 5; \\
+				int b = ++a; // b will be 6, a will be 6
+			}
+			
+			\item \textbf{Postfix (var++)}: Variable is used in the expression and then incremented. 
+			\bigskip
+			\codeblock{
+				int a = 5; \\
+				int b = a++; // b will be 5, a will be 6
+			}			
+		\end{itemize}
+		
+		\item \textbf{Decrement Operator (--):} Works in a similar way and can be used in prefix and postfix forms:
+		\bigskip
+		\codeblock{
+			int a = 5; \\
+			int b = --a; // b will be 4, a will be 4  \\
+			int c = a--; // c will be 4, a will be 3
+		}
+	\end{itemize}
+	
+	Summary:
+	\tablefour{
+		\hline
+		Expression & Initial value of x & Value of y & Final value of x \\
+		\hline
+		y=++x; & 10 & 11 & 11 \\
+		\hline
+		y=++x; & 10 & 10 & 11 \\
+		\hline
+		y=++x; & 10 & 9 & 9 \\
+		\hline
+		y=++x; & 10 & 10 & 9 \\
+		\hline
+	}
+	
+	Important Points:
+	\begin{itemize}
+		\item Increment/decrement is \textbf{applicable only on variable and not on constant}.
+		\bigskip
+		\codeblock{
+			System.out.println(++10); \xmark
+		}
+		\item \textbf{Listing} of increment/decrement operators \textbf{not allowed}.
+		\bigskip
+		\codeblock{
+			int x=10; \\
+			int y = ++(++x); \xmark
+		}
+	
+		\item \textbf{For final variables}, increment/decrement operators \textbf{cannot} be used:
+		\bigskip
+		\codeblock{
+			final int x=10; \\
+			System.out.println(x++); \xmark
+		}
+	
+		\item Increment/decrement is applicable on all primitive type, \textbf{except boolean datatype}:
+		\begin{itemize}
+			\item Integer example:
+			\bigskip
+			\codeblock{
+				int x=10; \\
+				x++; \\
+				System.out.println(x);   // output: 11
+			}
+			\item Character example:
+			\bigskip
+			\codeblock{
+				char ch = 'a'; \\
+				ch++; \\
+				System.out.println(ch); // output: 'b'
+			}
+			\newpage
+			\item Boolean example:
+			\bigskip
+			\codeblock{
+				boolean b=true;  \\
+				b++;  \xmark  
+			}
+		
+		
+		\end{itemize}
+		
+	\end{itemize}
+		
+	\textbf{Difference between “x++” and “x=x+1”}
+	
+	\begin{itemize}
+		\item We know that: If we apply any arithmetic operator between 2 variables “a” and “b”, the result type is always:
+		\bigskip
+		\codecontinue{
+			maximum(int, type of a, type of b)
+		}
+		
+		\item This is the reason why using "x=x+1" can result in compile-time error:
+		\bigskip
+		\codeblock{
+			byte b=10; \\
+			b = b+1;        \xmark 
+		}
+	
+		\item But in case of increment/decrement operators, internal type casting will be performed automatically:
+		\bigskip
+		\codeblock{
+			byte b=10;  \\
+			b++;   \cmark
+		}
+		
+	\end{itemize}
+	
+	
+		
+\end{flushleft}
+\newpage

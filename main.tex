@@ -1,0 +1,738 @@
+%https://www.overleaf.com/learn/latex/Subscripts_and_superscripts
+\RequirePackage[2020-02-02]{latexrelease}
+\documentclass[14pt,fleqn]{extbook} % Default font size and left-justified equations
+\usepackage{graphicx}
+\usepackage{setspace}
+\input{structure.tex} % Insert the commands.tex file which contains the majority of the structure behind the template
+\usepackage{color}
+\definecolor{light}{rgb}{0.5, 0.5, 0.5}
+\definecolor{back}{RGB}{245, 214, 235}
+\definecolor{sborder}{RGB}{255, 230, 234}
+\definecolor{scontent}{RGB}{255, 191, 191}
+\definecolor{oborder}{RGB}{214, 245, 214}
+\definecolor{ocontent}{RGB}{148, 201, 115}
+\definecolor{eborder}{RGB}{255, 153, 153}
+\definecolor{econtent}{RGB}{255, 0, 0}
+\definecolor{ans}{RGB}{242, 242, 242}
+\def\light#1{{\color{light}#1}}
+\usepackage{multicol}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{tabulary}
+\usepackage{adjustbox}
+\usepackage{subfig}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{amssymb}
+\usepackage{afterpage}
+\tcbuselibrary{breakable}
+\usepackage[printwatermark]{xwatermark}
+\usepackage{multirow}
+% tickmarks and wrong mark
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\definecolor{ncontent}{RGB}{255, 242, 0}
+\definecolor{nborder}{RGB}{255, 255, 179}
+
+\definecolor{border}{RGB}{245,245,245}
+
+\newcommand\blankpage{%
+	\null
+	\thispagestyle{empty}%
+	\addtocounter{page}{-1}%
+	\newpage}
+
+\fancyfoot[R]
+{
+	\includegraphics[scale=0.6]{content/logo.png}%
+}
+
+
+\usepackage{framed}
+
+
+\newcommand{\codeblockfull}[2] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=white,
+		collower=white,
+		title=\textbf{#1},
+		coltitle = white,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#2
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+\newcommand{\codeblock}[1] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=white,
+		collower=white,
+		title=\textbf{Code:},
+		coltitle = white,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+
+
+\newcommand{\codecontinue}[1] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=white,
+		collower=white,
+		coltitle = white,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+
+
+\newcommand{\datablock}[1] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=white,
+		collower=white,
+		title=\textbf{Dataset:},
+		coltitle = white,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+
+\newcommand{\syntaxblock}[1] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=scontent,
+		title=\textbf{Syntax:},
+		colframe=sborder,
+		coltitle = black,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+
+\newcommand{\noteblock}[1] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=ncontent,
+		title=\textbf{Note:},
+		colframe=nborder,
+		coltitle = black,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+
+\newcommand{\outputblock}[1] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=ocontent,
+		title=\textbf{Output:},
+		colframe=oborder,
+		coltitle = black,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+\newcommand{\errorblock}[1] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=econtent,
+		title=\textbf{Error:},
+		colframe=eborder,
+		coltitle = black,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+\newcommand{\n} {
+	\newline
+}
+
+\newcommand{\boximage}[2] {
+	\includegraphics[width=#1\textwidth]{#2}
+}
+
+
+\newcommand{\s} {
+	\hphantom{} \hphantom{} \hphantom{}
+}
+
+\newcommand{\bspace} {
+	\bigskip
+}
+
+\newcommand{\tabletwo}[1] {
+	\bspace
+	\begin{tabular}{ |p{7cm}|p{7cm}| }
+		\hline
+		#1
+		\hline
+	\end{tabular}
+}
+
+\newcommand{\tableinsidebox}[1] {
+	\bspace
+	\begin{tabular}{ |p{6cm}|p{6cm}| }
+		\hline
+		#1
+		\hline
+	\end{tabular}
+}
+
+\newcommand{\commandblock}[1] {
+	\begin{tcolorbox}[
+		space to upper,
+		colback=white,
+		collower=white,
+		title=\textbf{Command:},
+		coltitle = white,]
+		\color{black}
+		\fontdimen2\font=8pt
+		#1
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+}
+
+
+\newcommand{\tablethree}[1] {
+	\bspace
+	\begin{tabular}{ |p{4.5cm}|p{4.5cm}|p{4.5cm}| }
+		\hline
+		#1
+		\hline
+	\end{tabular}
+}
+
+\newcommand{\tablefour}[1] {
+	\bspace
+	\begin{tabular}{ |p{3.5cm}|p{3.5cm}|p{3.5cm}|p{3.5cm}| }
+		\hline
+		#1
+		\hline
+	\end{tabular}
+}
+6
+\newcommand{\error}[1] {
+	\color{red}\# Error: \newline
+	#1 \color{black}
+}
+
+\newcommand{\correct}[1] {
+	\color{correctans}\# Output: \newline
+	#1 \color{black}
+}
+
+\newcommand{\answer}[1] {
+	
+	\begin{tcolorbox}[space to upper,
+		colback=ans,
+		collower=white,
+		coltitle = black, 
+		colframe=border,
+		title={Answer:},]
+		#1
+	\end{tcolorbox}
+}
+
+\newcommand{\quest}[2] {
+	\begin{tcolorbox}[space to upper,
+		colback=ans,
+		collower=white,
+		coltitle = white, 
+		title={\textbf{#1}},]
+		Ans: #2
+	\end{tcolorbox}
+}
+
+\newcommand{\anscontinue}[1] {
+	\begin{tcolorbox}
+		#1
+	\end{tcolorbox}
+}
+
+\newcommand{\newimage}[2] {
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[scale=#1]{#2}
+	\end{figure}			
+}
+
+\thispagestyle{plain}
+%\hypersetup{pdftitle={Title},pdfauthor={Author}} % Uncomment and fill out to include PDF metadata for the author and title of the book
+
+%----------------------------------------------------------------------------------------
+\setstretch{1.25}
+%\definecolor[new][h=9A957A, a=1, t=.3]
+\definecolor{code}{RGB}{248,248,248}
+\definecolor{output}{RGB}{148, 201, 115}
+\definecolor{error}{RGB}{255, 77, 77}
+\definecolor{trick}{RGB}{242, 204, 255}
+%%%%%%%%%%%%%%%%%%%%%%%   This block adds watermark  %%%%%%%%%%%%%%%%%
+%\newsavebox\mybox
+%\savebox\mybox{\tikz[color=mycolor,opacity=0.2]\node{lavatechtechnology.com};}
+%\newwatermark*[
+%allpages,
+%angle=45,
+%scale=2.5,
+%xpos=-20,
+%ypos=15
+%]{\usebox\mybox}
+%%%%%%%%%%%%%%%%%%%%%%%   This block adds watermark  %%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty} % Suppress headers and footers on the title page
+\begin{tikzpicture}[remember picture,overlay]
+\node[inner sep=0pt] (background) at (current page.center) {\includegraphics[width=\paperwidth, height=\paperheight]{cover_new.pdf}};
+\end{tikzpicture}
+\vfill
+\endgroup
+
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\newpage
+
+
+
+~\vfill
+\thispagestyle{empty}
+
+\noindent Copyright \copyright\ 2022 Lavatech Technology\\ % Copyright notice
+
+The contents of this course and all its modules and related materials, including handouts are
+Copyright ©
+
+No part of this publication may be stored in a retrieval system, transmitted or reproduced in any way, including, but not limited to, photocopy, photograph, magnetic, electronic or other record, without the prior written permission of Lavatech Technology.
+
+If you believe Lavatech Technology training materials are being used, copied, or otherwise improperly distributed please e-mail: 
+\newline
+\textbf{info@lavatechtechnology.com}
+
+\noindent \textsc{Published by Lavatech Technology}\\ % Publisher
+
+\noindent \textit{lavatechtechnology.com}\\ % URL
+
+%\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\  License information, replace this with your own license (if any)
+%
+\noindent \textit{January 2022} % Printing/edition date
+
+\afterpage{\blankpage}
+\afterpage{\blankpage}
+
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+
+\usechapterimagetrue % If you don't want to include a chapter image, use this to toggle images off - it can be enabled later with \usechapterimagetrue
+
+\chapterimage{image1.png} % Table of contents heading image
+
+\pagestyle{empty} % Disable headers and footers for the following pages
+
+
+\tableofcontents
+
+
+
+\cleardoublepage % Forces the first chapter to start on an odd page so it's on the right side of the book
+
+\pagestyle{fancy} % Enable headers and footers again
+
+%----------------------------------------------------------------------------------------
+%	PART One
+%----------------------------------------------------------------------------------------
+
+%\part{System Admin Level I}
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 0
+%----------------------------------------------------------------------------------------
+%\input{content/chapter1/1.0.tex}
+\chapterimage{index2.png}
+\chapter{Introduction to Java}
+\section{Getting started with Java}
+\input{content/chapter1/1.1.tex}
+\subsection{What is Java?}
+\input{content/chapter1/1.1.1.tex}
+\subsection{Uses of Java}
+\input{content/chapter1/1.1.5.tex}
+\subsection{Problem with C and C++}
+\input{content/chapter1/1.1.2.tex}
+\subsection{Advantages of Java over C++}
+\input{content/chapter1/1.1.4.tex}
+\subsection{How does program execution works?}
+\input{content/chapter1/1.1.7.tex}
+\subsection{The way Java works}
+\input{content/chapter1/1.1.6.tex}
+\subsection{Compiler V/S JVM}
+\input{content/chapter1/1.1.8.tex}
+\subsection{JVM components}
+\input{content/chapter1/1.1.9.tex}
+\subsection{History of Java}
+\input{content/chapter1/1.1.3.tex}
+\section{Installing Java and IDE}
+\input{content/chapter1/1.2.tex}
+\subsection{Java installation}
+\input{content/chapter1/1.2.1.tex}
+\subsection{IDE installation}
+\input{content/chapter1/1.2.2.tex}
+\subsection{Our first Java program}
+\input{content/chapter1/1.2.3.tex}
+\subsection{Executing our first Java program}
+\input{content/chapter1/1.2.4.tex}
+\subsection{Using JShell}
+\input{content/chapter1/1.2.5.tex}
+
+
+%--------------------------------------------------------------------------
+%	CHAPTER 2
+%-------------------------------------------------------------------------
+
+\chapterimage{index3.png} % Table of contents heading image
+\chapter{Java Language Fundamentals}
+%-----------------------
+\section{Identifiers, variables and more}
+\input{content/chapter2/2.1.tex}
+\subsection{Java identifiers}
+\input{content/chapter2/2.1.1.tex}
+\subsection{Java grammar}
+\input{content/chapter2/2.1.8.tex}
+\subsection{Java variable}
+\input{content/chapter2/2.1.2.tex}
+\subsection{Literals}
+\input{content/chapter2/2.2.9.tex}
+\subsection{Java reserved words or keywords}
+\input{content/chapter2/2.1.3.tex}
+\subsection{Java Comments}
+\input{content/chapter2/2.1.9.tex}
+\subsection{How Objects Can Change Your Life?}
+\input{content/chapter2/2.1.7.tex}
+\section{Introductions to OOPs}
+\input{content/chapter2/2.1.11.tex}
+\subsection{Pillars of OOPs}
+\input{content/chapter2/2.1.13.tex}
+\subsection{main() method}
+\input{content/chapter2/2.1.23.tex} 
+\subsection{Command-line argument}
+\input{content/chapter2/2.1.24.tex} 
+
+
+\chapterimage{index3.png} % Table of contents heading image
+\chapter{Data types in Java}
+%-----------------------
+\section{Getting started with data type}
+\input{content/chapter2/2.2.tex}
+\subsection{Java is strongly typed}
+\input{content/chapter2/2.2.0.tex}
+\subsection{Types of data types}
+\input{content/chapter2/2.1.4.tex}
+\section{Integer}
+\input{content/chapter2/2.2.17.tex}
+\subsection{byte}
+\input{content/chapter2/2.2.1.tex}
+\subsection{short}
+\input{content/chapter2/2.2.2.tex}
+\subsection{int}
+\input{content/chapter2/2.2.3.tex}
+\subsection{long}
+\input{content/chapter2/2.2.4.tex}
+\subsection{Integer literals}
+\input{content/chapter2/2.2.10.tex}
+\section{Floating-point}
+\input{content/chapter2/2.2.5.tex}
+\subsection{Float}
+\input{content/chapter2/2.2.18.tex}
+\subsection{Double}
+\input{content/chapter2/2.2.19.tex}
+\subsection{Floating-point literals}
+\input{content/chapter2/2.2.12.tex}
+\section{Character}
+\input{content/chapter2/2.2.20.tex}
+\subsection{What is ascii \& unicode?}
+\input{content/chapter2/2.2.21.tex}
+\subsection{char datatype}
+\input{content/chapter2/2.2.7.tex}
+\subsection{Character literals}
+\input{content/chapter2/2.2.13.tex}
+\subsection{Escape character}
+\input{content/chapter2/2.2.14.tex}
+\section{Boolean}
+\input{content/chapter2/2.2.6.tex}
+\section{Type conversion}
+\input{content/chapter2/2.2.16.tex}
+
+%-----------------------
+
+%-------------------------------------------------------------------------------------
+%	CHAPTER 4
+%-------------------------------------------------------------------------------------
+\chapterimage{index5.png} % Table of contents heading image
+\chapter{Arrays}
+%-----------------------
+\section{Arrays in detail}
+\input{content/chapter4/4.1.tex}
+\subsection{Array introduction}
+\input{content/chapter4/4.1.1.tex}
+\subsection{Array declaration}
+\input{content/chapter4/4.1.2.tex}
+\subsection{Array creation}
+\input{content/chapter4/4.1.3.tex}
+%\subsection{Practice}
+%\input{content/chapter4/4.1.4.tex}
+\subsection{Array initialisation}
+\input{content/chapter4/4.1.5.tex}
+\subsection{Array declaration, creation and initialisation in one line}
+\input{content/chapter4/4.1.6.tex}
+\subsection{length variable}
+\input{content/chapter4/4.2.1.tex}
+\subsection{Anonymous Arrays}
+\input{content/chapter4/4.2.2.tex}
+\subsection{Array element assignments}
+\input{content/chapter4/4.2.3.tex}
+\subsection{Array variable assignments}
+\input{content/chapter4/4.2.4.tex}
+%-----------------------
+
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 3
+%----------------------------------------------------------------------------------------
+\chapterimage{index4.png} % Table of contents heading image
+\chapter{Operators}
+%-----------------------
+\section{Operators in Java}
+\input{content/chapter3/3.1.tex}
+\subsection{Arithematic Operator}
+\input{content/chapter3/3.1.2.tex}
+\subsection{String Concatenation Operator}
+\input{content/chapter3/3.1.3.tex}
+\subsection{Increment/Decrement Operator}
+\input{content/chapter3/3.1.4.tex}
+\subsection{Relational Operator}
+\input{content/chapter3/3.1.5.tex}
+\subsection{Equality Operator}
+\input{content/chapter3/3.1.6.tex}
+\subsection{Bitwise Operator}
+\input{content/chapter3/3.1.7.tex}
+\subsection{Boolean complement operator}
+\input{content/chapter3/3.1.8.tex}
+\subsection{Short circuit Operator}
+\input{content/chapter3/3.1.9.tex}
+\subsection{Assignment Operator}
+\input{content/chapter3/3.1.10.tex}
+\subsection{Conditional Operator}
+\input{content/chapter3/3.1.11.tex}
+%\subsection{instanceOf Operator}
+%\input{content/chapter3/3.1.1.tex}
+\subsection{new Operator}
+\input{content/chapter3/3.1.14.tex}
+\subsection{ $\left[ \s \right]$ Operator}
+\input{content/chapter3/3.1.12.tex}
+\subsection{Operator Precedence}
+\input{content/chapter3/3.1.13.tex}
+%-----------------------
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 6
+%----------------------------------------------------------------------------------------
+\chapterimage{index4.png} % Table of contents heading image
+\chapter{Flow Control}
+%-----------------------
+\section{Flow control statement}
+\input{content/chapter8/8.1.tex}
+\section{Selection Statements}
+\input{content/chapter8/8.1.1.tex}
+\subsection{if...else}
+\input{content/chapter8/8.1.2.tex}
+\subsection{switch case}
+\input{content/chapter8/8.1.3.tex}
+\section{Iteration}
+\input{content/chapter8/8.2.tex}
+\subsection{while()}
+\input{content/chapter8/8.2.1.tex}
+\subsection{do-while()}
+\input{content/chapter8/8.2.2.tex}
+\subsection{for()}
+\input{content/chapter3/3.1.6.tex}
+\subsection{for-each loop}
+\input{content/chapter3/3.1.7.tex}
+\section{Transfer Statements}
+\input{content/chapter3/3.1.tex}
+\subsection{break}
+\input{content/chapter3/3.1.2.tex}
+\subsection{continue}
+\input{content/chapter3/3.1.2.tex}
+\subsection{return}
+\input{content/chapter3/3.1.2.tex}
+\subsection{try..catch..finally}
+\input{content/chapter3/3.1.2.tex}
+\subsection{assert}
+\input{content/chapter3/3.1.2.tex}
+%-----------------------
+
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 7
+%----------------------------------------------------------------------------------------
+\chapterimage{index8.png} % Table of contents heading image
+\chapter{Pandas}
+%%%%%-----------------------
+\section{Getting started with Pandas}
+\input{content/chapter7/7.2.tex}
+\subsection{Pandas Introduction}
+\input{content/chapter7/7.2.1.tex}
+\subsection{Pandas Series}
+\input{content/chapter7/7.2.2.tex}
+\subsection{Pandas DataFrames}
+\input{content/chapter7/7.2.3.tex}
+\subsection{Pandas Read CSV}
+\input{content/chapter7/7.2.4.tex}
+%\subsection{Pandas Analyzing Data}
+%\input{content/chapter7/7.2.1.tex}
+\section{Pandas Deep Dive}
+\input{content/chapter7/7.1.tex}
+\subsection{Cleaning Data}
+\input{content/chapter7/7.1.1.tex}
+\subsection{Pandas Plotting}
+\input{content/chapter7/7.2.1.tex}
+%%%%%-----------------------
+
+
+
+
+\chapterimage{appen.png} % Table of contents heading image
+\chapter{Appendix}
+\section{An A-Z Index of the Linux command line}
+\input{content/chapter19/19.1.9.tex}
+\section{Technical books from Lavatech Technology}
+\input{content/chapter19/19.1.10.tex}
+\input{page.tex}
+
+%%%%-----------------------
+
+
+
+
+
+%%%%
+%%%%
+%%%%
+%%%%
+%%%%%----------------------------------------------------------------------------------------
+%%%%%	PART
+%%%%%----------------------------------------------------------------------------------------
+%%%%
+%%%%\part{System Admin Level II}
+%%%%
+%%%%%----------------------------------------------------------------------------------------%%%%%	CHAPTER 3
+%%%%%----------------------------------------------------------------------------------------
+%%%%
+%%%%\chapterimage{index4.pdf} % Chapter heading image
+%%%%
+%%%%\chapter{Presenting Information}
+%%%%
+%%%%\section{Table}\index{Table}
+%%%%
+%%%%\begin{table}[h]
+%%%%\centering
+%%%%\begin{tabular}{l l l}
+%%%%\toprule
+%%%%\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
+%%%%\midrule
+%%%%Treatment 1 & 0.0003262 & 0.562 \\
+%%%%Treatment 2 & 0.0015681 & 0.910 \\
+%%%%Treatment 3 & 0.0009271 & 0.296 \\
+%%%%\bottomrule
+%%%%\end{tabular}
+%%%%\caption{Table caption}
+%%%%\label{tab:example} % Unique label used for referencing the table in-text
+%%%%%\addcontentsline{toc}{table}{Table \ref{tab:example}} % Uncomment to add the table to the table of contents
+%%%%\end{table}
+%%%%
+%%%%Referencing Table \ref{tab:example} in-text automatically.
+%%%%
+%%%%%------------------------------------------------
+%%%%
+%%%%\section{Figure}\index{Figure}
+%%%%
+%%%%\begin{figure}[h]
+%%%%\centering\includegraphics[scale=0.5]{placeholder.jpg}
+%%%%\caption{Figure caption}
+%%%%\label{fig:placeholder} % Unique label used for referencing the figure in-text
+%%%%%\addcontentsline{toc}{figure}{Figure \ref{fig:placeholder}} % Uncomment to add the figure to the table of contents
+%%%%\end{figure}
+%%%%
+%%%%Referencing Figure \ref{fig:placeholder} in-text automatically.
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+%\chapter*{Bibliography}
+%\addcontentsline{toc}{chapter}{\textcolor{ocre}{Bibliography}} % Add a Bibliography heading to the table of contents
+%
+%%------------------------------------------------
+%
+%\section*{Articles}
+%\addcontentsline{toc}{section}{Articles}
+%\printbibliography[heading=bibempty,type=article]
+%
+%%------------------------------------------------
+%
+%\section*{Books}
+%\addcontentsline{toc}{section}{Books}
+%\printbibliography[heading=bibempty,type=book]
+%
+%%----------------------------------------------------------------------------------------
+%%	INDEX
+%%----------------------------------------------------------------------------------------
+%
+%\cleardoublepage % Make sure the index starts on an odd (right side) page
+%\phantomsection
+%\setlength{\columnsep}{0.75cm} % Space between the 2 columns of the index
+%\addcontentsline{toc}{chapter}{\textcolor{ocre}{Index}} % Add an Index heading to the table of contents
+%\printindex % Output the index
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
+
+

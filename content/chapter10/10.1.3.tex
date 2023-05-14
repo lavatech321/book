@@ -1,0 +1,108 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\bigskip
+	\paragraph{What is a link?}
+	\begin{itemize}
+		\item A link allows two or more names for the same file/directory.
+		\item There are two types of links:
+		\begin{itemize}
+			\item \textbf{Hard link}:
+			\begin{itemize}
+				\item Can be created only for file and points to the file's inode number.
+				\item Cannot be created across filesystem.
+				\item Inode for all the hard links are same .
+			\end{itemize}
+			
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=9pt
+				Syntax: ln source\_filename  hard\_link\_name
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			Eg:
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\fontdimen2\font=9pt
+				\color{yellow}
+				\# Create hard link for abc.txt file:
+				\newline
+				\color{green}
+				\# ln abc.txt /tmp/new\_link.txt
+				\newline
+				\newline
+				\color{yellow}
+				\# Check the inode of abc.txt \& /tmp/new\_link.txt 
+				\newline
+				\color{green}
+				\# ls -i abc.txt  /tmp/new\_link.txt
+				\newline
+				\color{white}
+				3052945 abc.txt
+				\newline
+				3052945 /tmp/new\_link.txt
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=yellow,colframe=yellow]
+				\color{black}
+				Note: Notice how the inode number for hard link are same.
+			\end{tcolorbox}
+			
+			
+			\newpage
+			\item \textbf{Soft link}:
+			\begin{itemize}
+				\item Can be created for file as well as directory.
+				\item Can be created across filesystems.
+				\item Inode for soft link are different.
+			\end{itemize}
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+				\color{black}
+				\fontdimen2\font=9pt
+				Syntax: ln -s source\_file\_or\_directory  softlink\_name
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			Eg:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				
+				\fontdimen2\font=9pt
+				\color{yellow}
+				\# Create soft link for /tmp folder:
+				\newline
+				\color{green}
+				\$ ln -s /tmp /home/sample/
+				\newline
+				\newline
+				\color{yellow}
+				\# Check the inode of /tmp \&  /home/sample
+				\newline
+				\color{green}
+				\$ ls -i /tmp  /home/sample
+				\newline
+				\color{white}
+				3052047 /tmp
+				\newline
+				2052047 /home/sample
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+
+			\bigskip
+			\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=yellow,colframe=yellow]
+				\color{black}
+				Note: Notice how the inode number for soft link are different.
+			\end{tcolorbox}
+
+
+		\end{itemize}
+		
+	\end{itemize}
+	, 
+	
+
+	
+\end{flushleft}
+
+\newpage
+

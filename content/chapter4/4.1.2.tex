@@ -1,0 +1,98 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{itemize}
+		\item \textbf{One dimensional array declaration}:
+		\bigskip
+		\syntaxblock{
+			int[] x; (Recommended as name of variable is clearly separated from type) \newline
+			int []x; \newline
+			int x[];
+		}
+		\bigskip
+		\noteblock{
+			Array declaration \textbf{cannot define size} of array.
+			\codeblock{
+				int[6] x; \xmark
+			}
+		}
+		
+		\bigskip
+		\item \textbf{Two-dimensional array declaration}:
+		\bigskip
+		\syntaxblock{
+			int[][] x;  (Recommended)
+			\newline
+			int [][]x;
+			\newline
+			int x[][];
+			\newline
+			int[] []x;
+		}
+		
+		
+		
+		\item \textbf{3-dimensional array declaration:}
+		\bigskip
+		\syntaxblock{
+			int[][][] x;  (Recommended)
+			\newline
+			int [][][]x;
+			\newline
+			int x[][][];
+			\newline
+			int[] [][]x;
+			\newline
+			int[] x[][];
+			\newline
+			int[] []x[];
+		}
+		
+		\bigskip		
+		\item \textbf{More combinations}:
+		\begin{itemize}
+			\item Declaring variable \textbf{"a"} and \textbf{"b"} with \textbf{1} dimension:
+			\bigskip
+			\codeblock{
+				int[] a,b;
+			}
+			\bigskip
+			\item Declaring variable \textbf{"a"} with 2 dimension and variable \textbf{"b"} with 1 dimension
+			\bigskip
+			\codeblock{
+				int[] a[],b;
+			}
+			
+			\item Declaring variable \textbf{"a"} and \textbf{"b"} with 2 dimensions.
+			\bigskip
+			\codeblock{
+				int[] a[],b[]; \\
+				int[] \s a[],b;
+			}
+			
+			\item Declaring variable \textbf{"a"} with 2 dimension and variable \textbf{"b"} with 3 dimension:
+			\codeblock{
+				int[] \s []a,b[];
+			}		
+			
+			\bigskip
+			\noteblock{
+				\textbf{"[]" is allowed only in front of first variable.} 
+				\codeblock{
+					int[] \hphantom{} \hphantom{} []a,[]b; \xmark  \\
+					int[] \hphantom{} \hphantom{} []a,[]b,[]c; \xmark
+				}
+			}
+			
+		\end{itemize}
+		
+	\end{itemize}
+	
+	
+	
+\end{flushleft}
+
+\newpage
+
+
+
+

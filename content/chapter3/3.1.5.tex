@@ -1,0 +1,32 @@
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Below are available relational operator in Java:
+		\newimage{0.5}{content/chapter3/images/relational.png}
+		\item We can apply relational operator for every primitive datatype, except boolean datatype.
+		\item Eg:
+		\bigskip
+		\codeblock{
+			System.out.println(10>20);  // output: false  \\
+			System.out.println('a'>20);  // output: false  \\ 
+			System.out.println('b'>2.0); // output: false  \\
+			//System.out.println(true > false); \xmark
+		}
+	
+		\item We can’t apply relational operators for object types
+		\bigskip
+		\codeblock{
+			System.out.println('lava' > 'lavatech');  \xmark
+		}
+	
+		\item Chaining of relational operators is not allowed.
+		\bigskip
+		\codeblock{
+			System.out.println(10>20>30);  \xmark
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}
+\newpage

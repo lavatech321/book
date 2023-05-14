@@ -1,0 +1,48 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+\bigskip
+
+
+\begin{itemize}
+\item \textbf{logger}: Allows a local user to write to log files owned by the root user with default facility \textbf{user} \& priority \textbf{notice}.
+\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+	\color{black}
+	\fontdimen2\font=9pt
+	Syntax: logger log\_message
+	\newline
+	or
+	\newline
+	Syntax: logger -p facility.severity	 log\_message
+	\fontdimen2\font=4pt
+\end{tcolorbox}
+Eg:	
+\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+	\color{green}
+	\fontdimen2\font=9pt
+	\# logger "Sample log entry 1..."
+	\newline
+	\# logger -p user.info "Sample log entry 2..."
+	\newline
+	\newline
+	\color{yellow}
+	\# Check the log entry in /var/log/messages
+	\newline
+	\color{green}
+	\# tail -1 /var/log/message
+	\newline
+	\color{white}
+	Mar 26 11:27:00 server vagrant[8956]: Sample log entry 1...
+	\newline
+	Mar 26 11:27:00 server vagrant[8956]: Sample log entry 2...
+	\fontdimen2\font=4pt
+\end{tcolorbox}
+	, 
+	
+\end{itemize}
+
+
+
+\end{flushleft}
+\newpage
+
+

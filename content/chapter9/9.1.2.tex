@@ -1,0 +1,42 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\bigskip
+	\begin{itemize}
+		\item Runtime  errors are called exceptions.
+		\item An exception is a Python object which represents an error. 
+		\item If not handled properly, it prints a trackback error.
+		\item Built-in exceptions are display with:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=code,colframe=code]
+			\color{white}
+			\fontdimen2\font=8pt
+			print(dir(\_\_builtins\_\_))
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+	
+		Output:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+			\color{black}
+			['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException',
+			\newline
+			...]
+			\fontdimen2\font=4pt
+		\end{tcolorbox}		
+	
+		\item Frequently faced exceptions are:
+		\begin{itemize}
+			\item ModuleNotFoundError 
+			\item FileNotFoundError
+			\item ZeroDivisionError
+			\item ImportError
+			\item FileExistsError
+			\item ValueError
+			\item StopIteration
+		\end{itemize}
+	
+	
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage
+

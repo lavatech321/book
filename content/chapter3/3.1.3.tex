@@ -1,0 +1,44 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item The only overloaded operator in Java is \textbf{"+"} operator. 
+		\item It can act as arithmetic addition operator as well as string concatecation operator.
+		\bigskip
+		\codeblock{
+			System.out.println(10+20); // output: 30  \\
+			System.out.println("ab"+"cd"); // output: abcd
+		}
+		\bigskip
+		\noteblock{
+			Apart from "+", Java does not support \textbf{operator overloading}!	
+		}
+	
+		\item Working of \textbf{"+"} with string:
+		
+		\begin{itemize}
+			\item If atleast one argument is string type, + operator acts as concatenation operator.
+			\item If both arguments are number type, + operator acts as arithmetic addition operator.
+		\end{itemize}
+	
+		Eg:
+		\codeblock{
+			String a = "lavatech";   \\
+			int b=10, c=20, d=30;   		\\
+			System.out.println(a+b+c+d);  // output: lavatech102030 \\
+			System.out.println(b+c+d+a);  // output: 60lavatech		\\
+			System.out.println(b+c+a+d);  // output: 30lavatech30		\\
+			System.out.println(b+a+c+d);  // output: 10lavatech2030
+		}
+		
+	\end{itemize}
+	
+
+\end{flushleft}
+
+\newpage
+
+
+
+
+

@@ -1,0 +1,76 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\bigskip
+	You can start using yum server for package installation on any client, by following below steps:
+	
+	\begin{enumerate}
+		\item Create a repository file named \textbf{/etc/yum.repos.d/new.repo}:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{white}
+			\fontdimen2\font=9pt
+			[Title\_name] \color{yellow}  \# Add title name for this repository 
+			\newline
+			\color{white}
+			name = Repo\_name
+			\color{yellow}
+			\# Add repository name
+			\newline
+			\color{white}
+			enabled = 1
+			\newline
+			gpgcheck = 0
+			\newline
+			baseurl = ftp://(server-IP-address)/pub
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=yellow,colframe=yellow]
+			\color{black}
+			\textbf{Note:} 
+			\begin{itemize}
+				\item Location of repository file should be \textbf{/etc/yum.repos.d}
+				\item Name of the file can be anything
+				\item Extension of the file of should be \textbf{".repo"}
+			\end{itemize}
+		\end{tcolorbox}
+
+		
+		
+		\item Clean all the cached files from any enabled repository.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# yum	clean	all
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		
+		\item Refresh all the enabled repository:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# yum 	update 	all
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		
+		\item Now you can install any packages using the YUM server.
+		\newline
+		Eg:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# yum	install	httpd -y		
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+
+		
+	\end{enumerate}
+	
+	
+	
+\end{flushleft}
+\newpage
+
+
+

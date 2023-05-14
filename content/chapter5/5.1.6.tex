@@ -1,0 +1,94 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\bigskip
+	
+	\paragraph{What is a umask?}
+	\begin{itemize}
+		\item Umask is responsible for the default permission of a file or directory.
+		\item Comamnd to check default umask:
+		\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax:  umask
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# umask
+			\color{white}
+			\newline
+			0022
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\item Default umask value is \textbf{0022}.
+		\item Using the default umask, you can calculate:
+		\begin{itemize}
+			\item Default file permission:
+				\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=pink,colframe=pink]
+					\color{black}
+					Formula:  \textbf{Complete file permission - Default umask}
+					\newline
+					Which means: \textbf{666 - 022 = 644}
+					\newline
+					Hence, \textbf{default file permission is 644}
+				\end{tcolorbox}
+			\bigskip
+			\bigskip
+			\item Default folder permission:
+					\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=pink,colframe=pink]
+					\color{black}
+					Formula:  \textbf{Complete folder permission - Default umask}
+					\newline
+					Which means: \textbf{777 - 022 = 755}
+					\newline
+					Hence, \textbf{default file permission is 755}
+				\end{tcolorbox}
+		\end{itemize}
+	\end{itemize}
+
+\newpage
+		
+		
+	\paragraph{Changing the umask value}
+	\begin{itemize}
+		\item Umask value can be changed using \textbf{"umask"} command.
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: umask permission
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg: If you don’t want anybody other than the user (owner) to do anything on the file or directory then you can give umask as 0077.
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# umask 0077
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\bigskip
+		After this, if you create a file or directory, it will have permissions only for the user
+		as shown below:
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# touch testfile
+			\newline
+			\# ls -l testfile
+			\newline
+			\color{white}
+			-rw------- 1 jack jack 0 Mar 17 08:23 testfile
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+	\end{itemize}
+
+	
+\end{flushleft}
+
+\newpage
+

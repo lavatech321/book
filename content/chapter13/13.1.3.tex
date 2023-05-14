@@ -1,0 +1,58 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\textbf{crontab}: Command to maintains crontab files for individual users.
+	\begin{itemize}
+		\item \textbf{-e}: Edit cron file
+		\item \textbf{-u}:  Username
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: crontab -u username -e
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# crontab -u jack -e
+			\newline
+			*/1 	* 	*	*	*   date > /tmp/one.txt
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=yellow,colframe=yellow]
+		\color{black}
+			Note: Above command would configure cronjob in \textbf{/var/spool/cron/jack} file
+		\end{tcolorbox}
+		
+		\bigskip
+		
+		\item \textbf{-l}: List all the cronjob for current user.
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: crontab -u username -l
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		
+		\bigskip
+		
+		\item \textbf{-r}: Remove all cronjob at a time for a particular user.
+		\bigskip
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: crontab -u username -r	
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+	\end{itemize}
+
+
+\end{flushleft}
+\newpage
+
+

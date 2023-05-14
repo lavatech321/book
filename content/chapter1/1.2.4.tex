@@ -1,0 +1,74 @@
+\setlength{\columnsep}{5pt}
+\begin{flushleft}
+
+		\begin{itemize}
+			\item Using simple text editor:
+			\bigskip
+			\codeblockfull{MyFirstApp.java}{
+				public class MyFirstApp \{ \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		System.out.println("I Rule!"); \\
+				\s \s		System.out.println("The World"); \\
+				\s	\} \\
+				\}	
+		
+			}
+			\bigskip
+			\commandblock{
+				javac MyFirstApp.java \\
+				java MyFirstApp 
+			}
+			\bigskip
+			\outputblock{
+				I Rule! \\
+				The World
+			}
+		
+			\newpage
+			\item Using Eclipse:		
+			\begin{enumerate}
+				\item Create New Project:
+				\\
+				\textbf{File -> New -> Java Project -> Add “Starter”} as project name
+				
+				\newimage{0.35}{content/chapter0/images/new11.png}
+				
+				\item This will create directory structure as shown below:
+				
+				\newimage{0.8}{content/chapter0/images/new12.png}
+				
+				\newpage
+				\item Right click the src -> Select “Package” -> Add “Start1” as package name as shown below:
+				
+				
+				\newimage{0.35}{content/chapter0/images/new13.png}
+				
+				\item Right click the “Start1” -> Select New -> Class -> Add “MyFirstClass” as classname as shown below:
+				
+				\newimage{0.4}{content/chapter0/images/new14.png}
+				
+				\newpage
+				\item This will create a class with below structure:
+				\bigskip
+				\codeblock{
+					package Start1; \\
+					public class MyFirstClass \{ \\
+					\s	public static void main(String[] args) \{ \\
+					\s	\s	// TODO Auto-generated method stub \\
+					\s \s	System.out.println("Welcome Back!"); \\
+					\s	\} \\
+					\}
+				}
+			
+				\item Execute the code by pressing the run button:
+				
+				\newimage{0.65}{content/chapter0/images/new15.png}
+				
+			\end{enumerate}
+			
+			
+		\end{itemize}
+		
+\end{flushleft}
+
+\newpage

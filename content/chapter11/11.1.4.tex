@@ -1,0 +1,50 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\begin{enumerate}
+		\item \textbf{Dependency problem while installing a package:}
+		\begin{itemize}
+			\item The \textbf{"rpm"} commands can handle only 1 package at a time.
+			\item However, packages can be dependent on each other.
+			\item Eg: Notice error while installing \textbf{"NetworkManager"} package using \textbf{rpm} command:
+			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+				\fontdimen2\font=9pt
+				\color{green}
+				\# wget https://rpmfind.net/linux/centos/8-stream/BaseOS/x86\_64/os/Packages/NetworkManager-1.36.0-0.7.el8.x86\_64.rpm
+				\newline
+				\# rpm -ivh NetworkManager-1.36.0-0.7.el8.x86\_64.rpm
+				\color{red}\newline
+				warning: NetworkManager-1.36.0-0.7.el8.x86\_64.rpm: Header V3 RSA/SHA256 Signature, key ID 8483c65d: NOKEY
+				\newline
+				error: Failed dependencies:
+				\newline
+				NetworkManager-libnm(x86-64) = 1:1.36.0-0.7.el8 is needed........
+				\fontdimen2\font=4pt
+			\end{tcolorbox}
+			\end{itemize}
+
+			\item \textbf{Dependency problem while removing a pacakge:}
+			\begin{itemize}
+				\item While "uninstalling" \& "removing" a package, \textbf{rpm} command cannot remove a package if it has dependency issues.
+				\item Eg: Notice the error while removing \textbf{"openssh"} package using \textbf{rpm} command:
+				\bigskip
+				\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+					\color{green}
+					\fontdimen2\font=9pt
+					\# rpm -e openssh
+					\color{red}
+					\newline
+					error: Failed dependencies:
+					\newline
+					openssh = 8.0p1-10.el8 is needed by (installed) openssh-clients-8.0p1-10.el8.x86\_64
+					\newline
+					openssh = 8.0p1-10.el8 is needed by (installed) openssh-server-8.0p1-10.el8.x86\_64
+					\fontdimen2\font=4pt
+				\end{tcolorbox}				
+			\end{itemize}
+
+	\end{enumerate}
+
+\end{flushleft}
+\newpage
+
+

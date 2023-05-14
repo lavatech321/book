@@ -1,0 +1,83 @@
+
+\begin{flushleft}
+	
+	 	In Java, the short-circuit operators are:
+		\begin{itemize}
+			\item \textbf{\&\& (logical AND)}: Same as bitwise \&
+			\item \textbf{|| (logical OR)}: Same as bitwise |
+		\end{itemize}
+
+		\tabletwo{
+		\hline
+		\& , |  & \&\& , || \\
+		\hline
+		Both arguments should be evaluated always & Second argument evaluation is optional \\
+		\hline
+		Relatively performance is low & Relatively performance is high \\
+		\hline
+		Applicable for both boolean and integral types & Applicable only for boolean but not for integral types \\
+		\hline
+		Eg: \newline
+		For x \& y, both x and y will be evaluated. \newline
+		Similarly, \newline
+		For x | y, both x and y will be evaluated. 
+		& 
+		Eg: \newline
+		For x \&\& y, y will be evaluated if and only if x is true i.e if x is false then y wont be evaluated. \newline
+		Similarly, \newline
+		For x || y,  y will be evaluated if and only if x is false i.e if x is true then y wont be evaluated. \\
+		
+		\hline
+		
+		}
+		
+		\bigskip
+		Consider below code showing different behaviour of \&, \&\&, |, ||:
+		\codeblock{
+			int x = 10, y = 15;   \\
+			if(  ++x < 10  \& ++y > 15) \{ \\
+			\s	x++;   \\
+			\}  \\
+			else \{  \\
+			\s	y++;   \\
+			\}  \\
+			System.out.println(x + "..." + y);  //   output: 11...17
+		}
+		\bigskip
+		\codeblock{
+			int x = 10, y = 15;   \\
+			if(  ++x < 10  | ++y > 15) \{ \\
+			\s	x++;   \\
+			\}  \\
+			else \{  \\
+			\s	y++;   \\
+			\}  \\
+			System.out.println(x + "..." + y);  //   output: 12...16
+		}
+		\bigskip
+		\codeblock{
+			int x = 10, y = 15;   \\
+			if(  ++x < 10  \&\& ++y > 15) \{ \\
+			\s	x++;   \\
+			\}  \\
+			else \{  \\
+			\s	y++;   \\
+			\}  \\
+			System.out.println(x + "..." + y);  //   output: 11...16
+		}
+		\bigskip
+				\codeblock{
+			int x = 10, y = 15;   \\
+			if(  ++x < 10  || ++y > 15) \{ \\
+			\s	x++;   \\
+			\}  \\
+			else \{  \\
+			\s	y++;   \\
+			\}  \\
+			System.out.println(x + "..." + y);  //   output: 12...16
+		}
+		\bigskip
+
+	
+\end{flushleft}
+\newpage

@@ -1,0 +1,110 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	Information can be passed into functions as arguments. \newline
+	Arguments are specified after the function name, inside the parentheses.  \newline
+	\newline
+	Types of arguments:
+	
+	\begin{itemize}
+		\item \textbf{Mandatory arguments}: Fixed number of arguments needs to be passed everytime function is called.
+		\newline
+		Sample Code:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			def add(no1,no2): \newline
+			\hphantom{} \hphantom{} print(no1+no2) \newline
+			\newline
+			add(67,89)
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Output:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+			\color{black}
+			156
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		
+		
+		\item \textbf{Variable/default arguments}: Function arguments can have default values in Python.
+		\newline
+		Sample Code:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			def add(no1,no2,no3=0): \newline
+			\hphantom{} \hphantom{} print(no1+no2) \newline
+			\newline
+			add(67,89) \newline
+			add(56,34,23) 
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Output:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+			\color{black}
+			156 \newline
+			90
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		\newpage
+		\item \textbf{Arbitrary arguments}: When number of arguments passed to function is not fixed, you can supply arbitrary arguments in form of tuple.
+		\newline
+		Sample Code:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			def add(*nos): \newline
+			\hphantom{} \hphantom{} print(nos,type(nos)) \newline
+			\hphantom{} \hphantom{} print(sum(nos)) \newline
+			\newline
+			add(56,34,23) \newline
+			add(34,23,12,56,34,34,23)
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Output:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+			\color{black}
+			(56, 34, 23) <class 'tuple'> \newline
+			113 \newline
+			(34, 23, 12, 56, 34, 34, 23) <class 'tuple'> \newline
+			216
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		\bigskip
+		
+		\item \textbf{Arbitrary key value pair as arguments}: Any number of key value pair passed as arguments passed to function in form of dictionary.
+		\newline
+		Sample Code:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			def info(**kargs): \newline
+			\hphantom{} \hphantom{} print(kargs) \newline
+			\newline
+			info(name="Raman",age=34,city="Pune")
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		
+		Output:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=output,colframe=output]
+			\color{black}
+			\fontdimen2\font=9pt
+			{'name': 'Raman', 'age': 34, 'city': 'Pune'}
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+
+		
+		
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage
+

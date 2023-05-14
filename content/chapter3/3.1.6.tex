@@ -1,0 +1,53 @@
+
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Equality operators can be used for every primitive type including boolean.
+		\bigskip
+		\codeblock{
+			System.out.println(10==20);  // output: fasle \\
+			System.out.println('a' == 'b'); // output: false \\
+			System.out.println('a' == 97.0); // output: true \\
+			System.out.println(false == false); // output: true
+		}
+		
+		\item Equality operators can be applied for object types also. For object references, "r1" \& "r2", "r1==r2" returns true, if both reference pointing to the same object (reference comparison or address comparison)
+		\bigskip
+		\codeblock{
+			Thread t1 = new Thread(); \\
+			Thread t2 = new Thread(); \\
+			Thread t3 = t1; \\
+			System.out.println(t1 == t2);   // output: false \\
+			System.out.println(t1 == t3);   // output: true
+		}
+		
+		There should be some relation between argument types(either child to parent or parent to child or same type). Otherwise, it will result in compile-time error.
+		\bigskip
+		\codeblock{
+			Thread t1 = new Thread();   \\
+			Object o = new Object();   \\
+			String s = new String("lava");   \\
+			System.out.println(t1==o) ; // output: false    \\
+			System.out.println(o==s); // output: false    \\
+			//System.out.println(s==t1); \xmark
+		}
+		
+		For any object reference "r": "r==null"  ← is always False
+		\bigskip
+		\codeblock{
+			String s1 = new String("lava"); \\
+			System.out.println(s1 == null) ; // output: false \\
+			\\
+			String s2 = new String(); \\
+			System.out.println(s2==null); // output: false \\
+			\\
+			String s3 = null; \\
+			System.out.println(s3==null); // output: true
+		}
+		
+	\end{itemize}
+
+
+	
+\end{flushleft}
+\newpage

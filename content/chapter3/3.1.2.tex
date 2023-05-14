@@ -1,0 +1,144 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\tabletwo{
+		\hline
+		Operator &  Example \\
+		\hline
+		Addition(+) & 
+		\bigskip
+		\codecontinue{
+			int a = 5; \\
+			int b = 10; \\
+			int c = a + b; // c will be 15 
+			}  \\
+		\hline
+		
+		Subtraction(-) & 
+		\bigskip
+		\codecontinue{
+			int a = 10; \\
+			int b = 5; \\
+			int c = a - b; // c will be 5
+		}  \\
+		
+		\hline
+		
+		Multiplication(*) & 
+		\bigskip
+		\codecontinue{
+			int a = 2; \\
+			int b = 3; \\
+			int c = a * b; // c will be 6
+		}  \\
+		\hline
+		
+		Modulus (\%) &
+		\bigskip
+		\codecontinue{
+			int a = 10;
+			int b = 3;
+			int c = a \% b; // c will be 1
+		}
+		\\
+		
+		\hline
+
+	}
+	
+	\newpage
+	
+	\tabletwo{
+		\hline
+		Division(/) & 
+		\bigskip
+		\codecontinue{
+			int a = 10; \\
+			int b = 3; \\
+			int c = a / b; // c will be 3 (the remainder is discarded) \\
+			\\
+			double d = 10.0; \\
+			double e = 3.0; \\
+			double f = d / e; // f will be 3.33333
+		}  \\
+		
+		\hline
+	}
+	
+	\textbf{Important Points:}
+	\begin{itemize}
+		\item \textbf{Implicit type casting:} If we apply any arithmetic operator between 2 variables “a” and “b”, the result type is always:
+		\codecontinue{
+			maximum(int, type of a, type of b)
+		}
+		
+		Using above formula,
+		\codecontinue{
+			\begin{itemize}
+				\item Byte + byte = int
+				\item Byte + short = int
+				\item Short + short = int
+				\item Byte + long = long
+				\item Long + double = double
+				\item Float + long = float
+				\item Char + char = int
+				\item Char + double = double
+			\end{itemize}
+		}
+		\newpage
+		Eg:
+		\codeblock{
+			System.out.println('a'+'b'); // output: 195 \\
+			System.out.println('a'+3.29); // output: 100.29
+		}
+	
+		\bigskip
+		
+		\item \textbf{Infinity}: 
+		\begin{itemize}
+			\item In integral arithmetic \textbf{(byte short int long)}\textbf{, infinity cannot be represented} and JVM will return runtime error.
+			\bigskip
+			\codeblock{
+				System.out.println(10/0); \xmark
+			}
+			
+			\item But in \textbf{floating point arithmetic (float, double), infinity can be represented}.  For this, Float and Double classes contains below 2 constants:
+			\begin{itemize}
+				\item POSITIVE\_INFINITY;
+				\item NEGATIVE\_INFINITY;
+			\end{itemize}
+			\bigskip		
+			\codeblock{
+				System.out.println(10/0.0); // output: Infinity\\
+				System.out.println(-10/0.0); // output: -Infinity
+			}
+		\end{itemize}
+		
+		\bigskip
+		\item \textbf{NaN (not a number):}
+		\begin{itemize}
+			\item In \textbf{integer arithmetic (byte, short, int, long) , undefined results cannot be represented} and JVM will return runtime error.
+			\bigskip
+			\codeblock{
+			System.out.println(0/0);	\xmark				
+			}
+		
+			\item But, in floating point arithmetic \textbf{(float,double), undefined results can be represented as NaN constant}.
+			\bigskip
+			\codeblock{
+				System.out.println(0.0/0); // output: NaN \\
+				System.out.println(-0/0.0); // output: NaN	
+			}
+				
+		\end{itemize} 
+		
+	\end{itemize}
+	
+\end{flushleft}
+
+
+
+
+
+
+

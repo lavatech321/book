@@ -1,0 +1,126 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item The \textbf{if} statement allows you to execute a block of code if a certain condition is true.
+		\bigskip
+		\syntaxblock{
+			if (condition) \\
+			\s Action if is true
+		}		
+		\bigskip
+		\syntaxblock{
+			if (condition) \{ \\
+			\s Action if is true \\
+			\} \\
+			else \{ \\
+			\s Action if is false \\
+			\} 
+		}
+		
+		
+		\item The argument to if statement should be boolean type only, else there will be compile-time error.
+		
+		\item \textbf{Else part and curly braces are optional.}
+		\item Without curly braces only one statement is allowed under if statement, which should \textbf{not be declarative statement}.
+		\newpage
+		\item Eg 1:
+		\codeblock{
+			if (true) \\
+			\s System.out.println("Hello");
+		}
+		
+		\item Eg 2:
+		\codeblock{
+			if (true);		\cmark // Note: Semicolon is also valid statement.
+			
+		}
+		
+		\item Eg 3:
+		\codeblock{
+			if (true) \\
+			\s int x = 10;  \xmark // Compile-time error for declarative statement
+		}
+		
+		\item Eg 4:
+		\codeblock{
+			if (true) \{ \\
+			\s	int x = 10; \\ 
+			\}
+		}
+		
+		\item Eg 5:
+		\codeblock{
+			int x = 0; \\
+			if (x) \{          \xmark // Compile-time error as not a boolean     \\
+			\s System.out.println("Hello"); \\
+			\} \\
+			else \{ \\
+			\s System.out.println("Hi"); \\
+			\} 
+		}
+		\newpage
+		\item Eg 6:
+		\codeblock{
+			int x = 0; \\
+			if (x=20) \{          \xmark // Compile-time error as not a boolean     \\
+			\s System.out.println("Hello"); \\
+			\} \\
+			else \{ \\
+			\s System.out.println("Hi"); \\
+			\} 
+		}
+		
+		\item Eg 7:
+		\codeblock{
+			int x = 0; \\
+			if (x==20) \{   \\
+			\s System.out.println("Hello"); \\
+			\} \\
+			else \{ \\
+			\s System.out.println("Hi"); // output: Hi \\
+			\} 
+		}
+		
+		\item Eg 8:
+		\codeblock{
+			boolean b = false; \\
+			if (b == false) \{   \\
+			\s System.out.println("Hello"); // output: Hello \\
+			\} \\
+			else \{ \\
+			\s System.out.println("Hi");  \\
+			\} 
+		}
+	\end{itemize}
+	
+	\newpage
+	
+	\textbf{Dangling else}
+	
+	\begin{itemize}
+		\item There is no dangling else problem in Java.
+		\item Every else is mapped to the nearest if statement.
+		
+		\codeblock{
+			if (true)  \\
+			if (true) \\
+			\s System.out.println("Hello"); // output: Hello \\
+			else \\
+			\s System.out.println("Hi");  \\
+		}	
+	\end{itemize}
+	
+	
+	
+	
+	
+	
+\end{flushleft}
+
+\newpage
+
+
+
+
+

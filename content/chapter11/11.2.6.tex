@@ -1,0 +1,236 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	\bigskip
+	
+	\textbf{dnf}: Used to install, update, remove \& search package.
+	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+		\color{black}
+		\fontdimen2\font=9pt
+		Syntax: dnf [options] command [package\_name]
+		\fontdimen2\font=4pt
+	\end{tcolorbox}
+	Command and options with \textbf{dnf} command:
+	
+	\begin{itemize}
+		\item \textbf{install}: Install package along with it's dependency.
+		\newline
+		\textbf{-y}: Automatically answer yes for all questions.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: dnf install package\_name -y
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# dnf install httpd -y
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\bigskip
+		\bigskip
+		\item \textbf{remove}: Uninstall a package along with this dependency.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: dnf remove package\_name 
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# dnf remove httpd
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\bigskip
+		\bigskip		
+		
+		\item \textbf{info}: Display the information of a package.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: dnf info package\_name 
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# dnf info httpd
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\bigskip
+		\bigskip		
+
+		\item \textbf{groupinfo}: List all packages provided by the group.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: dnf groupinfo group\_name 
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# dnf groupinfo "Development Tools"
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\bigskip
+		\bigskip	
+		
+		\item \textbf{groupinstall}: Install all packages provided by the group.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: dnf groupinstall group\_name 
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# dnf groupinstall "Development Tools"
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\bigskip
+		\bigskip	
+		
+		\item \textbf{groupremove}: Remove all packages provided by the group.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: dnf groupremove group\_name 
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# dnf groupremove "Development Tools"
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\bigskip
+		\bigskip	
+
+
+
+		\item \textbf{update}: Update all packages and their dependencies.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: dnf update
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\bigskip
+		\bigskip	
+
+		\item \textbf{history}: Display a list of all the latest dnf transactions
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: dnf history
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\bigskip
+		\bigskip			
+
+		\item \textbf{history info}: Examine a particular dnf transaction.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: dnf history info transactionID
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# dnf history info 8
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\bigskip
+		\bigskip			
+
+		\item \textbf{history undo}: Revert a particular transaction.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: dnf history undo transactionID
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# dnf history undo 8
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\bigskip
+		\bigskip			
+		\newpage
+		\item \textbf{history redo}: Repeat a particular transaction.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: dnf history redo transactionID
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg:
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# dnf history redo 8
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\bigskip
+		\bigskip		
+		
+		
+		\item \textbf{list all}: List all installed packages.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: dnf list all
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg: List all installed pacakges associated with httpd.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# dnf list all | grep httpd
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\bigskip
+		\bigskip					
+
+		\item \textbf{localinstall}: Install locally downloaded package.
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
+			\color{black}
+			\fontdimen2\font=9pt
+			Syntax: dnf localinstall package.rpm
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		Eg: Download cvs package using command \textbf{"wget https://rpmfind.net/linux/epel/8/Everything/x86\_64/Packages/c/cvs-1.11.23-52.el8.x86\_64.rpm"}
+		\newline
+		Install downloaded package using command:		
+		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
+			\color{green}
+			\fontdimen2\font=9pt
+			\# dnf localinstall cvs-1.11.23-52.el8.x86\_64.rpm -y
+			\fontdimen2\font=4pt
+		\end{tcolorbox}
+		\bigskip
+		\bigskip					
+		
+					
+	\end{itemize}
+	
+	
+\end{flushleft}
+\newpage
+
+
+
