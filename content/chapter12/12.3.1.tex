@@ -1,0 +1,28 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item An interface is like a 100\% pure abstract class.
+		\item Inside interface, every method is always abstract whether we are declaring it or not.
+		\item Any service requirement specification(SRS) or any contract between client and service provider are 100\% pure abstract class, is nothing but interface.
+		
+		\item To declare an interface, use the interface keyword followed by the name of the interface.
+		\bigskip
+		\syntaxblock{
+		public interface InterfaceName \{\}
+		}
+
+		\item To implement an interface, a class must use the implements keyword followed by the name of the interface(s) it is implementing.
+		\bigskip
+		\syntaxblock{
+		public class ClassName implements InterfaceName \{\}
+		}
+				
+		\item A class can implement any number of interfaces solving the multiple inheritance problem.
+				
+	\end{itemize}	
+	
+\end{flushleft}
+
+\newpage
+

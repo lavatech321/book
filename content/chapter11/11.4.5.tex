@@ -1,0 +1,58 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	All rules of method hiding are exactly same overriding except the following difference:
+	
+	\tabletwo{
+		\hline
+		Method hiding & Method overriding \\
+		\hline
+		Both parent and child class method should be static & Both parent and child class method should be non-static \\
+		\hline
+		Compiler is responsible for method resolution based on reference type & JVM is always responsible for method resolution based on runtime object \\
+		\hline
+		It is also known as compile-time polymorphism or static polymorphism or early binding & It is also known as runtime polymorphism or dynamic polymorphism or late binding \\
+		\hline
+	}
+	
+	Eg:
+	\codeblockfull{Test.java}{
+		class Parent \{ \\
+		\s public static void m1() \{ \\
+		\s \s	System.out.println("Parent"); \\
+		\s	\} \\
+		\} \\
+		class Child extends Parent \{ \\
+		\s	public static void m1() \{ \\
+		\s \s		System.out.println("Child"); \\
+		\s 	\} \\
+		\}  \\
+		class Test \{ \\
+		\s	public static void main(String[] args) \{ \\
+		\s \s		Parent p1 = new Parent(); \\
+			\s \s		p1.m1(); \\
+		\s \s		Child c1 = new Child(); 
+	}	
+	\newpage
+	\codecontinue{
+	\s \s		c1.m1(); \\
+	\s \s		Parent p2 = new Child(); \\
+	\s \s		p2.m1(); \\
+	\s	\} \\
+	\}
+	}
+	
+	\bigskip
+	\outputblock{
+		Parent \\
+		Child \\
+		Parent
+	}
+
+	\bigskip
+	\noteblock{
+	Method hiding is like sticking poster on black board, while method overriding is like erasing board and writing new content.
+	}
+\end{flushleft}
+
+\newpage

@@ -1,0 +1,39 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item An instance initializer block (or instance block) is a block of code defined within a class, executed when an instance of the class is created. 
+		\item It initialises instance variables or perform other initialization tasks for each object of the class.
+		\item It is \textbf{executed before the constructor of the class}. 
+		\item It is used when you have multiple constructors or when you want to perform common initialization logic.
+		\item Eg:
+		\codeblockfull{Demo.java}{
+			public class Demo \{ \\
+			\s	int value;  \\
+			\s \{	 	\\
+			\s \s value = 8080;	\\
+			\s \}	\\
+			\s public Demo() \{\}	\\
+			\s public Demo(int value) \{	\\
+			\s \s this.value = value;		\\
+			\s \}	\\
+			\s public static void main(String[] args) \{	\\
+			\s \s Demo d1 = new Demo();	\\
+			\s \s Demo d2 = new Demo(10);		\\
+			\s \s System.out.println(d1.value);	\\
+			\s \s System.out.println(d2.value);	\\
+			\s \}	\\
+			\}
+		}
+		\bigskip
+		\outputblock{
+			8080 \\
+			10
+		}
+				
+	\end{itemize}	
+	
+	
+\end{flushleft}
+
+\newpage

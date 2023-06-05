@@ -1,0 +1,28 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	An object can be destroyed under below conditions:	
+		\begin{itemize}
+			\item Reference goes out of scope, permanently.
+			\item Assign the reference to another object.
+			\item Explicitly set the object reference to \textbf{null}.
+			\newline
+			Eg:
+			\bigskip
+			\codeblockfull{A.java}{
+			class A \{ \\
+			\s public A() \{ \\
+			\s \s		System.out.println("A constructor called"); \\
+			\s	\} \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		A a1 = new A(); \\
+			\s \s		\textbf{a1 = null;} \\
+			\s	\} \\
+			\}
+			}
+		\end{itemize}
+	
+	
+\end{flushleft}
+
+\newpage

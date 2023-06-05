@@ -1,105 +1,126 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
-	\bigskip
-	\paragraph{What is a link?}
+
 	\begin{itemize}
-		\item A link allows two or more names for the same file/directory.
-		\item There are two types of links:
+		\item Java package groups related classes and method can be grouped into a single unit.
+		\item Eg: All classes and interfaces for File I/O operations are group into \textbf{java.io} package.
+		\item Advantage of package:
 		\begin{itemize}
-			\item \textbf{Hard link}:
-			\begin{itemize}
-				\item Can be created only for file and points to the file's inode number.
-				\item Cannot be created across filesystem.
-				\item Inode for all the hard links are same .
-			\end{itemize}
-			
-			\bigskip
-			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-				\color{black}
-				\fontdimen2\font=9pt
-				Syntax: ln source\_filename  hard\_link\_name
-				\fontdimen2\font=4pt
-			\end{tcolorbox}
-			Eg:
-			\bigskip
-			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-				\fontdimen2\font=9pt
-				\color{yellow}
-				\# Create hard link for abc.txt file:
-				\newline
-				\color{green}
-				\# ln abc.txt /tmp/new\_link.txt
-				\newline
-				\newline
-				\color{yellow}
-				\# Check the inode of abc.txt \& /tmp/new\_link.txt 
-				\newline
-				\color{green}
-				\# ls -i abc.txt  /tmp/new\_link.txt
-				\newline
-				\color{white}
-				3052945 abc.txt
-				\newline
-				3052945 /tmp/new\_link.txt
-				\fontdimen2\font=4pt
-			\end{tcolorbox}
-			\bigskip
-			\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=yellow,colframe=yellow]
-				\color{black}
-				Note: Notice how the inode number for hard link are same.
-			\end{tcolorbox}
-			
-			
-			\newpage
-			\item \textbf{Soft link}:
-			\begin{itemize}
-				\item Can be created for file as well as directory.
-				\item Can be created across filesystems.
-				\item Inode for soft link are different.
-			\end{itemize}
-			\bigskip
-			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-				\color{black}
-				\fontdimen2\font=9pt
-				Syntax: ln -s source\_file\_or\_directory  softlink\_name
-				\fontdimen2\font=4pt
-			\end{tcolorbox}
-			Eg:
-			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-				
-				\fontdimen2\font=9pt
-				\color{yellow}
-				\# Create soft link for /tmp folder:
-				\newline
-				\color{green}
-				\$ ln -s /tmp /home/sample/
-				\newline
-				\newline
-				\color{yellow}
-				\# Check the inode of /tmp \&  /home/sample
-				\newline
-				\color{green}
-				\$ ls -i /tmp  /home/sample
-				\newline
-				\color{white}
-				3052047 /tmp
-				\newline
-				2052047 /home/sample
-				\fontdimen2\font=4pt
-			\end{tcolorbox}
-
-			\bigskip
-			\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=yellow,colframe=yellow]
-				\color{black}
-				Note: Notice how the inode number for soft link are different.
-			\end{tcolorbox}
-
-
+			\item \textbf{Resolve naming conflict}
+			\item \textbf{Modularity:} Modularises the application
+			\item \textbf{Maintainability:} Improves application maintainability.
+			\item \textbf{Security:} Provides security for our components
 		\end{itemize}
+
+	\end{itemize}
+
+	\textbf{Naming for Package}
+	\begin{itemize}
+		\item There is one universally accepted naming convention for packages, i.e to use internet domain name in reverse:
+		\newline
+		Eg:
+		\codeblockfull{Test.java}{
+			package com.lavatech.www; \\
+			class Test \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		int a=10; \\
+			\s \s 		System.out.println(a); \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		
+ 		\item Below command can be used to directory structure at valid location.
+ 		\bigskip
+ 		\syntaxblock{
+ 			\$ javac -d <location> <filename.java>
+ 		}
+ 		\newpage
+ 		Eg:
+ 		\commandblock{
+ 			\# To create directory structure in current location \\
+ 			\$ javac -d . Test.java    \\
+ 			\\
+ 			\# To create directory structure under "D:" location \\
+ 			\$ javac -d D: Test.java   
+ 		}
+ 		
+		Above command will create below directory structure:
+		\newimage{0.8}{content/chapter10/images/mew.png}
+		
+		\item While running, make sure that you provide fully qualified name:
+		\bigskip
+		\commandblock{
+		\$ java com.lavatech.www.Test  \\
+		10	
+		}
 		
 	\end{itemize}
-	, 
+
+\newpage
+
+\textbf{Important pointers:}
+\begin{itemize}
+	\item There can be utmost one package statement in any Java source file.
+	\newline
+	Eg 1:
+	\bigskip
+	\codeblock{
+		package pack1; \\
+		package pack2;  \xmark \s \# Result in compile-time error \\
+		public class A {} 	
+	}
+	Eg 2:
+	\bigskip
+	\codeblock{
+		package pack1; \cmark \\
+		public class A \{\} 	
+	}
+
+	\item The first non comment statement should be package statement (if it is available), otherwise we will get compile-time error.
+	\bigskip
+	\codeblock{
+		import java.util.*; \xmark \s \# Result in compile-time error  \\
+		package pack1; \\
+		package pack2; \\
+		public class A \{\}
+	}	
 	
+	\item The following is valid order in any Java source file:
+	\bigskip
+	\codecontinue{
+		package statement;   $\leftarrow$  Atmost one\\
+		import statements;  $\leftarrow$ Any number		\\
+		class | interface | enum declarations   $\leftarrow$ Any number
+	}
+	
+	\item An empty source file is a valid java program. Hence the following are valid java source files:
+	\bigskip
+	\codeblockfull{Test.java}{
+	\# Empty file	
+	}
+
+	\bigskip
+	\codeblockfull{Test.java}{
+	pacakge pack1;
+	}	
+
+	\bigskip
+	\codeblockfull{Test.java}{
+		import java.util.*;
+	}
+
+	\bigskip
+	\codeblockfull{Test.java}{
+		package pack1; \\
+		import java.util.*;
+	}
+
+	\bigskip
+	\codeblockfull{Test.java}{
+		class Test \{\}
+	}
+\end{itemize}
 
 	
 \end{flushleft}

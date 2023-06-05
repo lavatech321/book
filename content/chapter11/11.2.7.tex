@@ -1,117 +1,67 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
 
-Starting with RHEL8, you can directly install package from Red Hat Network. 
-\newline
-For this, you need join a free Red Hat Developer program. 
-\newline
-Follow along for step-by-step guide:
-
-\begin{itemize}
-			\item Browse to \textbf{https://developers.redhat.com/register}.
-			\item Create an account as shown in the image:
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[scale=.4]{content/chapter11/images/account.png}
-				\caption{Sample output}
-				\label{fig:iso3}
-			\end{figure}
-		\newpage
-			\item Once you have created your account, Red Hat should send a verification email as shown. Click on the link provided in email to confirm your email address.
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[scale=.25]{content/chapter11/images/verify.png}
-				\caption{Sample output of verification email}
-				\label{fig:iso4}
-			\end{figure}
-			\item Now register your RHEL8 server to Red Hat Network. Enter valid username and password that you created during account creation.
-				\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-				\color{black}
-				\fontdimen2\font=9pt
-				Syntax: subscription-manager register
-				\fontdimen2\font=4pt
-			\end{tcolorbox}
-			Eg:
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[scale=.2]{content/chapter11/images/2.png}
-				\caption{Sample output}
-				\label{fig:iso5}
-			\end{figure}
-			
+		\begin{itemize}
+			\item \textbf{this()} is used to invoke one constructor from another constructor within the same class. 
+			\item It allows constructors with different parameter lists to call each other and \textbf{reuse initialization code}.
+			\item The this() invocation \textbf{must be the first statement in the constructor body}.
+			\item It is used to \textbf{avoid code duplication when multiple constructors} in a class need to perform common initialization tasks.
+			\item Eg:
 			\bigskip
-			\bigskip
-			\item Confirm whether the system is successfully registered.
-			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-				\color{black}
-				\fontdimen2\font=9pt
-				Syntax: subscription-manager status
-				\fontdimen2\font=4pt
-			\end{tcolorbox}
-			Eg:
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[scale=.3]{content/chapter11/images/3.png}
-				\caption{Sample output}
-				\label{fig:iso6}
-			\end{figure}
-			
+			\codeblockfull{Test.java}{
+				class Rectangle \{ \\
+				\s	float l, w, h; \\
+				\s	public Rectangle() \{ \\
+				\s \s		\textbf{this(0,0,0);} \\
+				\} \\
+				\s 	public Rectangle(int width, int height) \{ \\
+				\s \s 	\textbf{this(0,width,height);} \\
+				\s	\} \\
+				\s	public Rectangle(int length, int width, int height) \{ \\
+				\s \s 	this.l = length; \\
+				\s \s 	this.w = width; \\
+				\s \s 	this.h = height; \\
+				\s	\} \\
+				\s 	public float getArea() \{ \\
+				\s \s 	float area; \\
+				\s \s 	area = 2*(l*w) + 2*(l*h) + 2*(h*w); \\
+				\s \s 	return area; \\
+				\s	\} \\
+				\} 
+			}
+		
 			\newpage
-			\item Finally, attach the subscriptions to your RHEL8 server.
-			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-				\color{black}
-				\fontdimen2\font=9pt
-				Syntax: subscription-manager attach ---auto
-				\fontdimen2\font=4pt
-			\end{tcolorbox}
-			Eg:
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[scale=.3]{content/chapter11/images/4.png}
-				\caption{Sample output}
-				\label{fig:iso7}
-			\end{figure}		
+			
+			\codecontinue{
+			public class TestRect \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s 	Rectangle r1 = new Rectangle(3,4,5); \\
+			\s \s 	float area; \\
+			\s \s 	area = r1.getArea(); \\
+			\s \s 	System.out.println(area); \\
+			\\
+			\s \s 	Rectangle r2 = new Rectangle(); \\
+			\s \s 	float area2; \\
+			\s \s 	area2 = r2.getArea(); \\
+			\s \s 	System.out.println(area2); \\
+			\s \} \\
+			\}	
+			}
 			\bigskip
-						\bigskip
-			\item Clear the yum cache.
-			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-				\color{black}
-				\fontdimen2\font=9pt
-				Syntax: yum clean all
-				\fontdimen2\font=4pt
-			\end{tcolorbox}		
-			\bigskip
-						\bigskip
-			\item Refresh yum repository.
-			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-				\color{black}
-				\fontdimen2\font=9pt
-				Syntax: yum update all
-				\fontdimen2\font=4pt
-			\end{tcolorbox}		
-			Eg:
-			\begin{figure}[h!]
-				\centering
-				\includegraphics[scale=.25]{content/chapter11/images/update.png}
-				\caption{Sample output}
-				\label{fig:iso7}
-			\end{figure}		
-			\bigskip
-			\bigskip
-			\item Install httpd package to confirm you are connected to Red Hat Network.
-			\bigskip
-			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-				\color{white}
-				\fontdimen2\font=9pt
-				\color{green}
-				\# yum install httpd -y
-				\fontdimen2\font=4pt
-			\end{tcolorbox}
-\end{itemize}
+			\outputblock{
+			94.0 \\
+			0.0
+			}
+			
+		\end{itemize}
 	
+		\noteblock{
+			\begin{itemize}
+				\item The first line inside every constructor should be either super() or this() but not both at a time.
+				\item We can use super() or this() only inside constructor.
+			\end{itemize}	
+		}
 		
-		
-	
 	
 \end{flushleft}
 

@@ -1,0 +1,112 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Allows a subclass to provide its own implementation of a method that is already defined in its superclass. 
+		\item When a method in the subclass has the \textbf{same name, return type, and parameter list} as a method in the superclass, it is said to override the superclass method.
+		
+		\item Key points about method overriding:
+		
+		\begin{itemize}
+			\item \textbf{Inheritance:} Based on the concept of inheritance, where a subclass inherits methods and fields from its superclass.
+			
+			\item \textbf{Signature:} The overriding method must have the same method signature (name, return type, and parameter list) as the method it is overriding.
+			
+			\item \textbf{Access modifier:} The overriding method cannot have a more restrictive access modifier than the method it is overriding. It can have the same or a more permissive access modifier.
+			
+			\item \textbf{@Override annotation:} It is a good practice to use the @Override annotation when overriding a method.
+			
+		\end{itemize}
+		\newpage
+		\item Eg:
+		\bigskip
+		\codeblockfull{Test.java}{
+			class Animal \{ \\
+			\s	public void makeSound() \{ \\
+			\s \s		System.out.println("Animal makes a sound"); \\
+			\s	\} \\
+			\} \\
+			\\
+			class Cat extends Animal \{ \\
+			\s	\textbf{@Override} \\
+			\s 	\textbf{public void makeSound()} \{ \\
+			\s \s		System.out.println("Cat meows"); \\
+			\s	\} \\
+			\} \\
+			\\
+			class Dog extends Animal \{ \\
+			\s 	\textbf{@Override} \\
+			\s	\textbf{public void makeSound()} \{ \\
+			\s \s		System.out.println("Dog barks"); \\
+			\s	\} \\
+			\} \\
+			\\
+			class Test \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Animal animal1 = new Cat(); \\
+			\s \s		Animal animal2 = new Dog(); \\
+					\\
+			\s \s		\textbf{animal1.makeSound();}  \\
+			\s \s		\textbf{animal2.makeSound();}  \\
+			\s	\} \\
+			\}
+		}
+		\outputblock{
+			Cat meows \\
+			Dog barks
+		}
+	\end{itemize}
+	
+	\textbf{Method overriding with respect to var\_arg}
+	
+	\begin{itemize}
+		\item For overriding wrt var\_arg method, the overriding method must have the \textbf{same method name, return type, and parameter types} as the overridden method.
+		\item Eg:
+		\bigskip
+		\codeblockfull{Main.java}{
+			class BaseClass \{ \\
+			\s public void printValues(String... values) \{ \\
+			\s \s		System.out.println("BaseClass - printValues:"); \\
+			\s \s		for (String value : values) \{ \\
+			\s \s \s			System.out.println(value); \\
+			\s \s		\} \\
+			\s	\} \} \\
+			class SubClass extends BaseClass \{ \\
+			\s	@Override \\
+			\s	public void printValues(String... values) \{ \\
+			\s \s		System.out.println("SubClass - printValues:"); \\
+			\s \s		for (String value : values) \{ \\
+			\s \s \s			System.out.println(value); \\
+			\s \s		\} \\
+			\s	\} \} \\
+			\\
+			class Main \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		BaseClass base = new BaseClass(); \\
+			\s \s		base.printValues("Hello", "World");  
+		}
+		
+		\codecontinue{
+			\s \s		SubClass sub = new SubClass(); \\
+			\s \s		sub.printValues("Hello", "World");   \\
+			\s \s		BaseClass polymorphic = new SubClass(); \\
+			\s \s		polymorphic.printValues("Hello", "World"); \\  
+			\s	\} \}
+		}
+		\bigskip
+		\outputblock{
+			BaseClass - printValues: \\
+			Hello \\
+			World \\
+			SubClass - printValues: \\
+			Hello \\
+			World \\
+			SubClass - printValues: \\
+			Hello \\
+			World 
+		}
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage

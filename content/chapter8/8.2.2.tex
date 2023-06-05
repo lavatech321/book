@@ -2,48 +2,100 @@
 \begin{flushleft}
 	
 	\begin{itemize}
-		\item The partition table in MBR can hold only \textbf{4 entries}.
-		\item Hence, there can be only \textbf{four partitions in hard disks}.
-		\item These 4 partitions are called primary partitions.
-		\item OS can be installed on the primary partition.
-		\begin{figure}[h!]
-			\centering
-			\includegraphics[scale=.6]{content/chapter8/images/correct.png}
-			\caption{Primary partitions}
-			\label{primary_naming}
-		\end{figure}		
+		\item If we want to execute loop body atleast once, then we should go for do-while loop.
+		\bigskip
+		\syntaxblock{
+			do \{ \\
+			\s action \\
+			\} while(condition); 
+		}
+		\bigskip
+		\item The ";" after while is compulsory.
+		\item The condition should be of boolean type.
+		\item Curly braces are optional
+		\item Without curly braces only one statement is allowed which should not be declarative statement.
+		\item Below are some valid and invlaid example of do-while:
+		\bigskip
+		\codeblock{
+			do \\
+			\s System.out.println("Hello"); \cmark \\
+			while(true);
+		}
+		\bigskip
+		\codeblock{
+			do;   \cmark \\
+			while(true);
+		}
+		\bigskip
+		\codeblock{
+			do \\
+			\s int x = 10; \xmark \\
+			while(true);
+		}
+		\bigskip
+		\codeblock{
+			do \{ \\
+				int x = 10; \\
+			\} while(true);  \cmark
+		}
 		
-	\end{itemize}
-
-\newpage
-
-\paragraph{Command to create primary partition}
-
-\bigskip
-\textbf{fdisk}: Used to change the partition table.
-	\bigskip
-	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-		\color{black}
-		\fontdimen2\font=9pt
-		Syntax: fdisk device\_name
-		\fontdimen2\font=4pt
-	\end{tcolorbox}
-
-	Options for \textbf{fdisk} command:
-	\begin{itemize}
-		\item \textbf{p}: Print the partition table
-		\item \textbf{n}: Create a new partition
-		\item \textbf{w}: Write the new partition table and exit
-	\end{itemize}
-
-	Eg:
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[scale=.4]{content/chapter8/images/primary_fdisk.png}
-		\caption{Creating primary partitions}
-		\label{pp}
-	\end{figure}		
-			
+		\bigskip
+		\codeblock{
+			do \\
+			while(true); \xmark
+		}
+		\bigskip
+		\codeblock{
+			do \\
+			\s while(true) \cmark \\ 
+			\s \s System.out.println("Hello"); \\
+			while(false);
+		}
+		\item Unreachable statement in do-while loop also results in compile-time error. Below are some examples showing unreachable statement:
+		\bigskip
+		\codeblock{
+			do \{\\
+			\s System.out.println("Hello"); \\
+			\} while(true); \\
+			System.out.println("Hi");   \xmark // Unreachable statement error
+		}
+	
+		\bigskip
+		\codeblock{
+			do \{ \\
+			\s System.out.println("Hello"); \\
+			\} while(false); \\
+			System.out.println("Hi"); \cmark 
+		}
+		\bigskip
+		\outputblock{
+		Hello \\
+		Hi
+		}
+	
+		\bigskip
+		\item Every final variable will be replaced by value at compile-time only. If any variable is final in while's condition, then the condition will be evaluated at compile-time only.
+		
+		\bigskip
+		\codeblock{
+			final int a = 10, b = 20; \\
+			do \{ \\
+				\s System.out.println("Hello"); \\
+			\} while(a < b); \\
+			System.out.println("Hi");  \xmark 
+			\s // Unreachable statement
+		}
+		\bigskip
+		\codeblock{
+			final int a = 10, b = 20; \\
+			do \{ \\
+			\s System.out.println("Hello"); \\
+			\} while(a > b); \\
+			System.out.println("Hi");  \cmark
+		}
+	
+	
+	\end{itemize}		
 	
 \end{flushleft}
 

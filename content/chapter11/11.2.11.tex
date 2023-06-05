@@ -1,0 +1,163 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\textbf{private constructor}
+	
+	\tablethree{
+		\hline
+		Syntax & Accessibility & Uses \\
+		\hline
+		private Classname \{\} & Only accessible within the same class & Used to \textbf{prevent direct instantiation} of the class \\
+		\hline
+	}
+	\begin{itemize}
+			\item Eg 1:
+			\codeblockfull{A.java}{
+				class A \{ \\
+				\s \textbf{private A()} \{ \\
+				\s \s		System.out.println("A constructor called"); \\
+				\s	\} \\
+				\s 	public static void main(String[] args) \{ \\
+				\s \s 		\textbf{A a1 = new A(); \cmark} \\
+				\s	\} \\
+				\}
+			}
+			\bigskip
+			\outputblock{
+				A constructor called
+			}
+		
+			\item Eg 2:
+			\codeblockfull{B.java}{
+			class A \{ \\
+			\s	\textbf{private A()} \{ \\
+			\s \s		System.out.println("A constructor called"); \\
+			\s	\} \} \\	 
+			public class B extends A \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		\textbf{B b1 = new B();} \xmark \s // Cannot instantiate \\
+			\s	\} \} 
+			}
+		\end{itemize}
+
+		\newpage
+		\textbf{protected constructor}
+		
+		\tablethree{
+			\hline
+			Syntax & Accessibility & Uses \\
+			\hline
+			protected Classname \{\} & Accessible within \begin{itemize}
+				\item Same class
+				\item Subclasses
+				\item Other classes within the same package
+			\end{itemize} 
+			Cannot be accessed from different package where class is not subclass. & 
+			Used to allow subclasses to access the constructor but restrict direct access from unrelated classes. \\
+			\hline
+		}
+	
+		\begin{itemize}
+			\item Eg 1:
+			\codeblockfull{B.java}{
+				class A \{ \\
+				\s \textbf{protected A()} \{ \\
+				\s \s		System.out.println("A constructor called"); \\
+				\s	\} \\
+				\} \\
+				public class B extends A \{ \\
+				\s	public B() \{ \\
+				\s \s		System.out.println("B constructor called"); \\
+				\s	\} \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		\textbf{B b1 = new B();} \cmark \\
+				\s	\} 	\}
+			}
+		
+			\bigskip
+			\outputblock{
+				A constructor called \\
+				B constructor called
+			}
+		\end{itemize}
+		
+		\newpage
+		
+		\textbf{public constructor}
+
+		\tablethree{
+			\hline
+			Syntax & Accessibility & Uses \\
+			\hline
+			public Classname \{\} & Accessible from anywhere like: \begin{itemize}
+				\item Other classes
+				\item Subclasses
+				\item Different packages
+			\end{itemize} 
+			& 
+			Used to create objects of the class from any context \\
+			\hline
+		}
+			
+		\begin{itemize}
+			\item Eg 1:
+			\codeblockfull{B.java}{
+				class A \{ \\
+				\s \textbf{public A()} \{ \\
+				\s \s		System.out.println("A constructor called"); \\
+				\s	\} \\
+				\} \\
+				public class B extends A \{ \\
+				\s	public B() \{ \\
+				\s \s		System.out.println("B constructor called"); \\
+				\s	\} \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		\textbf{B b1 = new B();} \cmark \\
+				\s	\} 	\}
+			}
+			\bigskip
+			\outputblock{
+				A constructor called \\
+				B constructor called
+			}
+		\end{itemize}
+	
+		\newpage
+		\textbf{default constructor}: Has no explicit access modifier specified.
+		\newline
+		\tablethree{
+			\hline
+			Syntax & Accessibility & Uses \\
+			\hline
+			Classname \{\} & Accessible within the same package but not accessible from classes outside the package.
+			& 
+			If no constructor is defined, a default constructor is automatically provided by the compiler. \\
+			\hline
+		}
+		
+		\begin{itemize}
+			\item Eg 1:
+			\codeblockfull{B.java}{
+				class A \{ \\
+				\s \textbf{A()} \{ \\
+				\s \s		System.out.println("A constructor called"); \\
+				\s	\} \\
+				\} \\
+				public class B extends A \{ \\
+				\s	public B() \{ \\
+				\s \s		System.out.println("B constructor called"); \\
+				\s	\} \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		\textbf{B b1 = new B();} \cmark \\
+				\s	\} 	\}
+			}
+			\bigskip
+			\outputblock{
+				A constructor called \\
+				B constructor called
+			}
+		\end{itemize}
+	
+\end{flushleft}
+
+\newpage

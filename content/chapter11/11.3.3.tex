@@ -1,0 +1,324 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+
+	\begin{itemize}
+		\item Represents the \textbf{state or characteristics} of an object.
+		\item Declared \textbf{within a class but outside any methods}.
+		\item Each object of the class has its own copy of instance variables.
+		\bigskip
+		\syntaxblock{
+			modifier type identifier;
+		}
+		where,
+		\begin{itemize}
+			\item \textbf{access modifiers} can be public, private, protected, default, static, final, transient, volatile.
+			\item \textbf{type} can be data-type, classname
+			\item \textbf{identifier} is name of attribute
+		\end{itemize}
+		
+	\end{itemize}	
+	
+	Let see each effect of the access modifier on instance variable in detail.
+	\begin{itemize}
+		\item \textbf{public attributes:}
+		\begin{itemize}
+			\item Can be accessed from any other class or package.
+			\item Eg 1: Accessing from other class -
+			\bigskip
+			\codeblock{
+				class A \{ \\
+				\s	\textbf{public int no;} \\
+				\} \\
+				\\
+				public class Test3 \{ \\
+				\s	public static void main(String[] args) \{  \\
+				\s \s		A a1 = new A(); \\
+				\s \s		a1.no = 1; \\
+				\s \s		System.out.println(a1.no); \\
+				\s	\} \\
+				\}
+			}
+
+			\newpage
+			\outputblock{
+				1
+			}	
+		
+			\bigskip
+			\item Eg 2: Accessing from other package -
+			\bigskip
+			\codeblockfull{Test1.java}{
+				package com.lavatech.www; \\
+				public class Test1 \{ \\
+				\s	\textbf{public int code;} \\
+				\} 
+			}
+			
+			\bigskip
+			\codeblockfull{Test2.java}{
+				package com.lavatech.info; \\
+				import com.lavatech.www.Test1;			 \\
+				class Test2 \{ \\
+				\s	public static void main(String[] args) \{  \\
+				\s \s		Test1 test = new Test1(); \\
+				\s \s		test.code = 12345678; \\
+				\s \s		System.out.println(test.code); \\
+				\s	\} \\
+				\}	
+			}
+			
+			\bigskip
+			\commandblock{
+				\$ javac -d . Test1.java  \\
+				\$ javac -d . Test2.java  \\
+				\$ java com.lavatech.info.Test2  \\
+				12345678
+			}		
+		\end{itemize}
+	
+		\newpage
+		\item \textbf{private attributes}:
+		\begin{itemize}
+			\item  Can only be accessed within the same class. 
+			\item Not visible to other classes or packages.
+			\item Eg: Accessing with the same class:
+			\bigskip
+			\codeblockfull{Test.java}{
+			class A \{ \\
+			\s	\textbf{private int no;} \\
+			\s 	public void display()\{ \\
+			\s \s		no=100; \\
+			\s \s		System.out.println(no); \\
+			\s	\} \} \\
+			public class Test \{ \\
+			\s	public static void main(String[] args) \{  \\
+			\s \s		A a1 = new A(); \\
+			\s \s		a1.display(); \\
+			\s	\} \}
+			}
+		\end{itemize}
+	
+		\item \textbf{protected attribute}:
+		\begin{itemize}
+			\item Accessible within the same package or subclass. 
+			\item Accessed from subclasses even in different package.
+			
+			\item Eg 1: Accessing from within subclass: 
+			\bigskip
+			\codeblockfull{Test.java}{
+				class A \{ \\
+				\s	protected int no; \\
+				\} \\
+				public class Test extends A \{  \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		Test3 t1 = new Test3(); \\
+				\s \s		t1.no = 120; \\
+				\s \s		System.out.println(t1.no); \\
+				\s	\} \}
+			}
+		\newpage
+			\outputblock{
+				120
+			}
+			
+			\item Eg 2: Accessing from other package:
+			\bigskip
+			\codeblockfull{Test1.java}{
+				package com.lavatech.www; \\
+				public class Test1 \{  \\
+				\s	protected int no; \\
+				\}	
+			}
+			\bigskip
+			\codeblockfull{Test2.java}{
+				package com.lavatech.info; \\
+				import com.lavatech.www.Test1; \\
+				class Test2 extends Test1 \{  \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		Test2 test = new Test2(); \\
+				\s \s		test.no = 150; \\
+				\s \s		System.out.println(test.no); \\
+				\s	\} \\
+				\}
+			}
+			
+			\bigskip
+			\commandblock{
+				\$ javac -d . Test1.java  \\
+				\$ javac -d . Test2.java  \\
+				\$ java com.lavatech.info.Test2  \\
+				150
+			}	
+		\end{itemize}
+	
+		\bigskip
+		\item \textbf{default (package-private):} 
+		\begin{itemize}
+			\item No access modifier specified is considered as the default attribute. 
+			\item Can be accessed within the same package but not from other packages.
+			\item Eg: Accessing from same class -
+			\bigskip
+			\codeblockfull{Test.java}{ 
+				class A \{ \s	\textbf{int no;}  \} \\
+				public class Test3 \{  \\
+				\s public static void main(String[] args) \{  \\
+				\s \s		A a1 = new A(); \\
+				\s \s		System.out.println(a1.no); \\
+				\s	\} \}	
+			}
+			\bigskip
+			\outputblock{
+			0
+			}
+		\end{itemize}
+	
+		\item \textbf{static attribute}:
+		\begin{itemize}
+			\item A static instance variable belongs to the class rather than an instance of the class. 
+			\item It is shared among all instances of the class.
+			\item Eg: Accessing varaible using class name -
+			\bigskip
+			\codeblockfull{Test.java}{
+				class A \{ \\
+				\s static int count; \\
+				\} \\
+				public class Test3 \{ \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		System.out.println(A.count); \\
+				\s	\} \\
+				\}
+			}
+			\bigskip
+			\outputblock{
+			0
+			}
+		\end{itemize}
+		\newpage
+		
+		\item \textbf{final attribute}:
+		\begin{itemize}
+			\item Can only be assigned a value once, and its value cannot be changed thereafter. \item Onec value is assigned it becomes a constant and cannot be modified.			
+			\item Key points:
+			\begin{itemize}
+				\item \textbf{Initialization:} Must be initialized when it is declared or within the \textbf{constructor} of the class.
+				\item \textbf{Naming convention}: Final variable names are written in \textbf{uppercase} letters with underscores separating words (e.g., FINAL\_VARIABLE).
+				\item \textbf{Primitive types:} For final variables of primitive types (e.g., int, double, boolean), the value assigned at initialization cannot be modified.
+				\newline
+				Eg: Assigning final variable value using constructor:
+				\bigskip
+				\codeblockfull{Test.java}{
+					class A \{ \\
+					\s final int COUNT; \\
+					\s final int NO = 40; \\
+					\s	public A(int count) \{ \\
+					\s \s		this.COUNT = count; \\
+					\s	\} \\
+					\} \\
+					public class Test \{ \\
+					\s	public static void main(String[] args) \{ \\
+					\s \s		A a1 = new A(50); \\
+					\s \s		System.out.println(a1.COUNT); \\
+					\s \s		System.out.println(a1.NO); \\
+					\s	\} \\
+					\}	
+				}
+				\bigskip
+				\outputblock{
+					50 \\
+					40
+				}
+				\bigskip
+				\item \textbf{Reference types:} For final variables that are references to objects, the reference itself cannot be changed, but the state of the object it refers to can be modified.
+				\newline
+				Eg:
+				\bigskip
+				\codeblockfull{Test.java}{
+					class A \{ \\
+					\s	final StringBuilder NAME = new StringBuilder("Raman"); \\
+					\} \\
+					public class Test \{ \\
+					\s	public static void main(String[] args) \{ \\
+					\s \s		A a1 = new A(); \\
+					\s \s		a1.NAME.append(" Verma");  \\
+					\s \s		System.out.println(a1.NAME); \\
+					\s	\} \\
+					\}	
+				}
+				\bigskip
+				\outputblock{
+					Raman verma
+				}
+				\bigskip
+				\item \textbf{Final and static:} It is also possible to declare a final variable as static, making it a class-level constant accessible without creating an instance of the class.
+				\newline
+				Eg:
+				\newpage
+				\codeblockfull{Test.java}{
+					class Constant \{ \\
+					\s	public static final int MAX\_VALUE = 500; \\
+					\} \\
+					public class Test3 \{  \\
+					\s	public static void main(String[] args) \{  \\
+					\s \s		System.out.println(Constant.MAX\_VALUE); \\
+					\s	\} \\
+					\}	
+				}
+				\bigskip
+				\outputblock{
+					500
+				}
+			
+				\bigskip
+				
+				\item \textbf{protected final:} Provides a read-only variable accessible within the same package or subclass.
+				
+				\bigskip
+				\codeblockfull{Test.java}{
+					class Constant \{ \\
+					\s	protected final int MAX\_VALUE = 500; \\
+					\} \\
+					public class Test3 \{ \\
+					\s	public static void main(String[] args) \{ \\
+					\s \s		Constant c1 = new Constant(); \\
+					\s \s		System.out.println(c1.MAX\_VALUE); \\
+					\s	\} \\
+					\} 
+				}
+				\bigskip
+				\outputblock{
+					500
+				}
+				
+			\end{itemize}
+			
+		\end{itemize}
+	
+		\newpage
+		\item \textbf{transient}: 
+		\begin{itemize}
+			\item Transient keyword is applicable only on attributes.
+			\item Use transient keyword in serialisation context.
+			\item At the time of serialisation if we dont want to save the value of a particular variable to meet security constraint then we should declare that variable as trainsent.
+			\item At the time of serialsation JVM ignores original value of trainsent variables and save default value to the file. 
+			\item Hence, trainsent means not to serialise.
+			\item More on this is in serialisation chapter
+		\end{itemize}
+		\bigskip
+		\item \textbf{volatile attributes}: 
+		\begin{itemize}
+			\item A volatile instance variable is used in multithreaded programs to ensure that changes to the variable are visible to all threads. 
+			\item It guarantees that reads and writes to the variable are atomic and consistent.
+			\item More on this in multi-threading chapter.		
+		\end{itemize}
+		
+	\end{itemize}
+	
+	
+	
+
+	
+	
+\end{flushleft}
+
+\newpage
+

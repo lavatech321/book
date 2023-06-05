@@ -1,18 +1,110 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
-	\bigskip
-	\begin{itemize}
-		\item A package is how Linux OS delivers a \textbf{software}.
-		\item Linux packages are maintained through software repositories.
-	\end{itemize}
 
+	\newimage{0.6}{content/chapter11/images/type.png}
+	
+	\begin{itemize}
+		\item \textbf{Single inheritance:} In single inheritance, a class inherits from a single superclass.
+		\bigskip
+		\codeblock{
+			class Superclass \{ \\
+			\s	// superclass members \\
+			\} \\
+			\\
+			class Subclass extends Superclass \{ \\
+			\s	// subclass members \\
+			\}
+		}
 	\bigskip
-	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=yellow,colframe=yellow]
-		\color{black}
-		Note: A repository basically mean collection of something. It can be collection of codes, or collection of files, or collection of data or collection of anything else.
-	\end{tcolorbox}
+	
+		\item \textbf{Multilevel inheritance:} Multilevel inheritance refers to a situation where one class inherits from another class, and then a third class inherits from the second class.
+		\newpage
+		\codeblock{
+			class Grandparent \{ \\
+			\s	// grandparent members \\
+			\} \\
+			\\
+			class Parent extends Grandparent \{ \\
+			\s	// parent members \\
+			\} \\
+			\\
+			class Child extends Parent \{ \\
+			\s	// child members \\
+			\}
+		}
+		\bigskip
+		\item \textbf{Hierarchical inheritance:} Hierarchical inheritance occurs when multiple classes inherit from a single superclass.
+		\bigskip
+		\codeblock{
+			class Superclass \{ \\
+			\s	// superclass members \\
+			\} \\
+			\\
+			class Subclass1 extends Superclass \{ \\
+			\s	// subclass1 members \\
+			\} \\
+			\\			
+			class Subclass2 extends Superclass \{ \\
+			\s	// subclass2 members \\
+			\}
+		}
+		
+		\newpage
+		
+		\item \textbf{Multiple inheritance (through interfaces)}: 
+		\begin{itemize}
+			\item A java class cant extend more than one class at a time.
+			\item Multiple inheritance is not directly supported.
+			\item It can be achieved through interfaces. 
+			\bigskip
+			\codeblock{
+				interface Interface1 \{  \\
+				\s	// interface1 methods \\
+				\} \\
+				\\
+				interface Interface2 \{ \\
+				\s	// interface2 methods \\
+				\} \\
+				\\
+				class MyClass implements Interface1, Interface2 \{ \\
+				\s	// class members \\
+				\}	
+			}
+			\bigskip
+			\item Why Java does not provide support for multiple-inheritance?
+			\begin{itemize}
+				\item There maybe a chance of ambiguity problem. 
+				\newimage{0.5}{content/chapter11/images/prob.png}
+			\end{itemize}
+		
+			\item Why multiple-inheritance is supported by interface?
+			\begin{itemize}
+				\item We shall see this in the interface chapter.
+			\end{itemize}
+			
+		\end{itemize}
+		\newpage
+		\item \textbf{Cyclic inheritance:}
+		\begin{itemize}
+			\item This is not allowed in java. 
+			\item Eg 1:
+			\bigskip
+			\codeblock{
+				class A extends B \{\} \xmark \\
+				\\
+				class B extends A \{\} \xmark
+			}
+			\item Eg 2:
+			\bigskip
+			\codeblock{
+				class A extends A \{\} \xmark
+			}
+		\end{itemize}	
+		
+	\end{itemize}
 	
 \end{flushleft}
 
+\newpage
 
 

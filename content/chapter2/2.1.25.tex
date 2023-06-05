@@ -1,0 +1,112 @@
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item A Java program can contain any number of classes in a single program. 
+		\item However, only 1 class can be declared as \textbf{public}.
+		\item If there is a public class, then \textbf{name of the program and name of public class must be matched}, otherwise the program will result in compile time error.
+		\item Below are some use-cases on this:
+		
+		\begin{itemize}
+			\item \textbf{Case I}: If there is no public class and the program contains multiple class, then the program name can be anything. 
+			\bigskip
+			\codeblockfull{Lava.java}{
+					class A \{\} \\
+					class B \{\} \\
+					class C \{\} 
+			}			
+			\bigskip
+			\commandblock{
+			\$ javac Lava.java \\
+			 // This will create A.class, B.class, C.class
+			}
+			
+			\bigskip
+			\item \textbf{Case II}: If \textbf{class B is public}, then name of the program should be \textbf{B.java}, otherwise we will get compile-time error saying: \textbf{class B is public should be declared in file named B.java}:
+			\bigskip
+			\codeblockfull{Lava.java}{
+				class A \{\} \\
+				public class B \{\} \xmark // Lava.java is incorrect name \\
+				class C \{\}
+			}
+			\bigskip
+			\codeblockfull{B.java}{
+				class A \{\} \\
+				public class B \{\} \cmark \\
+				class C \{\}
+			}
+			
+		
+			\bigskip
+			
+			\item \textbf{Case III}: If class B and C are declared as public and name of program is “B.java”, then we will get compile time error saying: class C is public, should be declared in a file named C.java
+			
+			\bigskip
+			\codeblockfull{B.java}{
+				class A \{\} \\
+				public class B \{\} \\
+				public class C \{\} \xmark \s // Two class cannot be public
+			}
+
+			\item \textbf{Class IV:} If a program contains main() for multiple class, then executing those specific class will execute their respective main()
+			\bigskip
+			
+			\codeblockfull{Lava.java}{
+				class A \{ \\ 
+				\s public static void main(String[] args) \{ \\
+				\s \s  System.out.println("A class main"); \\
+				\s	\} 			\\
+				class B \{ \\ 
+				\s public static void main(String[] args) \{ \\
+				\s \s  System.out.println("B class main"); \\
+				\s	\} \\
+				class C \{ \\ 
+				\s public static void main(String[] args) \{ 
+			}	
+			\newpage
+			
+			\codecontinue{
+				\s \s  System.out.println("C class main"); \\
+				\s	\} \\
+				class D \{\} \\
+				\}
+			}
+		
+			\bigskip
+			\commandblock{
+			\$ javac Lava.java \\
+			A.class B.class C.class D.class \\
+			\\
+			\$ java A \\
+			A class main \\
+			\\
+			\$ java B \\
+			B class main \\
+			\\
+			\$ java C \\
+			C class main \\
+			\\
+			\$ java D \\ 
+			RuntimeError: NoSuchMethodError: main() \\
+			\\
+			\$ java Lava \\
+			RuntimeError: NoClassDefFoundError: Lava \\
+			}
+		\end{itemize}
+	\end{itemize}
+
+	\textbf{Conclusion:}
+	\begin{itemize}
+		\item While executing a java program, for every class present in that program, a separate \textbf{“.class”} will be generated.
+		\item You can compile a java program (Java source file), but you can run a java \textbf{".class"} file.
+		\item On executing a java class, the corresponding class main() will be executed.
+		\item If the class doesn’t contain main(), then you will get runtime exception.
+		\item If the corresponding .class file is not available, then you will get runtime exception.
+		\item It is not recommended to declare multiple classes in a single source file. 
+		\item It is recommended to declare only one class per source file and name of the program to be same as class name.
+	\end{itemize}
+	
+\end{flushleft}
+\newpage
+
+
+

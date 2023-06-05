@@ -1,22 +1,102 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
-	\bigskip
-	\begin{itemize}
-		\item RPM is a collection of different files that constitues a package.
-		\item RPM stands for \textbf{Red Hat Package Manager}.
-		\item It was developed by Red Hat company.
-		\item RPM is used on Red Hat-based Linux operating systems (like Fedora, CentOS, RHEL, etc.)
-		\item An RPM package uses the \textbf{.rpm} extension.
 
-		\bigskip
-		\item Syntax of package name:
-		\begin{figure}[h!]
-			\centering
-			\includegraphics[scale=.5]{content/chapter11/images/package2.png}
-			\caption{Package name syntax}
-			\label{fig:package_name}
-		\end{figure}
+	\begin{itemize}
+		\item Advantage of has-a relationship is \textbf{reuseability} of the code.
+		\item There are 2 types of Has-A relationship:
+		\begin{itemize}
+					\item \textbf{Aggregation:}
+			\begin{itemize}
+				\item Aggregation is a weaker form of the "has-a" relationship.
+				\item It is a one-way relationship and called unidirectional association. 
+				\item For example, Bank can have employees but vice versa is not possible.
+				\bigskip
+				\codeblock{
+					class Bank \{ \\\
+					\s String nameOfBank; \\
+					\s	Bank(String nameOfBank)	\{ \\
+					\s \s		this.nameOfBank = nameOfBank; \\
+					\s \} \\
+					\s public void displayAllDetails(Customer customer) \{ \\
+					\s \s		System.out.println("Bank = "+ nameOfBank); \\
+					\s \s		System.out.println("Customer = "+ customer.nameOfCustomer); \\
+					\s \} \\
+					\} \\
+					class Customer \{ \\
+					\s	String nameOfCustomer; \\
+						\s	Customer(String nameOfCustomer) \{ \\
+					\s \s		this.nameOfCustomer = nameOfCustomer; \\
+					\s	\} \\
+					\} 
+				}
+				\newpage
+				\codecontinue{
+					class Branch \{ \\
+					\s	public static void main(String arg[]) \\
+					\s	\{ \\
+					\s \s		Bank bank = new Bank("AXIS"); \\
+					\s \s		Customer customer = new Customer("Ram"); \\
+					\s \s 		bank.displayAllDetails(customer); \\
+					\s	\} \\
+					\}
+				}
+			\end{itemize}
+			\bigskip
+			\item \textbf{Composition:}
+			\begin{itemize}
+				\item Composition is a strong form of the "has-a" relationship.
+				\item In composition two entities are highly dependent on each other. 
+				\item One entity cannot exist without the other.
+				\item It represents a \textbf{part-of} relationship.
+				\item Eg: a car has an engine
+				\bigskip
+				\codeblock{
+					class Car \{ \\
+					\s	private final Engine engine;   \\
+					\s	String nameOfCar; \\
+					\s	String model; \\
+					\s	public Car(String nameOfCar, String model) \{ \\
+					\s \s		engine  = new Engine("POWERHIGH", "ABC"); \\
+					\s \s		this.nameOfCar = nameOfCar; \\
+					\s \s		this.model = model; \\
+					\s	\}	 
+				}	
+			
+			\newpage
+			
+			\codecontinue{
+					\s	public void showAlldetails() \{ \\
+			\s 	System.out.println("Car ="+nameOfCar); \\
+			\s 		System.out.println("Model ="+model); \\
+			\s 		System.out.println("Engine used ="+engine.typeOfEngine); \\
+			\s 		System.out.println("Engine name ="+engine.nameOfEngine); \\
+			\s	\} \\
+			\} \\
+			\\
+			class Engine  \{ \\
+			\s	String typeOfEngine; \\
+			\s	String nameOfEngine; \\
+			\s	Engine(String typeOfEngine, String nameOfEngine) \{ \\
+			\s \s		this.typeOfEngine = typeOfEngine; \\
+			\s \s		this.nameOfEngine = nameOfEngine; \\
+			\s	\} \\
+			\} \\
+			\\
+			public class Test \{ \\
+			\s	public static void main(String arg[]) \{ \\
+			\s \s		Car car = new Car("BMW", "5X"); \\
+			\s \s		car.showAlldetails(); \\
+			\s 	\} \\
+			\}
+			}	
+				
+			\end{itemize}
+			
+		\end{itemize}
+	
 	\end{itemize}
+
+
 \end{flushleft}
 \newpage
 

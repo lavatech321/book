@@ -2,58 +2,94 @@
 \begin{flushleft}
 
 	\begin{itemize}
-		\item Logical partitions are partitions created inside the extended partition.
-		\begin{figure}[h!]
-			\centering
-			\includegraphics[scale=.6]{content/chapter8/images/logical.png}
-			\caption{Logical partitions}
-			\label{logical_naming}
-		\end{figure}		
-		
-		\begin{tcolorbox}[breakable,notitle,boxrule=-2pt,colback=yellow,colframe=yellow]
-			\color{black}
-			Note: 
-			\begin{itemize}
-				\item Number of logical partitions is unlimited
-				\item However, linux imposes limit on the total number of partitions on a drive
-				\item There can be total 15 partitions on an SCSI disk and 63 total on an IDE disk
-			\end{itemize}
-		\end{tcolorbox}
-		
+		\item This is enhanced for loop introduced in Java 1.5 version.
+		\item It is used to retrieve elements of arrays and collections.
+		\bigskip
+		\syntaxblock{
+			for (type var : array) \{  \\
+			\s	statements using var; \\
+			\}	
+		}
+		\item Eg: Print elements of 1-dimensional array -
+		\end{itemize}
+		\tabletwo{
+			\hline
+			Normal for loop & Enhanced for loop \\
+			\hline
+			\codeblock{
+				int[] x = \{10,20,30\}; \\
+				for(int i=0;i<x.length;i++) \{ \\
+				\s	System.out.println(x[i]); \\
+				\}
+			} &
+			\codeblock{
+				int[] x = \{10,20,30\}; \\
+				for(int x1; x) \{ \\
+				\s	System.out.println(x1); \\
+				\}
+			} \\
+		}
+	
+
+	
+	\begin{itemize}
+		\item Eg: Print elements of 2-dimensional array -
 	\end{itemize}
 
+	\tabletwo{
+		\hline
+		Normal for loop & Enhanced for loop \\
+		\hline
 
-\newpage
-
-\paragraph{fdisk command option to create logical partition}
-
-\begin{itemize}
-	\item \textbf{l}: Create a logical partition
-\end{itemize}
-
-Eg:
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=.4]{content/chapter8/images/logi.png}
-	\caption{Creating logical partition}
-	\label{primary_logi4}
-\end{figure}		
-
-\newpage
-
-\paragraph{fdisk command option to delete any partition}
-
-\begin{itemize}
-	\item \textbf{d}: Delete partition
-\end{itemize}
-Eg:
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=.4]{content/chapter8/images/delete.png}
-	\caption{Deleting partition}
-	\label{primary_logi3}
-\end{figure}		
-
+		\codeblock{
+			int[][] x=\{\{10,20\},\{40,50\}\}; \\
+			for(int i=0;i<x.length; i++)\{ \\
+			for(int j=0;j<x[i].length;j++)\{ \\
+			\s	System.out.println(x1); 	\\
+			\s \} \\	
+			\}
+		} &
+		\codeblock{
+			int[][] x=\{\{10,20\},\{40,50\}\}; \\
+			for(int[] x1: x) \{  \\
+			for(int x2: x1) \{    \\
+			\s	System.out.println(x1);  \\
+			\s \}  \\
+			\} 
+		}  \\
+	}
+	
+	\newpage
+	
+	\begin{itemize}
+		
+		\item Eg3: Print 3-dimensional array using for-each loop -
+		\bigskip
+		\codeblock{
+			
+			int[][][] x = \{ \\
+			\s	\{ \{1, 2\}, \{3, 4\}, \{5, 6\}, \{7, 8\} \}, \\
+			\s	\{ \{9, 10\}, \{11, 12\}, \{13, 14\}, \{15, 16\} \}, \\
+			\s	\{ \{17, 18\}, \{19, 20\}, \{21, 22\}, \{23, 24\} \} \\
+			\}; \\
+			\\
+			for(int[]][] x1:x) \{ \\
+			\s for(int[] x2: x1 ) \{  \\
+			\s \s for(int x3: x2) \{ \\
+			\s \s \s System.out.println(x3); \\
+			\s \s \} \\
+			\s \}	 \\
+			\} 
+		}
+		
+		\item Drawback of for-each loop:
+		\begin{itemize}
+			\item Applicable only for arrays and collections.
+			\item Using for-each loop, you can print array elements in original order but not in reverse order.	
+		\end{itemize}
+		
+		
+	\end{itemize}
 
 
 	

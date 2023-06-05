@@ -1,231 +1,40 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
-	\bigskip
-	
-	\textbf{yum}: Used to install, update, remove \& search package.
-	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-		\color{black}
-		\fontdimen2\font=9pt
-		Syntax: yum [options] command [package\_name]
-		\fontdimen2\font=4pt
-	\end{tcolorbox}
-	Command and options with \textbf{yum} command:
-	
+
 	\begin{itemize}
-		\item \textbf{install}: Install package along with it's dependency.
-		\newline
-		\textbf{-y}: Automatically answer yes for all questions
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-			\color{black}
-			\fontdimen2\font=9pt
-			Syntax: yum install package\_name -y
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		Eg:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# yum install httpd -y
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		\bigskip
-		\bigskip
-		\item \textbf{remove}: Uninstall a package along with this dependency.
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-			\color{black}
-			\fontdimen2\font=9pt
-			Syntax: yum remove package\_name 
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		Eg:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# yum remove httpd
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		\bigskip
-		\bigskip		
 		
-		\item \textbf{info}: Display the information of a package.
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-			\color{black}
-			\fontdimen2\font=9pt
-			Syntax: yum info package\_name 
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		Eg:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# yum info httpd
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
+		\item All the constructors in an object’s inheritance tree must run when you make a new object.
+		\item This all happens in a process called \textbf{Constructor Chaining}.
 		\bigskip
-		\bigskip		
-
-		\item \textbf{groupinfo}: List all packages provided by the group.
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-			\color{black}
-			\fontdimen2\font=9pt
-			Syntax: yum groupinfo group\_name 
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		Eg:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# yum groupinfo "Development Tools"
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
+		\codeblockfull{Test.java}{
+			class Animal \{ \\
+			\s	public Animal() \{ \\
+			\s \s		System.out.println("This is a Animal"); \\
+			\s	\} \\
+			\} \\
+			class Duck extends Animal \{ \\
+			\s	public Duck() \{ \\
+			\s \s		System.out.println("This is a Duck"); \\
+			\s	\} \\
+			\} \\
+			\\
+			public class Test \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Duck d1 = new Duck(); \\
+			\s	\}	\\
+			\}
+		}
+	
 		\bigskip
-		\bigskip	
-
-		\item \textbf{groupinstall}: Install all packages provided by the group.
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-			\color{black}
-			\fontdimen2\font=9pt
-			Syntax: yum groupinstall group\_name 
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		Eg:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# yum groupinstall "Development Tools"
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		\bigskip
-		\bigskip	
-
-		\item \textbf{groupremove}: Remove all packages provided by the group.
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-			\color{black}
-			\fontdimen2\font=9pt
-			Syntax: yum groupremove group\_name 
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		Eg:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# yum groupremove "Development Tools"
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		\bigskip
-		\bigskip	
-
-
-		\item \textbf{update}: Update all packages and their dependencies.
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-			\color{black}
-			\fontdimen2\font=9pt
-			Syntax: yum update
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		\bigskip
-		\bigskip	
-
-		\item \textbf{history}: Display a list of all the latest yum transactions.
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-			\color{black}
-			\fontdimen2\font=9pt
-			Syntax: yum history
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		\bigskip
-		\bigskip			
-
-		\item \textbf{history info}: Examine a particular yum transaction.
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-			\color{black}
-			\fontdimen2\font=9pt
-			Syntax: yum history info transactionID
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		Eg:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# yum history info 8
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		\bigskip
-		\bigskip			
-
-		\item \textbf{history undo}: Revert a particular transaction.
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-			\color{black}
-			\fontdimen2\font=9pt
-			Syntax: yum history undo transactionID
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		Eg:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# yum history undo 8
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		\bigskip
-		\bigskip			
-
-		\item \textbf{history redo}: Repeat a particular transaction.
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-			\color{black}
-			\fontdimen2\font=9pt
-			Syntax: yum history redo transactionID
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		Eg:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# yum history redo 8
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		\bigskip
-		\bigskip					
+		\outputblock{
+			This is a Animal \\
+			This is a Duck
+		}
 		
-		\item \textbf{list all}: List all installed packages.
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-			\color{black}
-			\fontdimen2\font=9pt
-			Syntax: yum list all
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		Eg: List all installed pacakges associated with httpd.
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# yum list all | grep httpd
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		\bigskip
-		\bigskip					
-
-		\item \textbf{localinstall}: Install locally downloaded package.
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-			\color{black}
-			\fontdimen2\font=9pt
-			Syntax: yum localinstall package.rpm
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		Eg: Download cvs package using command \textbf{"wget https://rpmfind.net/linux/epel/8/Everything/x86\_64/Packages/c/cvs-1.11.23-52.el8.x86\_64.rpm"}
-		\newline
-		 Install downloaded package using command:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# yum localinstall cvs-1.11.23-52.el8.x86\_64.rpm -y
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		\bigskip
-		\bigskip					
-
+		
+		
 		
 	\end{itemize}
-	
 	
 \end{flushleft}
 \newpage

@@ -1,72 +1,38 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
+
+	\begin{itemize}
+		\item \textbf{this} keyword refers to the current object instance within a class.
+		\item It is used to differentiate between class members and local variables.
+		\item It is used to access or modify instance variables or invoke instance methods of the current object.
+		\item \textbf{this} keyword can be used within constructors.
+	\item Eg:
 	\bigskip
-	You can start using yum server for package installation on any client, by following below steps:
-	
-	\begin{enumerate}
-		\item Create a repository file named \textbf{/etc/yum.repos.d/new.repo}:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{white}
-			\fontdimen2\font=9pt
-			[Title\_name] \color{yellow}  \# Add title name for this repository 
-			\newline
-			\color{white}
-			name = Repo\_name
-			\color{yellow}
-			\# Add repository name
-			\newline
-			\color{white}
-			enabled = 1
-			\newline
-			gpgcheck = 0
-			\newline
-			baseurl = ftp://(server-IP-address)/pub
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		\bigskip
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=yellow,colframe=yellow]
-			\color{black}
-			\textbf{Note:} 
-			\begin{itemize}
-				\item Location of repository file should be \textbf{/etc/yum.repos.d}
-				\item Name of the file can be anything
-				\item Extension of the file of should be \textbf{".repo"}
-			\end{itemize}
-		\end{tcolorbox}
-
+		\codeblockfull{Test.java}{
+			class Rectangle \{ \\
+			\s	float l, w, h; \\
+			\s	public Rectangle(int l, int w, int h) \{ \\
+			\s \s		\textbf{this.l = l;} \\
+			\s \s		\textbf{this.w = w;} \\
+			\s \s		\textbf{this.h = h;} \\
+			\s	\} \\
+			\s	public float getArea() \{ \\
+			\s \s		float area; \\
+			\s \s		area = 2*(l*w) + 2*(l*h) + 2*(h*w); \\
+			\s \s		return area; \\
+			\s	\} \\
+			\} \\
+			public class Test3 \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Rectangle r1 = new Rectangle(3,4,5); \\
+			\s \s		float area; \\
+			\s \s		area = r1.getArea(); \\
+			\s \s		System.out.println(area); \\
+			\s	\} \\
+			\} 
+		}		
 		
-		
-		\item Clean all the cached files from any enabled repository.
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# yum	clean	all
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		
-		
-		\item Refresh all the enabled repository:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# yum 	update 	all
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		
-		
-		\item Now you can install any packages using the YUM server.
-		\newline
-		Eg:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# yum	install	httpd -y		
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-
-		
-	\end{enumerate}
-	
+	\end{itemize}	
 	
 	
 \end{flushleft}

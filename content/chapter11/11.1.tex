@@ -1,39 +1,76 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
+
+\begin{itemize}
+	\item Inheritance means putting common code in a class\textbf{(superclass)} and tell other classes\textbf{(subclass)} that the common class is their superclass. 
+	\item The subclass \textbf{extends} the superclass.
+	\item The subclass inherits the members (i.e instance variables and methods) of the superclass.
+	\item Eg:
+	\newimage{0.34}{content/chapter11/images/new.png}
+
+	\newpage	
+	\item Instance variables are not overridden.
 	\bigskip
+	\item \textbf{IS-A relationship}: 
+	\begin{itemize}
+		\item Inheritance is also called \textbf{IS-A} relationship.
+		\item Eg: FriedEggMan IS-A SuperHero
+	\end{itemize}
 	\bigskip
-	\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=black,colframe=black]
-		\color{white}
-		\bigskip
-		In this section, you are going to learn:
-		\begin{enumerate}
-			\item \textbf{What is a package?}
-			\item \textbf{What is an RPM?}
-			\item \textbf{RPM commands}
-			\item \textbf{Drawback of RPM}
-		\end{enumerate}	
-		\bigskip
-		Finally, there will be a \textbf{small excerise} on these topics to check your knowledge.
-		\bigskip
-	\end{tcolorbox}
+	\item The \textbf{extends} keyword is used to implement IS-A relationship.
+	\bigskip
+	\syntaxblock{
+		class A \{\} \\
+		\\
+		class B extends A \{\}
+	}
+
+	\item Superclass reference can be used to hold subclass object. 	
+	\item Eg:
 	
+	\codeblock{
+		class A \{ \\
+		\s	void displayA() \{ \\
+		\s \s		System.out.println("This is A"); \\
+		\s	\} \\
+		\} \\
+		class B \textbf{extends} A \{  \\
+		\s	void displayB() \{  \\
+		\s \s		System.out.println("This is B"); \\
+		\s 	\} \\
+		\} \\
+		class Test \{ \\
+		\s	public static void main(String[] args) \{ \\
+		\s \s		A a = new A(); \\
+		\s \s		a.displayA(); \\
+		\s \s		a.displayB();   \xmark \s  //Results in error
+	}
+	\newpage
+	\codecontinue{
+		\s \s		A a2 = new B(); \\
+	\s \s		a2.displayA(); \\
+	\s \s		a2.displayB();  \xmark \s //Results in error \\
+	\\		
+	\s \s		B b = new B(); \\
+	\s \s		b.displayA(); \\
+	\s \s 		b.displayB(); \\
+	\\
+	\s			B b2 = new A();  \xmark \s //Results in error \\
+	\s \} \\
+	\}
+	}
+
+	\bigskip
+	\noteblock{
+	\begin{itemize}
+		\item Using parent refernece, you cant call child specific methods.
+		\item Parent reference can be used to hold child object, but using that refernece, we cant call child specific methods.
+		\item Child reference cannot be used to hold parent object.
+	\end{itemize}
+	}
+
 	
-	\begin{multicols}{2}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		
-		\vfill \null
-		\columnbreak
-		So let's get started....
-		\includegraphics[scale=0.08]{content/linux_section.png}
-	\end{multicols}	
+\end{itemize}
 	
 \end{flushleft}
 

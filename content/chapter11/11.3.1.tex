@@ -1,0 +1,151 @@
+\setlength{\columnsep}{3pt}
+\begin{flushleft}
+	
+	\begin{itemize}
+		\item Using access modifier, class can provide more information to the JVM like:
+		\begin{itemize}
+			\item Whether the class is accessible from anywhere or not
+			\item Whether child class creation is possible or not
+			\item Whether object creation is possible or not
+		\end{itemize}
+		\item The only applicable modifiers for top-level classes are:
+		\begin{itemize}
+			\item public
+			\item default
+			\item final
+			\item abstract
+			\item strictfp
+		\end{itemize}
+		\item But, for inner classes, the applicable modifiers are:
+		\begin{itemize}
+			\item private
+			\item protected 
+			\item static
+		\end{itemize}
+	
+	\end{itemize}
+
+	\newimage{0.4}{content/chapter11/images/class.png}
+	
+	\noteblock{
+	In Java, there are only access modifiers, there is no word like access specifier.
+	
+	}
+	
+	Let's see these class level access modifiers in detail.
+	
+	\newpage
+	
+	\textbf{public classes}:
+	\begin{itemize}
+		\item  If a class is declared as public then we can access that class from anywhere.
+		\item Eg:
+		\bigskip
+		\codeblockfull{Test1.java}{
+			package com.lavatech.www; \\
+			public class Test1 \{  \\
+			\s	public void message()\{ \\
+			\s \s		System.out.println("Hard work pays off!"); \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		\codeblockfull{Test2.java}{
+			package com.lavatech.info; \\
+			import com.lavatech.www.Test1; \\
+			public class Test2 \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s		Test1 t1 = new Test1(); \\
+			\s \s		t1.message(); \\
+			\s	\} \\
+			\}	
+		}
+		\bigskip
+		\commandblock{
+		\$ javac -d . Test1.java  \\
+		\$ javac -d . Test2.java  \\
+		\$ java com.lavatech.info.Test2  \\
+		Hard work pays off!
+		}
+	\end{itemize}
+	
+	\newpage
+	\textbf{default classes}:
+	
+	\begin{itemize}
+		\item A default class \textbf{does not have an access modifier} specified. 
+		\item Also known as a \textbf{package-private class} 
+		\item It is accessible \textbf{only within the same package}.
+		\item If no access modifier (such as public, private, or protected) is specified, the class is considered to have default access.
+		\item Eg:
+		\bigskip
+		\codeblockfull{Test1.java}{
+			package com.lavatech.www; \\
+			class Test1 \{ \\
+			\s public void message()\{ \\
+			\s \s		System.out.println("Hard work pays off!"); \\
+			\s	\} \\
+			\}
+		}
+		\bigskip
+		\codeblockfull{Test2.java}{
+			package com.lavatech.info; \\
+			import com.lavatech.www.Test1;
+		}
+		\bigskip
+		\commandblock{
+			\$ javac -d . Test2.java  \\
+			\color{red}
+			Test2.java:2: error: Test1 is not public in com.lavatech.www; cannot be accessed from outside package \\
+			import com.lavatech.www.Test1; \\
+			1 error 
+		}
+	\end{itemize}
+
+	\newpage
+	\textbf{final class}
+	\begin{itemize}
+		\item Final class can’t be inherited 
+		\item You can’t create child class for final class.
+		\item More on final class is mentioned in inheritance section.
+	\end{itemize}
+
+	\textbf{abstract class}
+	\begin{itemize}
+		\item Abstract classes can be instantiated.
+		\item You cannot create object of abstract class.
+		\item More on abstract class is mentioned in Abstract class section.
+	\end{itemize}
+
+	\textbf{strictfp class}
+	\begin{itemize}
+		\item strictfp was introduced in Java1.2 version.
+		\item Strictfp class ensures all methods in the class \& its subclasses, adhere to strict floating-point precision rules.
+		\item strictfp is used to ensure that floating points operations give the same result on any platform. 
+		\item As floating points precision may vary from one platform to another. strictfp keyword ensures the consistency across the platforms.
+		\item Eg:
+		\codeblockfull{Test.java}{
+		\textbf{strictfp class A} \{ \\
+		\s	double num1 = 10e+102; \\
+		\s	double num2 = 6e+08; \\
+		\s	double calculate() \{ \\
+		\s \s		return num1 + num2; \\
+		\s	\} \} \\
+		public class Test \{  \\
+		\s	public static void main(String[] args) \{  \\
+		\s \s		A a1 = new A();      \\
+		\s \s		System.out.println("Result: " + a1.calculate()); \\
+		\s	\} \}
+		}
+		\newpage
+		
+		\bigskip
+		\outputblock{
+			Result: 1.0E103	
+		}
+		
+	\end{itemize}
+	
+\end{flushleft}
+
+\newpage

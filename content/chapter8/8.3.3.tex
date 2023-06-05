@@ -1,65 +1,61 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
 	
-
-	Mounting a partition means attaching it to some directory so that it can be used. 
-		
-		\begin{figure}[h!]
-			\centering
-			\includegraphics[scale=.6]{content/chapter8/images/new.png}
-			\caption{Mounting filesystem}
-			\label{mounting}
-		\end{figure}	
-	
-	\newpage
-	\paragraph{Command to mount a partition}
-		\begin{itemize}		
-		\item Mount a linux partition:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-			\color{black}
-			\fontdimen2\font=9pt
-			Syntax: mount device\_name directory\_name
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		
-		\item Check mounted partition:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-			\color{black}
-			\fontdimen2\font=9pt
-			Syntax: df -Th
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
+	\begin{itemize}
+		\item Use labeled break and continue to break/continue a particular loop in nested loops.
 		\bigskip
-		\bigskip
-		\item Eg: Create a directory to mount a partition -
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# mkdir /mnt/access
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		Mount \textbf{/dev/sda2} partition on \textbf{/mnt/access} directory -
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# mount /dev/sda2 /mnt/access
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		Check mounted partition:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-			\color{green}
-			\fontdimen2\font=9pt
-			\# df -Th
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
+		\syntaxblock{
+			label-1: \\
+			for(...) \{ \\
+			\s label-2: \\
+			\s for(...) \{ \\
+			\s ..\\
+			\s ..\\
+			\s \s for(...) \{ \\
+			\s \s \s break label-1; \\
+			\s \s \s break label-2; \\
+			\s \s \s break; \\
+			\s \s \} \\
+			\s \} \\
+			\} \\
+		}
 		
 	\end{itemize}
-	\bigskip
-	\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=yellow,colframe=yellow]
-		\color{black}
-		Note: Mounting done using \textbf{mount} command is \textbf{temporary}. After system reboot, the partition and directory will get dissociated. This will cause partition to be \textbf{unmounted}.
-	\end{tcolorbox}
 	
+	Eg 1:
+	\codeblock{
+		l1: \\
+		for(int i=0; i<j; i++) \{ \\
+		\s	for(int j=0; j<3; j++) \{ \\
+		\s \s		if(i==j) \\
+		\s \s \s			continue l1; \\
+		\s \s		System.out.println(i+"..."+j); \\
+		\s	\} \\
+		\} \\
+	}
+	\bigskip
+	\outputblock{
+		1...0 \\
+		2...0 \\
+		2...1
+	}
+
+	\bigskip
+	Eg 2:
+	\codeblock{
+		l1: \\
+		for(int i=0; i<j; i++) \{ \\
+		\s	for(int j=0; j<3; j++) \{ \\
+		\s \s		if(i==j) \\
+		\s \s \s			break l1; \\
+		\s \s		System.out.println(i+"..."+j); \\
+		\s	\} \\
+		\} \\
+	}
+	\bigskip
+	\outputblock{
+		---No output---
+	}
 	
 	
 \end{flushleft}

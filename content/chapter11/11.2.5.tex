@@ -1,79 +1,67 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
 	
-	\paragraph{}
-	\bigskip
+	\begin{itemize}
+		\item \textbf{super()} is used to invoke a superclass constructor from a subclass constructor. 
+		
+		\item Key points about super():
+		\begin{itemize}
+			\item Must be the \textbf{first statement in the subclass} constructor body.
+			\item The compiler automatically inserts a call to the superclass's default (no-argument) constructor.
+			\item super() can only be used only within a constructor.
+		\end{itemize}
+		
+		\item Eg 1:
+		\bigskip
+		\codeblockfull{Test.java}{
+			class Animal \{ \\
+			\s	public Animal() \{ \\
+			\s \s		System.out.println("This is a Animal"); \\
+			\s	\} \\
+			\} \\
+			class Duck extends Animal \{ \\
+			\s	public Duck() \{ \\
+			\s \s		\textbf{super();}\\
+			\s \s		System.out.println("This is a Duck"); \\
+			\s	\} \\
+			\}
+		}
+		
+		\textbf{Eg2: Superclass constructors with arguments}
+		\bigskip
+		\codeblockfull{Test.java}{
+		class Animal \{ \\
+		\s 	String name; \\
+		\s	Animal(String name) \{ \\
+		\s \s		this.name = name; \\
+		\s	\} \\ 
+		\} 		
+		}
+		
+		\codecontinue{
+		class Duck extends Animal \{ \\
+		\s	int size; \\
+		\s	public Duck(String name, int size) \{ \\
+		\s \s		\textbf{super(name);} \\
+		\s \s		\textbf{this.size = size;} \\
+		\s	\} \\
+		\} \\
+		\\
+		public class Test \{ \\
+		\s	public static void main(String[] args) \{ \\
+		\s \s		Duck d1 = new Duck("Duckling",4); \\
+		\s \s		System.out.println("Name : "+d1.name); \\
+		\s \s		System.out.println("Size : "+d1.size); \\
+		\s	\}	 \\
+		\}
+		}
+		
+	\end{itemize}
 	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[scale=.2]{content/practise.jpg}
-	\end{figure}	
-	\begin{enumerate}
-		
-		\item \textbf{Which of the following statement is true about yum \& rpm command? (Select all that applies.)}
-		\begin{enumerate}[label=(\alph*)]
-			\item The \textbf{rpm} command can install a package, but cannot resolve the dependency issue of the package. %correct
-			\item The \textbf{yum} command can install a package while resolving its dependency issue. %correct
-			\item The \textbf{yum} command cannot resolve the dependency issue of a package.
-			\item The \textbf{rpm} command can resolve the dependency issue of a package.
-		\end{enumerate}
-		\bigskip
-		\bigskip
-		
-		\item \textbf{Which of the following is the correct location for yum ".repo" configuration?}
-		\begin{enumerate}[label=(\alph*)]
-			\item /etc/yum/repos.d
-			\item /etc/yum/
-			\item /etc/yum.repos.d/  %correct
-			\item /etc/repos.d
-		\end{enumerate}
-		\bigskip
-		\bigskip	
-		
-		\item \textbf{Select the correct YUM command to install a package.}
-		\begin{enumerate}[label=(\alph*)]
-			\item yum install package-name -y %correct
-			\item yum -install package-name -y 
-			\item yum -i package-name -y 
-			\item yum --install package-name -y 
-		\end{enumerate}
-		\bigskip
-		\bigskip	
-
-		\item \textbf{Select the correct YUM command to uninstall a package.}
-		\begin{enumerate}[label=(\alph*)]
-			\item yum --remove package-name -y 
-			\item yum remove package-name -y %correct
-			\item yum uninstall package-name -y
-			\item yum -e package-name -y
-		\end{enumerate}
-		\bigskip
-		\bigskip	
-		
-		
-		\item \textbf{Select the correct DNF command display package details.}
-		\begin{enumerate}[label=(\alph*)]
-			\item dnf display package\_name
-			\item dnf show package\_name
-			\item dnf info package\_name   %correct
-			\item dnf list package\_name
-		\end{enumerate}
-		\bigskip
-		\bigskip	
-
-		\item \textbf{Select the correct DNF command to list all installed package.}
-		\begin{enumerate}[label=(\alph*)]
-			\item dnf list all   %correct
-			\item dnf report all
-			\item dnf show all
-			\item dnf list
-		\end{enumerate}
-		\bigskip
-		\bigskip	
-
-		
-	\end{enumerate}
+	
+	
 	
 	
 \end{flushleft}
 
+\newpage
