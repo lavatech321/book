@@ -2,63 +2,41 @@
 \begin{flushleft}
 	
 	\begin{itemize}
-		\item Use labeled break and continue to break/continue a particular loop in nested loops.
+		\item Use labeled break/continue to break/continue a particular loop.
 		\bigskip
 		\syntaxblock{
 			label-1: \\
 			for(...) \{ \\
-			\s label-2: \\
-			\s for(...) \{ \\
-			\s ..\\
-			\s ..\\
-			\s \s for(...) \{ \\
-			\s \s \s break label-1; \\
-			\s \s \s break label-2; \\
-			\s \s \s break; \\
-			\s \s \} \\
-			\s \} \\
-			\} \\
+			\s \s break label-1; \\
+			\} 
 		}
 		
 	\end{itemize}
 	
 	Eg 1:
 	\codeblock{
-		l1: \\
-		for(int i=0; i<j; i++) \{ \\
-		\s	for(int j=0; j<3; j++) \{ \\
-		\s \s		if(i==j) \\
-		\s \s \s			continue l1; \\
-		\s \s		System.out.println(i+"..."+j); \\
-		\s	\} \\
-		\} \\
-	}
-	\bigskip
-	\outputblock{
-		1...0 \\
-		2...0 \\
-		2...1
+		String str = "elephant"; \\
+		char[] ch = str.toCharArray(); \\
+		\textbf{l1:} \\
+		\s for(char c : ch) \{ \\
+		\s	if(c == 'p') \\
+		\s \s	\textbf{break l1;} \\
+		\s	System.out.print(c); // Output: ele \\
+		\s \}
 	}
 
 	\bigskip
 	Eg 2:
 	\codeblock{
-		l1: \\
-		for(int i=0; i<j; i++) \{ \\
-		\s	for(int j=0; j<3; j++) \{ \\
-		\s \s		if(i==j) \\
-		\s \s \s			break l1; \\
-		\s \s		System.out.println(i+"..."+j); \\
-		\s	\} \\
-		\} \\
-	}
-	\bigskip
-	\outputblock{
-		---No output---
+		String str = "elephant"; \\
+		char[] ch = str.toCharArray(); \\
+		\textbf{l1:} \\
+		\s for(char c : ch) \{ \\
+		\s	if(c == 'p') \\
+		\s \s	\textbf{continue l1;} \\
+		\s	System.out.print(c); // Output: elehant \\
+		\s \}
 	}
 	
 	
 \end{flushleft}
-
-\newpage
-

@@ -2,62 +2,42 @@
 \begin{flushleft}
 	
 	\begin{itemize}
-		\item import keyword is used to access classes, interfaces, and other types from external packages or libraries. 
-
-		\item Consider an example where you want to use \textbf{ArrayList} class from \textbf{java.util} package. For this, you will need to use fully qualified name:
-		\bigskip
-		\codeblock{
-			class New \{ \\
-			\s public static void main(String[] args) \{ \\
-		    \s \textbf{java.util.ArrayList l1 = new java.util.ArrayList();}	 \\
-		   	\s	\} \\
-		   \} 
-		}
-	
-		With \textbf{import} keyword, the code would look like:
-		\bigskip
-		\codeblock{
-		 \textbf{import java.util.ArrayList;} \\
-		 class New \{ \\
-		 \s public static void main(String[] args) \{ \\
-		 \s \s	\textbf{ArrayList l1 = new ArrayList();} \\
-		 \s	\} \\
-		 \}
-		}
-		
-		\item Using import statement, it is not required to use fully qualified name everytime.
-		\bigskip
-		\noteblock{
-			All classes and interfaces present in the following packages are by default available to every Java program. Hence we are not required to write import statement:
-			\begin{itemize}
-				\item java.lang
-				\item default package (current working directory)
-			\end{itemize}
-		}
-		\item 		There are 2 types of \textbf{import}. Let's see each of these in detail.	
-		\end{itemize}		
-
-		\newpage
-
-		\textbf{Explicit class import:} 
+		\item \textbf{import} keyword is used to access classes \& interfaces from \textbf{external packages or libraries}. 
+		\item Import keyword is not required for following packages as they are by default available to every Java program:
 		\begin{itemize}
-			\item Used to import a single class.
-			\item It is highly recommended as improves readability of the code.
+			\item \textbf{java.lang}
+			\item \textbf{default package (current working directory)}
+		\end{itemize} 
+		\item There are 2 types of import:
+		\begin{itemize}
+			\item \textbf{Explicit import}
+			\item \textbf{Implicit import}
+		\end{itemize}	
+		\item Let's see each of these in detail.
+	\end{itemize}		
+
+	\newpage
+	\textbf{Explicit class import:} 
+	\begin{itemize}
+		\item Used to import a single class.
 			\bigskip
 			\syntaxblock{
 				import packageName.ClassName;	
 			}
 			\item Eg:
 			\codeblock{
-				import java.util.ArrayList; \cmark \\
-				import java.util; \xmark
+				\textbf{import java.time.LocalDate;} \\
+				class demo \{ \\
+				\s public static void main(String[] args) \{ \\
+				\s \s	LocalDate date = LocalDate.now(); \\
+				\s \s		System.out.println(date); // \textbf{Ouptut: 2023-08-15} \\
+				\s	\} \}
 			}
 		\end{itemize}
 		
-		
 		\textbf{Implicit class import:} 
 		\begin{itemize}
-			\item Used tp import all classes from a package.
+			\item Used to import all classes from a package.
 			\item Not recommended to use as reduces readability of the code.
 			\bigskip
 			\syntaxblock{
@@ -65,14 +45,18 @@
 			}
 			\item Eg:
 			\codeblock{
-				import java.util.ArrayList.*; \xmark  \\
-				import java.util.*; \cmark
+				\textbf{import java.util.*;} \\
+				class New \{  \\
+				\s	public static void main(String[] args) \{  \\
+				\s \s	\textbf{Date date = new Date();} \\
+				\s \s	System.out.println(date); \\
+				\s \s	\textbf{Calendar cal = Calendar.getInstance();} \\
+				\s \s	System.out.println(cal); \\
+				\s	\} \}
 			}
 		
 			
-			\item Implicit declaration results in \textbf{ambiguity problem}. Eg:
-
-			
+			\item Drawback of implicit declaration: \textbf{Ambiguity problem}. Eg:
 			\codeblock{
 				\textbf{import java.util.*;} \\
 				\textbf{import java.sql.*;} \\
@@ -83,60 +67,32 @@
 				\} 
 			}
 
-			\newpage			
-			In above code, \textbf{Date} is available in both \textbf{java.util} as well as \textbf{java.sql} package.
-			
-			\item While resolving class names, compiler will give precedence in the following order:
+		\end{itemize}
+		
+		\textbf{Note about import statement:}
+		\begin{itemize}
+			\item \textbf{No subpackage import}: Importing a Java package, imports only classes and interfaces but not it's subpackage classes.
+			\item \textbf{No effect on execution time:} \textbf{More import statements results in more compile-time. There is no effect on execution time (runtime).}
+			\item Compiler resolves class names in the below order:
 			\begin{itemize}
-				\item Explicit class import
+				\item Explicit import
 				\item Classes present in current working directory (default package)
 				\item Implicit class import
-			\end{itemize}
-			\bigskip
-			\codeblock{
-				import java.util.*; \\
-				import java.sql.*; \\
-				class New \{ \\
-				\s public static void main(String[] args) \{ \\
-				\s \s \textbf{Date d = new Date();}  \\
-				\s \s  System.out.println(d.getClass().getName()); \\
-				\s	\} \\
-				\} 
-			}
-			\bigskip
-			\outputblock{
-				java.util.Date
-			}	
+			\end{itemize}	
 		\end{itemize}
 		
-		
-		
-			
-		\newpage
-		
-		\textbf{Some more things to note about import statement:}
-		\begin{itemize}
-			\item \textbf{No subpackage import}: By importing a Java package, all classes and interfaces present in that package are available to Java program, but not the subpackage classes.
-			\bigskip
-			\item \textbf{No effect on execution time:} Import statements is totally compile-time 
-			related concept. \textbf{If more number of imports, then more will be the compile-time.} But, there is no effect on execution time (runtime).
-			\bigskip
-			\item Difference between C language \textbf{#include} and Java \textbf{import} statement:
-			\bigskip
-			\bigskip
-			\tabletwo{
-				\hline
-				\#include & import statement \\
-				\hline
-				All I/O header files will be loaded at the beginning (at translation time) &
-				No \textbf{".class"} file will be loaded at the beginning. Whenever we are using a particular class, then only corresponding \textbf{".class"} file will be loaded. \\
-				\hline
-				It is static include & It is "dynamic include" or "load on fly" or "load on demand" \\
-				\hline
-			}	
-		\end{itemize}
-		
-		
+		Difference between C language \textbf{\#include} and Java \textbf{import} statement:
+		\bigskip
+		\tabletwo{
+			\hline
+			\#include & import statement \\
+			\hline
+			All I/O header files will be loaded at the beginning (at translation time) &
+			No \textbf{".class"} file will be loaded at the beginning. Whenever we are using a particular class, then only corresponding \textbf{".class"} file will be loaded. \\
+			\hline
+			It is static include & It is "dynamic include" or "load on fly" or "load on demand" \\
+			\hline
+		}			
 		
 		
 		

@@ -1,103 +1,72 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
 
-	\begin{itemize}
-		\item Advantage of has-a relationship is \textbf{reuseability} of the code.
-		\item There are 2 types of Has-A relationship:
+
+		Has-a relationship causes \textbf{reuseability} of the code.
+		There are 2 types of Has-A relationship:
 		\begin{itemize}
-					\item \textbf{Aggregation:}
-			\begin{itemize}
-				\item Aggregation is a weaker form of the "has-a" relationship.
-				\item It is a one-way relationship and called unidirectional association. 
-				\item For example, Bank can have employees but vice versa is not possible.
-				\bigskip
-				\codeblock{
-					class Bank \{ \\\
-					\s String nameOfBank; \\
-					\s	Bank(String nameOfBank)	\{ \\
-					\s \s		this.nameOfBank = nameOfBank; \\
-					\s \} \\
-					\s public void displayAllDetails(Customer customer) \{ \\
-					\s \s		System.out.println("Bank = "+ nameOfBank); \\
-					\s \s		System.out.println("Customer = "+ customer.nameOfCustomer); \\
-					\s \} \\
-					\} \\
-					class Customer \{ \\
-					\s	String nameOfCustomer; \\
-						\s	Customer(String nameOfCustomer) \{ \\
-					\s \s		this.nameOfCustomer = nameOfCustomer; \\
-					\s	\} \\
-					\} 
-				}
-				\newpage
-				\codecontinue{
-					class Branch \{ \\
-					\s	public static void main(String arg[]) \\
-					\s	\{ \\
-					\s \s		Bank bank = new Bank("AXIS"); \\
-					\s \s		Customer customer = new Customer("Ram"); \\
-					\s \s 		bank.displayAllDetails(customer); \\
-					\s	\} \\
-					\}
-				}
+			\item Aggregation (Weaker form of "has-a")
+			\item Composition (Strong form of "has-a")
+		\end{itemize}
+		
+		\textbf{Aggregation:}
+		\begin{itemize}
+			\item Aggregation is a one-way relationship(unidirectional association).
+			\item For eg: Bank can have employees but vice versa is not possible.
+			\codeblock{
+				class Bank \{ \\
+				\s String bname; \\
+				\s	Bank(String bname) \{ \\
+				\s \s	this.bname = bname; \\
+				\s	\} \\
+				\s	public void display(Customer c) \{ \\
+				\s System.out.println(bname); // Output: AXIS\\
+				\s System.out.println(name); // Output: Ram\\
+				\s	\} \} \\
+				class Customer \{ \\
+				\s	String name; \\
+				\s	Customer(String name) \{ \\
+				\s \s	this.name = name; \\
+				\s	\} \} \\
+				class Branch \{ \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s		Bank b = new Bank("AXIS"); \\
+				\s \s		Customer c = new Customer("Ram"); \\
+				\s \s		b.display(c); \\
+				\s	\} \}		
+			}
 			\end{itemize}
-			\bigskip
-			\item \textbf{Composition:}
+		
+		\newpage
+		\textbf{Composition:}
 			\begin{itemize}
-				\item Composition is a strong form of the "has-a" relationship.
-				\item In composition two entities are highly dependent on each other. 
-				\item One entity cannot exist without the other.
-				\item It represents a \textbf{part-of} relationship.
-				\item Eg: a car has an engine
-				\bigskip
+				\item In composition, two entities are highly dependent on each other. 
+				\item One entity cannot exist without the other. Eg: A car has an engine.
 				\codeblock{
 					class Car \{ \\
-					\s	private final Engine engine;   \\
-					\s	String nameOfCar; \\
+					\s	\textbf{private final Engine engine;}   \\
 					\s	String model; \\
-					\s	public Car(String nameOfCar, String model) \{ \\
-					\s \s		engine  = new Engine("POWERHIGH", "ABC"); \\
-					\s \s		this.nameOfCar = nameOfCar; \\
+					\s	public Car(String model) \{ \\
+					\s \s		\textbf{engine  = new Engine("POWERHIGH");} \\
 					\s \s		this.model = model; \\
-					\s	\}	 
+					\s	\}	  \\
+					\s	public void show() \{ \\
+					\s \s 		System.out.print(model+","); \\
+					\s \s	System.out.print(engine.type); \\
+					\s	\} \} \\
+					class Engine  \{ \\
+					\s	String type; \\
+					\s	Engine(String type) \{ \\
+					\s \s		this.type = type; \\
+					\s	\} \} \\
+					public class Test \{ \\
+					\s	public static void main(String arg[]) \{ \\
+					\s \s		\textbf{Car car = new Car("5X");} \\
+					\s \s		car.show(); // Output: 5X,POWERHIGH  \\
+					\s 	\} 	 \}
 				}	
-			
-			\newpage
-			
-			\codecontinue{
-					\s	public void showAlldetails() \{ \\
-			\s 	System.out.println("Car ="+nameOfCar); \\
-			\s 		System.out.println("Model ="+model); \\
-			\s 		System.out.println("Engine used ="+engine.typeOfEngine); \\
-			\s 		System.out.println("Engine name ="+engine.nameOfEngine); \\
-			\s	\} \\
-			\} \\
-			\\
-			class Engine  \{ \\
-			\s	String typeOfEngine; \\
-			\s	String nameOfEngine; \\
-			\s	Engine(String typeOfEngine, String nameOfEngine) \{ \\
-			\s \s		this.typeOfEngine = typeOfEngine; \\
-			\s \s		this.nameOfEngine = nameOfEngine; \\
-			\s	\} \\
-			\} \\
-			\\
-			public class Test \{ \\
-			\s	public static void main(String arg[]) \{ \\
-			\s \s		Car car = new Car("BMW", "5X"); \\
-			\s \s		car.showAlldetails(); \\
-			\s 	\} \\
-			\}
-			}	
-				
 			\end{itemize}
 			
-		\end{itemize}
-	
-	\end{itemize}
-
-
 \end{flushleft}
-\newpage
 
 

@@ -1,168 +1,281 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{\numberline {1}Introduction to Java}{9}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Getting started with Java}{9}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}What is Java?}{10}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Uses of Java}{11}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}Problem with C and C++}{12}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4}Advantages of Java over C++}{12}{subsection.1.1.4}%
-\contentsline {subsection}{\numberline {1.1.5}How does program execution works?}{13}{subsection.1.1.5}%
-\contentsline {subsection}{\numberline {1.1.6}The way Java works}{14}{subsection.1.1.6}%
-\contentsline {subsection}{\numberline {1.1.7}Compiler V/S JVM}{15}{subsection.1.1.7}%
-\contentsline {subsection}{\numberline {1.1.8}JVM components}{17}{subsection.1.1.8}%
-\contentsline {subsection}{\numberline {1.1.9}History of Java}{18}{subsection.1.1.9}%
-\contentsline {section}{\numberline {1.2}Installing Java and IDE}{22}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Java installation}{23}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}IDE installation}{24}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Our first Java program}{25}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Executing our first Java program}{28}{subsection.1.2.4}%
-\contentsline {subsection}{\numberline {1.2.5}Using JShell}{32}{subsection.1.2.5}%
-\contentsline {chapter}{\numberline {2}Java Language Fundamentals}{35}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Identifiers, variables and more}{35}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Java identifiers}{36}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Java grammar}{37}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Java variable}{38}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Literals}{39}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Java reserved words or keywords}{40}{subsection.2.1.5}%
-\contentsline {subsection}{\numberline {2.1.6}Java Comments}{41}{subsection.2.1.6}%
-\contentsline {subsection}{\numberline {2.1.7}How Objects Can Change Your Life?}{42}{subsection.2.1.7}%
-\contentsline {section}{\numberline {2.2}Introductions to OOPs}{45}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Java source file}{47}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}main() method}{51}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Command-line argument}{55}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Pillars of OOPs}{57}{subsection.2.2.4}%
-\contentsline {chapter}{\numberline {3}Data types in Java}{59}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Getting started with data type}{59}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Java is strongly typed}{60}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Types of data types}{60}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Integer}{61}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}byte}{62}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}short}{63}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}int}{63}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}long}{64}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Integer literals}{65}{subsection.3.2.5}%
-\contentsline {section}{\numberline {3.3}Floating-point}{68}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Float}{68}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Double}{68}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Floating-point literals}{69}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4}Character}{72}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}What is ascii \& unicode?}{72}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}char datatype}{73}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Character literals}{74}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Escape character}{76}{subsection.3.4.4}%
-\contentsline {section}{\numberline {3.5}Boolean}{77}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Type conversion}{78}{section.3.6}%
-\contentsline {chapter}{\numberline {4}Arrays}{81}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Arrays in detail}{81}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Array introduction}{82}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Array declaration}{83}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Array creation}{85}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Array initialisation}{90}{subsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.1.5}Array declaration, creation and initialisation in one line}{93}{subsection.4.1.5}%
-\contentsline {subsection}{\numberline {4.1.6}length variable}{94}{subsection.4.1.6}%
-\contentsline {subsection}{\numberline {4.1.7}Anonymous Arrays}{97}{subsection.4.1.7}%
-\contentsline {subsection}{\numberline {4.1.8}Array element assignments}{98}{subsection.4.1.8}%
-\contentsline {subsection}{\numberline {4.1.9}Array variable assignments}{99}{subsection.4.1.9}%
-\contentsline {chapter}{\numberline {5}Operators}{101}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Operators in Java}{101}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Arithematic Operator}{103}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}String Concatenation Operator}{106}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Increment/Decrement Operator}{107}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.1.4}Relational Operator}{110}{subsection.5.1.4}%
-\contentsline {subsection}{\numberline {5.1.5}Equality Operator}{111}{subsection.5.1.5}%
-\contentsline {subsection}{\numberline {5.1.6}Bitwise Operator}{113}{subsection.5.1.6}%
-\contentsline {subsection}{\numberline {5.1.7}Boolean complement operator}{115}{subsection.5.1.7}%
-\contentsline {subsection}{\numberline {5.1.8}Short circuit Operator}{116}{subsection.5.1.8}%
-\contentsline {subsection}{\numberline {5.1.9}Assignment Operator}{118}{subsection.5.1.9}%
-\contentsline {subsection}{\numberline {5.1.10}Conditional Operator}{120}{subsection.5.1.10}%
-\contentsline {subsection}{\numberline {5.1.11}new Operator}{120}{subsection.5.1.11}%
-\contentsline {subsection}{\numberline {5.1.12} $\left [ \hphantom {} \hphantom {} \hphantom {} \right ]$ Operator}{120}{subsection.5.1.12}%
-\contentsline {subsection}{\numberline {5.1.13}Operator Precedence}{121}{subsection.5.1.13}%
-\contentsline {chapter}{\numberline {6}Flow Control}{123}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Flow control statement}{123}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Selection Statements}{124}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}if...else}{124}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}switch case}{128}{subsection.6.2.2}%
-\contentsline {section}{\numberline {6.3}Iteration}{135}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}while()}{135}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}do-while()}{137}{subsection.6.3.2}%
-\contentsline {subsection}{\numberline {6.3.3}for()}{140}{subsection.6.3.3}%
-\contentsline {subsection}{\numberline {6.3.4}for-each loop}{143}{subsection.6.3.4}%
-\contentsline {section}{\numberline {6.4}Transfer Statements}{145}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}break}{145}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}continue}{147}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}Labeled break \& continue}{148}{subsection.6.4.3}%
-\contentsline {subsection}{\numberline {6.4.4}return}{150}{subsection.6.4.4}%
-\contentsline {subsection}{\numberline {6.4.5}try..catch..finally}{150}{subsection.6.4.5}%
-\contentsline {subsection}{\numberline {6.4.6}assert}{150}{subsection.6.4.6}%
-\contentsline {chapter}{\numberline {7}Functions}{151}{chapter.7}%
-\contentsline {section}{\numberline {7.1}var\_arg methods}{151}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Selection Statements}{152}{section.7.2}%
-\contentsline {chapter}{\numberline {8}Packages in Java}{153}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Packages in detail}{153}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}import keyword}{154}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Packages}{158}{subsection.8.1.2}%
-\contentsline {chapter}{\numberline {9}Polymorphism \& Inheritance}{163}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Class}{163}{section.9.1}%
-\contentsline {subsection}{\numberline {9.1.1}Attributes in detail}{164}{subsection.9.1.1}%
-\contentsline {subsection}{\numberline {9.1.2}Methods in detail}{173}{subsection.9.1.2}%
-\contentsline {subsection}{\numberline {9.1.3}Class level access modifier}{186}{subsection.9.1.3}%
-\contentsline {section}{\numberline {9.2}Constructors and garbage collection}{191}{section.9.2}%
-\contentsline {subsection}{\numberline {9.2.1}new operator}{192}{subsection.9.2.1}%
-\contentsline {subsection}{\numberline {9.2.2}Constructor}{193}{subsection.9.2.2}%
-\contentsline {subsection}{\numberline {9.2.3}this keyword}{195}{subsection.9.2.3}%
-\contentsline {subsection}{\numberline {9.2.4}Constructor Chaining.}{196}{subsection.9.2.4}%
-\contentsline {subsection}{\numberline {9.2.5}super()}{197}{subsection.9.2.5}%
-\contentsline {subsection}{\numberline {9.2.6}super keyword}{199}{subsection.9.2.6}%
-\contentsline {subsection}{\numberline {9.2.7}Constructor overloading}{200}{subsection.9.2.7}%
-\contentsline {subsection}{\numberline {9.2.8}this()}{202}{subsection.9.2.8}%
-\contentsline {subsection}{\numberline {9.2.9}super(),this() V/S super,this}{204}{subsection.9.2.9}%
-\contentsline {subsection}{\numberline {9.2.10}Access modifier and constructor}{205}{subsection.9.2.10}%
-\contentsline {subsection}{\numberline {9.2.11}Instance block}{209}{subsection.9.2.11}%
-\contentsline {subsection}{\numberline {9.2.12}Static initializer}{210}{subsection.9.2.12}%
-\contentsline {subsection}{\numberline {9.2.13}Constructor V/S Instance block V/S Static block}{212}{subsection.9.2.13}%
-\contentsline {subsection}{\numberline {9.2.14}Destroying object}{212}{subsection.9.2.14}%
-\contentsline {subsection}{\numberline {9.2.15}The Stack and the Heap: where things live}{213}{subsection.9.2.15}%
-\contentsline {section}{\numberline {9.3}Inheritance}{214}{section.9.3}%
-\contentsline {subsection}{\numberline {9.3.1}Types of inheritance}{217}{subsection.9.3.1}%
-\contentsline {subsection}{\numberline {9.3.2}Final class}{221}{subsection.9.3.2}%
-\contentsline {subsection}{\numberline {9.3.3}Has-A relationship}{222}{subsection.9.3.3}%
-\contentsline {subsection}{\numberline {9.3.4}Has-A V/S Is-A relationship}{225}{subsection.9.3.4}%
-\contentsline {section}{\numberline {9.4}Polymorphism}{226}{section.9.4}%
-\contentsline {subsection}{\numberline {9.4.1}Method overloading}{228}{subsection.9.4.1}%
-\contentsline {subsection}{\numberline {9.4.2}Method overriding}{230}{subsection.9.4.2}%
-\contentsline {subsection}{\numberline {9.4.3}Overloading V/S Overriding}{234}{subsection.9.4.3}%
-\contentsline {subsection}{\numberline {9.4.4}Method hiding}{235}{subsection.9.4.4}%
-\contentsline {section}{\numberline {9.5}Data Encapsulation}{237}{section.9.5}%
-\contentsline {subsection}{\numberline {9.5.1}Data Hiding}{238}{subsection.9.5.1}%
-\contentsline {subsection}{\numberline {9.5.2}Data Abstraction}{239}{subsection.9.5.2}%
-\contentsline {subsection}{\numberline {9.5.3}Tightly encapsulated class}{240}{subsection.9.5.3}%
-\contentsline {subsection}{\numberline {9.5.4}Coupling}{240}{subsection.9.5.4}%
-\contentsline {subsection}{\numberline {9.5.5}Cohesion}{242}{subsection.9.5.5}%
-\contentsline {chapter}{\numberline {10}Abstract Class \& Interface}{243}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Abstract class}{243}{section.10.1}%
-\contentsline {subsection}{\numberline {10.1.1}What is abstract class?}{244}{subsection.10.1.1}%
-\contentsline {subsection}{\numberline {10.1.2}What is concrete class?}{246}{subsection.10.1.2}%
-\contentsline {subsection}{\numberline {10.1.3}What is abstract method?}{247}{subsection.10.1.3}%
-\contentsline {subsection}{\numberline {10.1.4}Illegal modifier: final abstract}{249}{subsection.10.1.4}%
-\contentsline {section}{\numberline {10.2}The ultimate superclass: Object}{250}{section.10.2}%
-\contentsline {subsection}{\numberline {10.2.1}Object type-casting}{254}{subsection.10.2.1}%
-\contentsline {section}{\numberline {10.3}Interface}{255}{section.10.3}%
-\contentsline {subsection}{\numberline {10.3.1}Interface methods}{256}{subsection.10.3.1}%
-\contentsline {subsection}{\numberline {10.3.2}extends V/S implements}{258}{subsection.10.3.2}%
-\contentsline {subsection}{\numberline {10.3.3}Interface variables}{259}{subsection.10.3.3}%
-\contentsline {subsection}{\numberline {10.3.4}Interface method naming conflicts}{260}{subsection.10.3.4}%
-\contentsline {subsection}{\numberline {10.3.5}Interface variable naming conflicts}{262}{subsection.10.3.5}%
-\contentsline {subsection}{\numberline {10.3.6}Marker interface}{263}{subsection.10.3.6}%
-\contentsline {subsection}{\numberline {10.3.7}Adapter Classes}{264}{subsection.10.3.7}%
-\contentsline {subsection}{\numberline {10.3.8}Interface V/S Abstract class}{266}{subsection.10.3.8}%
-\contentsline {chapter}{\numberline {11}Java Built-in packages and API}{269}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Overview of java API}{269}{section.11.1}%
-\contentsline {subsection}{\numberline {11.1.1}String, String Buffer and String Builder}{270}{subsection.11.1.1}%
-\contentsline {subsection}{\numberline {11.1.2}Exception Handling}{271}{subsection.11.1.2}%
-\contentsline {subsection}{\numberline {11.1.3}Threads and multithreading}{272}{subsection.11.1.3}%
-\contentsline {subsection}{\numberline {11.1.4}Wrapper Classes}{273}{subsection.11.1.4}%
-\contentsline {subsection}{\numberline {11.1.5}Data Structures}{274}{subsection.11.1.5}%
-\contentsline {subsection}{\numberline {11.1.6}JAVA COLLECTION FRAMEWORKS}{275}{subsection.11.1.6}%
-\contentsline {subsection}{\numberline {11.1.7}File Handling}{276}{subsection.11.1.7}%
-\contentsline {subsection}{\numberline {11.1.8}Serialization}{277}{subsection.11.1.8}%
+\contentsline {chapter}{\numberline {1}Introduction to Java}{13}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Getting started with Java}{13}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}What is Java?}{13}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Uses of Java}{15}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Problem with C and C++}{16}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Advantages of Java over C++}{16}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.5}How does program execution works?}{17}{subsection.1.1.5}%
+\contentsline {subsection}{\numberline {1.1.6}The way Java works}{18}{subsection.1.1.6}%
+\contentsline {subsection}{\numberline {1.1.7}Compiler V/S JVM}{19}{subsection.1.1.7}%
+\contentsline {subsection}{\numberline {1.1.8}JVM components}{20}{subsection.1.1.8}%
+\contentsline {subsection}{\numberline {1.1.9}History of Java}{21}{subsection.1.1.9}%
+\contentsline {section}{\numberline {1.2}JDK v/s JRE v/s JVM}{25}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Installing Java and IDE}{26}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Java installation}{26}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}IDE installation}{31}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Our first Java program}{31}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Executing our first Java program}{34}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}Using JShell}{38}{subsection.1.3.5}%
+\contentsline {chapter}{\numberline {2}Java Language Fundamentals}{41}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Identifiers, variables and more}{41}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Java identifiers}{41}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Java grammar}{43}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Java variable}{43}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Literals}{44}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Java Comments}{44}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Java reserved words or keywords}{46}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.7}How Objects Can Change Your Life?}{47}{subsection.2.1.7}%
+\contentsline {section}{\numberline {2.2}Introductions to OOPs}{50}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Java source file}{51}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}main() method}{54}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Command-line argument}{56}{subsection.2.2.3}%
+\contentsline {chapter}{\numberline {3}Data types in Java}{57}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Getting started with data type}{57}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Java is strongly typed}{57}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Types of data types}{57}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Integer data type}{58}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}byte}{58}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}short}{59}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}int}{60}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}long}{60}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.5}Integer literals}{61}{subsection.3.2.5}%
+\contentsline {section}{\numberline {3.3}Floating-point}{64}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Float}{64}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Double}{64}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Floating-point literals}{65}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Character}{66}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}What is ascii \& unicode?}{66}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}char datatype}{67}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Character literals}{68}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Escape character}{69}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}Boolean}{70}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Type conversion}{71}{section.3.6}%
+\contentsline {chapter}{\numberline {4}String,StringBuffer,StringBuilder}{75}{chapter.4}%
+\contentsline {section}{\numberline {4.1}String}{75}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Mutable and Immutable objects}{75}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}String indexing}{77}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}String methods}{78}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}StringBuffer}{82}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}StringBuffer methods}{83}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.3}StringBuilder}{88}{section.4.3}%
+\contentsline {section}{\numberline {4.4}== V/S equals()}{89}{section.4.4}%
+\contentsline {section}{\numberline {4.5}String memory management}{90}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}String Constant Pool(SCP)}{91}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Heap}{93}{subsection.4.5.2}%
+\contentsline {chapter}{\numberline {5}Arrays}{95}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Arrays in detail}{95}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Array introduction}{95}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Array declaration}{96}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Array creation}{98}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Array initialisation}{103}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Array declaration, creation and initialisation in one line}{106}{subsection.5.1.5}%
+\contentsline {subsection}{\numberline {5.1.6}length variable}{107}{subsection.5.1.6}%
+\contentsline {subsection}{\numberline {5.1.7}Anonymous Arrays}{109}{subsection.5.1.7}%
+\contentsline {subsection}{\numberline {5.1.8}Array element assignments}{110}{subsection.5.1.8}%
+\contentsline {subsection}{\numberline {5.1.9}Array variable assignments}{111}{subsection.5.1.9}%
+\contentsline {chapter}{\numberline {6}Operators}{113}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Operators in Java}{114}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Arithematic Operator}{114}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}String Concatenation Operator}{118}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Increment/Decrement Operator}{119}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}Relational Operator}{122}{subsection.6.1.4}%
+\contentsline {subsection}{\numberline {6.1.5}Bitwise Operator}{124}{subsection.6.1.5}%
+\contentsline {subsection}{\numberline {6.1.6}Boolean complement operator}{126}{subsection.6.1.6}%
+\contentsline {subsection}{\numberline {6.1.7}Short circuit Operator}{127}{subsection.6.1.7}%
+\contentsline {subsection}{\numberline {6.1.8}Assignment Operator}{128}{subsection.6.1.8}%
+\contentsline {subsection}{\numberline {6.1.9}Conditional Operator}{130}{subsection.6.1.9}%
+\contentsline {subsection}{\numberline {6.1.10}new Operator}{130}{subsection.6.1.10}%
+\contentsline {subsection}{\numberline {6.1.11} $\left [ \hphantom {} \hphantom {} \hphantom {} \right ]$ Operator}{130}{subsection.6.1.11}%
+\contentsline {subsection}{\numberline {6.1.12}Operator Precedence}{131}{subsection.6.1.12}%
+\contentsline {chapter}{\numberline {7}Flow Control}{133}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Flow control statement}{133}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Selection Statements}{134}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}if...else}{134}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}switch case}{137}{subsection.7.2.2}%
+\contentsline {section}{\numberline {7.3}Iteration}{141}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}while()}{141}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}do-while()}{143}{subsection.7.3.2}%
+\contentsline {subsection}{\numberline {7.3.3}for()}{145}{subsection.7.3.3}%
+\contentsline {subsection}{\numberline {7.3.4}for-each loop}{147}{subsection.7.3.4}%
+\contentsline {section}{\numberline {7.4}Transfer Statements}{149}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}break}{149}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}continue}{150}{subsection.7.4.2}%
+\contentsline {subsection}{\numberline {7.4.3}Labeled break \& continue}{151}{subsection.7.4.3}%
+\contentsline {chapter}{\numberline {8}Wrapper classes}{153}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Introduction}{153}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Wrapper class constructors}{154}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Integer wrapper class methods}{156}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Utility methods}{159}{section.8.4}%
+\contentsline {section}{\numberline {8.5}Autoboxing and AutoUnboxing}{164}{section.8.5}%
+\contentsline {chapter}{\numberline {9}Packages in Java}{167}{chapter.9}%
+\contentsline {section}{\numberline {9.1}import keyword}{167}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Packages}{170}{section.9.2}%
+\contentsline {section}{\numberline {9.3}JAR files}{177}{section.9.3}%
+\contentsline {chapter}{\numberline {10}OOPs in detail}{181}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Class}{181}{section.10.1}%
+\contentsline {subsection}{\numberline {10.1.1}Attributes in detail}{182}{subsection.10.1.1}%
+\contentsline {subsection}{\numberline {10.1.2}Methods in detail}{189}{subsection.10.1.2}%
+\contentsline {subsection}{\numberline {10.1.3}Class level access modifier}{198}{subsection.10.1.3}%
+\contentsline {section}{\numberline {10.2}Constructor in detail}{202}{section.10.2}%
+\contentsline {subsection}{\numberline {10.2.1}new operator}{202}{subsection.10.2.1}%
+\contentsline {subsection}{\numberline {10.2.2}Constructor}{203}{subsection.10.2.2}%
+\contentsline {subsection}{\numberline {10.2.3}this keyword}{204}{subsection.10.2.3}%
+\contentsline {subsection}{\numberline {10.2.4}Constructor Chaining.}{205}{subsection.10.2.4}%
+\contentsline {subsection}{\numberline {10.2.5}super()}{206}{subsection.10.2.5}%
+\contentsline {subsection}{\numberline {10.2.6}super keyword}{207}{subsection.10.2.6}%
+\contentsline {subsection}{\numberline {10.2.7}Constructor overloading}{208}{subsection.10.2.7}%
+\contentsline {subsection}{\numberline {10.2.8}this()}{209}{subsection.10.2.8}%
+\contentsline {subsection}{\numberline {10.2.9}super(),this() V/S super,this}{210}{subsection.10.2.9}%
+\contentsline {subsection}{\numberline {10.2.10}Constructor's Access modifier}{210}{subsection.10.2.10}%
+\contentsline {subsection}{\numberline {10.2.11}Instance block}{214}{subsection.10.2.11}%
+\contentsline {subsection}{\numberline {10.2.12}Static initializer}{215}{subsection.10.2.12}%
+\contentsline {subsection}{\numberline {10.2.13}Constructor V/S Instance block V/S Static block}{216}{subsection.10.2.13}%
+\contentsline {subsection}{\numberline {10.2.14}Destroying object}{217}{subsection.10.2.14}%
+\contentsline {section}{\numberline {10.3}Inheritance}{217}{section.10.3}%
+\contentsline {subsection}{\numberline {10.3.1}Types of inheritance}{219}{subsection.10.3.1}%
+\contentsline {subsection}{\numberline {10.3.2}Has-A relationship}{221}{subsection.10.3.2}%
+\contentsline {subsection}{\numberline {10.3.3}Has-A V/S Is-A relationship}{222}{subsection.10.3.3}%
+\contentsline {section}{\numberline {10.4}Polymorphism}{223}{section.10.4}%
+\contentsline {subsection}{\numberline {10.4.1}Method overloading}{225}{subsection.10.4.1}%
+\contentsline {subsection}{\numberline {10.4.2}Method overriding}{226}{subsection.10.4.2}%
+\contentsline {subsection}{\numberline {10.4.3}Method hiding}{227}{subsection.10.4.3}%
+\contentsline {subsection}{\numberline {10.4.4}Overloading V/S Overriding}{228}{subsection.10.4.4}%
+\contentsline {section}{\numberline {10.5}Data Encapsulation}{229}{section.10.5}%
+\contentsline {subsection}{\numberline {10.5.1}Data Hiding}{229}{subsection.10.5.1}%
+\contentsline {subsection}{\numberline {10.5.2}Data Abstraction}{230}{subsection.10.5.2}%
+\contentsline {subsection}{\numberline {10.5.3}Tightly encapsulated class}{231}{subsection.10.5.3}%
+\contentsline {subsection}{\numberline {10.5.4}Coupling}{231}{subsection.10.5.4}%
+\contentsline {subsection}{\numberline {10.5.5}Cohesion}{232}{subsection.10.5.5}%
+\contentsline {chapter}{\numberline {11}Abstract Class \& Interface}{233}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Abstract class}{233}{section.11.1}%
+\contentsline {subsection}{\numberline {11.1.1}What is abstract class?}{233}{subsection.11.1.1}%
+\contentsline {subsection}{\numberline {11.1.2}What is concrete class?}{235}{subsection.11.1.2}%
+\contentsline {subsection}{\numberline {11.1.3}What is abstract method?}{236}{subsection.11.1.3}%
+\contentsline {subsection}{\numberline {11.1.4}Illegal modifier: final abstract}{236}{subsection.11.1.4}%
+\contentsline {section}{\numberline {11.2}The ultimate superclass: Object}{237}{section.11.2}%
+\contentsline {section}{\numberline {11.3}Interface}{239}{section.11.3}%
+\contentsline {subsection}{\numberline {11.3.1}Interface methods}{239}{subsection.11.3.1}%
+\contentsline {subsection}{\numberline {11.3.2}extends V/S implements}{240}{subsection.11.3.2}%
+\contentsline {subsection}{\numberline {11.3.3}Interface variables}{241}{subsection.11.3.3}%
+\contentsline {subsection}{\numberline {11.3.4}Interface method naming conflicts}{242}{subsection.11.3.4}%
+\contentsline {subsection}{\numberline {11.3.5}Interface variable naming conflicts}{244}{subsection.11.3.5}%
+\contentsline {subsection}{\numberline {11.3.6}Marker interface}{245}{subsection.11.3.6}%
+\contentsline {subsection}{\numberline {11.3.7}Adapter Classes}{246}{subsection.11.3.7}%
+\contentsline {subsection}{\numberline {11.3.8}Interface V/S Abstract class}{247}{subsection.11.3.8}%
+\contentsline {chapter}{\numberline {12}File Handling in Java}{249}{chapter.12}%
+\contentsline {section}{\numberline {12.1}File IO}{249}{section.12.1}%
+\contentsline {subsection}{\numberline {12.1.1}File class}{250}{subsection.12.1.1}%
+\contentsline {subsection}{\numberline {12.1.2}FileWriter class}{254}{subsection.12.1.2}%
+\contentsline {subsection}{\numberline {12.1.3}FileReader class}{257}{subsection.12.1.3}%
+\contentsline {subsection}{\numberline {12.1.4}Drawback of FileWriter \& FileReader}{258}{subsection.12.1.4}%
+\contentsline {subsection}{\numberline {12.1.5}BufferedWriter class}{258}{subsection.12.1.5}%
+\contentsline {subsection}{\numberline {12.1.6}BufferedReader class}{260}{subsection.12.1.6}%
+\contentsline {subsection}{\numberline {12.1.7}PrintWriter class}{261}{subsection.12.1.7}%
+\contentsline {chapter}{\numberline {13}Exception Handling}{265}{chapter.13}%
+\contentsline {section}{\numberline {13.1}What is exception?}{265}{section.13.1}%
+\contentsline {subsection}{\numberline {13.1.1}What is Exception Handling?}{265}{subsection.13.1.1}%
+\contentsline {subsection}{\numberline {13.1.2}Default Exception Handling}{266}{subsection.13.1.2}%
+\contentsline {section}{\numberline {13.2}Exception Heirarchy}{268}{section.13.2}%
+\contentsline {subsection}{\numberline {13.2.1}Throwable class}{268}{subsection.13.2.1}%
+\contentsline {subsection}{\numberline {13.2.2}Exception}{269}{subsection.13.2.2}%
+\contentsline {subsection}{\numberline {13.2.3}Error}{270}{subsection.13.2.3}%
+\contentsline {subsection}{\numberline {13.2.4}Try..Catch..Finally}{270}{subsection.13.2.4}%
+\contentsline {subsection}{\numberline {13.2.5}Rules for try..catch..finally}{273}{subsection.13.2.5}%
+\contentsline {subsection}{\numberline {13.2.6}Methods to print exception}{273}{subsection.13.2.6}%
+\contentsline {subsection}{\numberline {13.2.7}Try with multiple catch blocks}{275}{subsection.13.2.7}%
+\contentsline {section}{\numberline {13.3}Java 1.7 Exception Handling Enhancement}{277}{section.13.3}%
+\contentsline {subsection}{\numberline {13.3.1}try-with resources}{277}{subsection.13.3.1}%
+\contentsline {subsection}{\numberline {13.3.2}Multi-catch block}{280}{subsection.13.3.2}%
+\contentsline {section}{\numberline {13.4}Throwing exception}{281}{section.13.4}%
+\contentsline {subsection}{\numberline {13.4.1}throw keyword}{281}{subsection.13.4.1}%
+\contentsline {subsection}{\numberline {13.4.2}Checked \& unchecked exception}{283}{subsection.13.4.2}%
+\contentsline {subsection}{\numberline {13.4.3}FullyChecked v/s ParitallyChecked}{285}{subsection.13.4.3}%
+\contentsline {subsection}{\numberline {13.4.4}User-defined exceptions}{287}{subsection.13.4.4}%
+\contentsline {subsection}{\numberline {13.4.5}throws keyword}{289}{subsection.13.4.5}%
+\contentsline {subsection}{\numberline {13.4.6}Exception propagation}{291}{subsection.13.4.6}%
+\contentsline {section}{\numberline {13.5}Top 10 Exceptions}{293}{section.13.5}%
+\contentsline {chapter}{\numberline {14}Collection Framework}{301}{chapter.14}%
+\contentsline {section}{\numberline {14.1}Introduction}{301}{section.14.1}%
+\contentsline {subsection}{\numberline {14.1.1}Drawback of arrays}{301}{subsection.14.1.1}%
+\contentsline {subsection}{\numberline {14.1.2}What is Collection?}{302}{subsection.14.1.2}%
+\contentsline {subsection}{\numberline {14.1.3}Difference between Array \& Collection}{303}{subsection.14.1.3}%
+\contentsline {subsection}{\numberline {14.1.4}What is Collection Framework?}{304}{subsection.14.1.4}%
+\contentsline {subsection}{\numberline {14.1.5}Collection Interface}{305}{subsection.14.1.5}%
+\contentsline {section}{\numberline {14.2}List}{307}{section.14.2}%
+\contentsline {subsection}{\numberline {14.2.1}ArrayList}{309}{subsection.14.2.1}%
+\contentsline {subsection}{\numberline {14.2.2}LinkedList}{313}{subsection.14.2.2}%
+\contentsline {subsection}{\numberline {14.2.3}Vector}{317}{subsection.14.2.3}%
+\contentsline {subsection}{\numberline {14.2.4}Stack}{322}{subsection.14.2.4}%
+\contentsline {section}{\numberline {14.3}Queue}{325}{section.14.3}%
+\contentsline {subsection}{\numberline {14.3.1}Comparator \& Comparable}{327}{subsection.14.3.1}%
+\contentsline {subsection}{\numberline {14.3.2}PriorityQueue}{329}{subsection.14.3.2}%
+\contentsline {subsection}{\numberline {14.3.3}Deque}{332}{subsection.14.3.3}%
+\contentsline {subsection}{\numberline {14.3.4}ArrayDeque}{333}{subsection.14.3.4}%
+\contentsline {section}{\numberline {14.4}Set}{334}{section.14.4}%
+\contentsline {subsection}{\numberline {14.4.1}HashSet}{335}{subsection.14.4.1}%
+\contentsline {subsection}{\numberline {14.4.2}LinkedHashSet}{337}{subsection.14.4.2}%
+\contentsline {subsection}{\numberline {14.4.3}SortedSet}{338}{subsection.14.4.3}%
+\contentsline {subsection}{\numberline {14.4.4}NavigableSet}{339}{subsection.14.4.4}%
+\contentsline {subsection}{\numberline {14.4.5}TreeSet}{340}{subsection.14.4.5}%
+\contentsline {section}{\numberline {14.5}Map}{342}{section.14.5}%
+\contentsline {subsection}{\numberline {14.5.1}HashMap}{344}{subsection.14.5.1}%
+\contentsline {subsection}{\numberline {14.5.2}LinkedHashMap}{347}{subsection.14.5.2}%
+\contentsline {subsection}{\numberline {14.5.3}IdentityHashMap}{348}{subsection.14.5.3}%
+\contentsline {subsection}{\numberline {14.5.4}SortedMap}{349}{subsection.14.5.4}%
+\contentsline {subsection}{\numberline {14.5.5}NavigableMap}{350}{subsection.14.5.5}%
+\contentsline {subsection}{\numberline {14.5.6}TreeMap}{351}{subsection.14.5.6}%
+\contentsline {subsection}{\numberline {14.5.7}Properties}{353}{subsection.14.5.7}%
+\contentsline {section}{\numberline {14.6}Cursors}{353}{section.14.6}%
+\contentsline {subsection}{\numberline {14.6.1}Enumeration}{353}{subsection.14.6.1}%
+\contentsline {subsection}{\numberline {14.6.2}Iterator}{356}{subsection.14.6.2}%
+\contentsline {subsection}{\numberline {14.6.3}ListIterator}{359}{subsection.14.6.3}%
+\contentsline {section}{\numberline {14.7}Collections class}{362}{section.14.7}%
+\contentsline {subsection}{\numberline {14.7.1}Sorting}{363}{subsection.14.7.1}%
+\contentsline {subsection}{\numberline {14.7.2}Searching}{364}{subsection.14.7.2}%
+\contentsline {subsection}{\numberline {14.7.3}Reversing}{365}{subsection.14.7.3}%
+\contentsline {section}{\numberline {14.8}Advance array operations}{366}{section.14.8}%
+\contentsline {subsection}{\numberline {14.8.1}Sorting}{367}{subsection.14.8.1}%
+\contentsline {subsection}{\numberline {14.8.2}Searching}{368}{subsection.14.8.2}%
+\contentsline {chapter}{\numberline {15}Multithreading}{369}{chapter.15}%
+\contentsline {section}{\numberline {15.1}Introduction to Multi-threading}{369}{section.15.1}%
+\contentsline {subsection}{\numberline {15.1.1}What is Multi-tasking?}{369}{subsection.15.1.1}%
+\contentsline {subsection}{\numberline {15.1.2}What is Multi-threading?}{370}{subsection.15.1.2}%
+\contentsline {subsection}{\numberline {15.1.3}Thread scheduler}{371}{subsection.15.1.3}%
+\contentsline {subsection}{\numberline {15.1.4}Thread life-cycle}{371}{subsection.15.1.4}%
+\contentsline {section}{\numberline {15.2}Thread creation}{371}{section.15.2}%
+\contentsline {subsection}{\numberline {15.2.1}Extending Thread class}{372}{subsection.15.2.1}%
+\contentsline {subsection}{\numberline {15.2.2}Implementing Runnable Interface}{372}{subsection.15.2.2}%
+\contentsline {subsection}{\numberline {15.2.3}Getting and Setting name of a thread}{374}{subsection.15.2.3}%
+\contentsline {subsection}{\numberline {15.2.4}Thread Priorities}{375}{subsection.15.2.4}%
+\contentsline {subsection}{\numberline {15.2.5}start() \& run() methods}{377}{subsection.15.2.5}%
+\contentsline {subsection}{\numberline {15.2.6}Preventing thread from execution}{381}{subsection.15.2.6}%
+\contentsline {section}{\numberline {15.3}Synchronization}{390}{section.15.3}%
+\contentsline {subsection}{\numberline {15.3.1}Synchronised methods using object lock}{390}{subsection.15.3.1}%
+\contentsline {subsection}{\numberline {15.3.2}Synchronised methods using class lock}{395}{subsection.15.3.2}%
+\contentsline {subsection}{\numberline {15.3.3}Synchronised Block}{398}{subsection.15.3.3}%
+\contentsline {subsection}{\numberline {15.3.4}Inter Thread Communication}{402}{subsection.15.3.4}%
+\contentsline {section}{\numberline {15.4}More on Thread}{405}{section.15.4}%
+\contentsline {subsection}{\numberline {15.4.1}DeadLock}{405}{subsection.15.4.1}%
+\contentsline {subsection}{\numberline {15.4.2}Deadlock v/s Starvation}{407}{subsection.15.4.2}%
+\contentsline {subsection}{\numberline {15.4.3}Daemon Thread}{407}{subsection.15.4.3}%
+\contentsline {subsection}{\numberline {15.4.4}Default nature of a thread}{408}{subsection.15.4.4}%
+\contentsline {subsection}{\numberline {15.4.5}Green Thread}{408}{subsection.15.4.5}%
+\contentsline {chapter}{\numberline {16}Serialisation}{409}{chapter.16}%
+\contentsline {section}{\numberline {16.1}Introduction}{409}{section.16.1}%
+\contentsline {subsection}{\numberline {16.1.1}What is serialisation?}{409}{subsection.16.1.1}%
+\contentsline {subsection}{\numberline {16.1.2}What is deserialisation?}{410}{subsection.16.1.2}%
+\contentsline {subsection}{\numberline {16.1.3}Rules of serialisation}{410}{subsection.16.1.3}%
+\contentsline {subsection}{\numberline {16.1.4}Transicent Modifer}{412}{subsection.16.1.4}%
+\contentsline {subsection}{\numberline {16.1.5}Object order in serialisation}{414}{subsection.16.1.5}%
+\contentsline {section}{\numberline {16.2}Customised Serialisation}{415}{section.16.2}%
+\contentsline {section}{\numberline {16.3}Externalisation}{417}{section.16.3}%
+\contentsline {section}{\numberline {16.4}SerialVersionUID}{419}{section.16.4}%
+\contentsline {subsection}{\numberline {16.4.1}Custom SerialVersionUID}{420}{subsection.16.4.1}%
+\contentsline {chapter}{\numberline {17}Garbage Collection}{423}{chapter.17}%
+\contentsline {section}{\numberline {17.1}Introduction}{423}{section.17.1}%
+\contentsline {subsection}{\numberline {17.1.1}Ways to make an object}{424}{subsection.17.1.1}%
+\contentsline {subsection}{\numberline {17.1.2}JVM Methods for running Garbage collection}{425}{subsection.17.1.2}%
+\contentsline {subsection}{\numberline {17.1.3}Finalisation}{427}{subsection.17.1.3}%
+\contentsline {subsection}{\numberline {17.1.4}Memory Leaks}{428}{subsection.17.1.4}%
 \contentsfinish 

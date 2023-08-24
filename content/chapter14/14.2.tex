@@ -1,39 +1,55 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
-	\bigskip
-	\bigskip
-	\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=black,colframe=black]
-		\color{white}
-		\bigskip
-		In this section, you are going to learn:
-		\begin{enumerate}
-			\item \textbf{What is Internet Protocol (IP)?}
-			\item \textbf{What is IP address?}
-			\item \textbf{Types of IP address}
-			\item \textbf{ISO-OSI model}
-		\end{enumerate}	
-		\bigskip
-		Finally, there will be a \textbf{small excerise} on these topics to check your knowledge.
-		\bigskip
-	\end{tcolorbox}
-	
-	
-	\begin{multicols}{2}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
+
+	\begin{itemize}
+		\item Queue is an ordered list which enables \textbf{insert operations} to be performed at one end \textbf{(i.e REAR)} and \textbf{delete operations} to be performed at another end \textbf{(i.e FRONT)}.
+		\item Queue is referred to be as \textbf{First In First Out (FIFO)} list.
+		\item Eg: People waiting in line in library form a queue.
 		
-		\vfill \null
-		\columnbreak
-		So let's get started....
-		\includegraphics[scale=0.08]{content/linux_section.png}
-	\end{multicols}	
+		\newimage{0.32}{content/chapter14/images/fifo2.png}
+		
+		\newimage{0.5}{content/chapter14/images/queue.png}
+	
+		
+		\item Queue is the child interface of Collection interface.
+		
+	\end{itemize}
+	
+	\newpage
+	
+	\textbf{Queue interface specific methods}
+	\begin{itemize}
+		\item Add object to queue:
+		\syntaxblock{
+			boolean offer(Object o);
+		}
+		\bigskip
+		\item Return head of the queue. If queue is empty, it will return null.
+		\syntaxblock{
+			Object peek();
+		}
+		\bigskip
+		\item Return head of the queue. If queue is empty, error is returned.
+		\syntaxblock{
+			Object element();
+		}
+		\bigskip
+		\item Return and remove head of the queue. If queue is empty, it will return null.
+		\syntaxblock{
+			Object poll();
+		}
+		\bigskip
+		\item Return and remove head of the queue. If queue is empty, error is returned.
+		\syntaxblock{
+			Object remove();
+		}
+		\bigskip
+		\item Check whether queue is empty or not:
+		\syntaxblock{
+			boolean isEmpty();
+		}
+		
+	\end{itemize}
 	
 \end{flushleft}
 

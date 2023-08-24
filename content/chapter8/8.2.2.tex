@@ -34,13 +34,6 @@
 		}
 		\bigskip
 		\codeblock{
-			do \{ \\
-				int x = 10; \\
-			\} while(true);  \cmark
-		}
-		
-		\bigskip
-		\codeblock{
 			do \\
 			while(true); \xmark
 		}
@@ -58,23 +51,9 @@
 			\s System.out.println("Hello"); \\
 			\} while(true); \\
 			System.out.println("Hi");   \xmark // Unreachable statement error
-		}
-	
+		}	
 		\bigskip
-		\codeblock{
-			do \{ \\
-			\s System.out.println("Hello"); \\
-			\} while(false); \\
-			System.out.println("Hi"); \cmark 
-		}
-		\bigskip
-		\outputblock{
-		Hello \\
-		Hi
-		}
-	
-		\bigskip
-		\item Every final variable will be replaced by value at compile-time only. If any variable is final in while's condition, then the condition will be evaluated at compile-time only.
+		\item Final variable will be evaluated compile-time only. Thus for non-reachable condition, it will result in compile-time error.
 		
 		\bigskip
 		\codeblock{
@@ -85,15 +64,6 @@
 			System.out.println("Hi");  \xmark 
 			\s // Unreachable statement
 		}
-		\bigskip
-		\codeblock{
-			final int a = 10, b = 20; \\
-			do \{ \\
-			\s System.out.println("Hello"); \\
-			\} while(a > b); \\
-			System.out.println("Hi");  \cmark
-		}
-	
 	
 	\end{itemize}		
 	

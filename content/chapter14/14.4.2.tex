@@ -1,23 +1,42 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
-	\bigskip
+	
 	\begin{itemize}
-		\item Introduced in 1993.
-		\item CIDR (Classless Inter-Domain Routing) is also known as \textbf{supernetting} is \textbf{logical division of network}.
-		\item It is a method of distributing IP addresses effectively.
-		\item It replaces the Class A, Class B \& Class C networks.
-		\item Netmask prefix for CIDR are anything between 1-32, except 8, 16 \& 24 which are used for classful addressing.
+		\item NavigableSet interface implements SortedSet interface.
+		\item It defines several \textbf{methods for navigation purposes}.	
 	\end{itemize}
 
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=.55]{content/chapter14/images/cidr.png}
-	\caption{Netmask as per classful \& CIDR addressing}
-	\label{fig:cidr34}
-\end{figure}	
-
-
+	\textbf{NavigableSet specific methods}
+	
+	\begin{itemize}
+		\item Return highest element which is <= e:
+		\syntaxblock{
+			Object floor(e)
+		}
+		\bigskip
+		\item Return highest element which is < e:
+		\syntaxblock{
+			Object lower(e)
+		}
+		\bigskip
+		\item Return lowest element which is >= e:
+		\syntaxblock{
+			Object ceiling(e)
+		}
+		\bigskip
+		\item Return lowest element which is > e:
+		\syntaxblock{
+			Object higher(e)
+		}
+		\bigskip
+		\item Return Navigable set in reverse order:
+		\syntaxblock{
+			NavigableSet descendingSet()
+		}
+	\end{itemize}
+	
+	
+	
 	
 \end{flushleft}
 \newpage

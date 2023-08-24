@@ -1,63 +1,43 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
 	
-	\paragraph{}
-	\bigskip
+	\begin{itemize}
+		\item The string constant pool (SCP) (or string pool), is a \textbf{special area of memory in the Java heap} that stores string objects. 
+		\item Using SCP, Java compiler checks if an new string is already exists in the pool. 
+		\item If not, a new string object is created and added to SCP.
+		\item If it does, the reference to the existing string is returned. 
+		\item Eg:
+		\bigskip
+		\codeblock{
+		String str1 = "lava"; // Added to the string constant pool \\
+		String str2 = "lava"; // Reuses the existing string from the pool \\
+		\\
+		System.out.println(str1 == str2); // Output: true (both strings refer to the same object)
+		}
 	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[scale=.2]{content/practise.jpg}
-	\end{figure}	
-	\begin{enumerate}
+		\newimage{0.3}{content/chapter13/images/heap.png}
 		
-		\item \textbf{Which of the following file stores cron logs?}
-		\begin{enumerate}[label=(\alph*)]
-			\item /var/log/cronjobs
-			\item /var/log/cron %correct
-			\item /var/log/crontab
-			\item /var/log/crond
-		\end{enumerate}
-		\bigskip
-		\bigskip
+		\newpage
 		
-		\item \textbf{Which of the following directories stores user-specific crontab files?}
-		\begin{enumerate}[label=(\alph*)]
-			\item /etc/crontab.d/
-			\item /var/spool/crond/
-			\item /var/spool/cron/  %correct
-			\item /etc/crontab/
-		\end{enumerate}
+		\item Use intern() method to explicitly add string to the string constant pool:
+		\item Eg:
 		\bigskip
-		\bigskip	
-		
-		\item \textbf{Select the correct command to edit the cron file.}
-		\begin{enumerate}[label=(\alph*)]
-			\item crontab -u username -e %correct
-			\item cronjob -u username -e
-			\item cron -u username -e
-			\item crontab --user username -e
-		\end{enumerate}
+		\codeblock{
+			String str3 = new String("Hello").intern(); // Explicitly interns the string  \\
+			String str4 = "Hello"; \\
+			\\
+			System.out.println(str3 == str4); // Output: true
+		}
+	
 		\bigskip
-		\bigskip	
-
-		\item \textbf{Select the correct command to list cronjob of specific user.}
-		\begin{enumerate}[label=(\alph*)]
-			\item crontab -u username -list
-			\item cronjob -u username list
-			\item crontab -u username -l  %correct
-			\item crontab --user username -l
-		\end{enumerate}
+		In this case, str3.intern() adds the string to the string constant pool, allowing str3 and str4 to refer to the same string object.
+	
 		\bigskip
-		\bigskip	
-		
-		
-		\item \textbf{Select the correct command to remove cronjob of specific user.}
-		\begin{enumerate}[label=(\alph*)]
-			\item crontab -u username -r  %correct
-			\item cronjob -u username remove
-			\item crontab -u username --remove  
-			\item crontab --user username -r
-		\end{enumerate}
-	\end{enumerate}
+		\noteblock{
+		Upto Java1.6, scp is in method area. After java1.7, scp is present in heap itself.
+		}	
+	
+	\end{itemize}
+	
 \end{flushleft}
-
+\newpage

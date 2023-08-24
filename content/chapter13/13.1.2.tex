@@ -1,104 +1,33 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
+	\textbf{Immutable Object}
 	\begin{itemize}
-		\item Configure cronjob that would execute script \textbf{/home/jack/one.sh} every 2 minutes:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=teal,colframe=teal]
-			\color{white}
-			\fontdimen2\font=9pt
-			*/2     *    *   *   *  /home/jack/one.sh
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		\bigskip
+		\item An immutable object \textbf{data} cannot be modified once created. 
+		\item String is immutable where its internal state remains constant.
+		\item Benefits: \textbf{thread safety, caching, and security}.
+		\item Eg: Using hashCode(), you can check if the String is changed:
 		
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=yellow,colframe=yellow]
-			\color{black}
-			\textbf{Note:} Use "*/x" to execute a job every "x" minutes.
-		\end{tcolorbox}
-		
-		
-		\bigskip
-		\bigskip
-		\item Configure cronjob that would execute script \textbf{/home/jack/one.sh} at 1:30pm every day:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=teal,colframe=teal]
-			\color{white}
-			\fontdimen2\font=9pt
-			30     13    *   *   *  /home/jack/one.sh
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		
-		\bigskip
-		\bigskip
-		\item Configure cronjob that would execute script \textbf{/home/jack/one.sh} at 9:30am \& 2:30pm every day:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=teal,colframe=teal]
-			\color{white}
-			\fontdimen2\font=9pt
-			30     9,14    *   *   *  /home/jack/one.sh
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		
-		\bigskip
-		\bigskip
-		\item Configure cronjob that would execute script \textbf{/home/jack/one.sh} on 25th of each month at 7am:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=teal,colframe=teal]
-			\color{white}
-			\fontdimen2\font=9pt
-			*     7    25   *   *  /home/jack/one.sh
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
+		\codeblock{
+		String str1 = "Hello"; \\
+		System.out.println(\textbf{str.hashCode()}); // Output: 69609650 \\
+		str1 = str1 + ", World!"; // New object created \\
+		System.out.println(str.hashCode()); // Output: 496609612
+		}
 
-		\bigskip
-		\bigskip
-		\item Configure cronjob that would execute script \textbf{/home/jack/one.sh} from 15 to 21 date of Feb month at 7am:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=teal,colframe=teal]
-			\color{white}
-			\fontdimen2\font=9pt
-			*     7    15-21   2   *  /home/jack/one.sh
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		\bigskip
-
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=yellow,colframe=yellow]
-			\color{black}
-			\textbf{Note:} For range, use "-".
-		\end{tcolorbox}
-	
-		\bigskip
-		\bigskip
-		\item Configure cronjob that would execute script \textbf{/home/jack/one.sh} for first 6 months on 5,10,15,29 date at 12am:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=teal,colframe=teal]
-			\color{white}
-			\fontdimen2\font=9pt
-			*     12    5,10,15,20   1-6  *     /home/jack/one.sh
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		
-		\bigskip
-		\bigskip
-		\item Configure cronjob that would execute script \textbf{/home/jack/one.sh} that run on rach monday \& sunday of each month at 4:30am:	
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=teal,colframe=teal]
-			\color{white}
-			\fontdimen2\font=9pt
-			30     4    *  *   0,1     /home/jack/one.sh
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		
-		\bigskip
-		\bigskip
-		\item Configure cronjob that would execute script \textbf{/home/jack/one.sh} that run on 3rd week of monday in each month at 7:10pm:
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=teal,colframe=teal]
-			\color{white}
-			\fontdimen2\font=9pt
-			10   19  15-21  *  monday     /home/jack/one.sh
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		
-	
 	\end{itemize}
 
-	 
-
+	\bigskip
+	\textbf{Mmutable Object}
+	\begin{itemize}
+		\item A mutable object is an object whose \textbf{data} can be modified after it is created. Eg: \textbf{StringBuffer class}
+		\bigskip
+		\codeblock{
+		StringBuffer str = new StringBuffer("Hello"); \\ 
+		System.out.println(str.hashCode()); // Output: 64598293  \\
+		str.append(", World"); \\
+		System.out.println(str.hashCode()); Output: 64598293
+		}
+		
+	\end{itemize}
 
 \end{flushleft}
-\newpage
-
-

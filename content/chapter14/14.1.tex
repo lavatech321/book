@@ -1,40 +1,57 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
-	\bigskip
-	\bigskip
-	\begin{tcolorbox}[breakable,notitle,boxrule=1pt,colback=black,colframe=black]
-		\color{white}
-		\bigskip
-		In this section, you are going to learn:
-		\begin{enumerate}
-			\item \textbf{What is a network?}
-			\item \textbf{Types of network}
-			\item \textbf{Network connecting device}
-		\end{enumerate}	
-		\bigskip
-		Finally, there will be a \textbf{small excerise} on these topics to check your knowledge.
-		\bigskip
-	\end{tcolorbox}
-	
-	
-	\begin{multicols}{2}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
-		\vspace*{\fill}
 		
-		\vfill \null
-		\columnbreak
-		So let's get started....
-		\includegraphics[scale=0.08]{content/linux_section.png}
-	\end{multicols}	
+		\begin{itemize}
+			\item List is \textbf{ordered \& indexed} collection of \textbf{hetrogenous objects} wherein \textbf{duplicate objects} are allowed.
+			\newimage{0.5}{content/chapter14/images/list2.png}	
+			\item It is the child interface of Collection interface.
+			\newimage{0.5}{content/chapter14/images/list.png}
+		\end{itemize}
+	
+	\textbf{List interface methods}
+	\begin{itemize}
+		\item Add an object at specific index position:
+		\syntaxblock{
+			void add(int index, Object o)
+		}
+		\newpage
+		\item Add multiple objects at specific index position:
+		\syntaxblock{
+			boolean addAll(int index, Collection c)
+		}
+		\bigskip
+		\item Get object at a specific index position:
+		\syntaxblock{
+			object get(int index)
+		}
+		\bigskip
+		\item Remove an object at a specific index position:
+		\syntaxblock{
+			object remove(int index)
+		}
+		\bigskip
+		\item Replace an object at a specific index position:
+		\syntaxblock{
+			object set(int index, Object new)
+		}
+		\bigskip
+		\item Get index position of an object:
+		\syntaxblock{
+			int indexof(Object o)
+		}
+		\bigskip
+		\item Get last index position of an object:
+		\syntaxblock{
+			int lastIndexOf(Object o)
+		}
+		\bigskip
+		\item Iterate over list collection:
+		\syntaxblock{
+			ListIterator listIterator();
+		}
+	\end{itemize}
 	
 \end{flushleft}
 
-\newpage
 
+\newpage

@@ -3,81 +3,31 @@
 	
 	 	In Java, the short-circuit operators are:
 		\begin{itemize}
-			\item \textbf{\&\& (logical AND)}: Same as bitwise \&
-			\item \textbf{|| (logical OR)}: Same as bitwise |
+			\item \textbf{\&\& (logical AND)}: If LHS evaluates to false, RHS is not evaluated at all. Note that \&\& requires both condition to be true.
+			
+			\item \textbf{|| (logical OR)}: If the LHS evaluates to true, the RHS is not evaluated at all. Note that || requires atleast one condition to be true.
+			
 		\end{itemize}
-
+		Eg:
+		\codeblock{
+			String user="Ram"; \\
+			String password="ram@123"; \\
+			System.out.println(user=="Ram" \&\& password=="ram@123");  // output: true \\
+			System.out.println(user=="Ram" || password=="ram@123");   // output: true 
+		}
+		\bigskip
+		Difference between Bitwise "\& |" and Logical "\&\&  ||" 
 		\tabletwo{
-		\hline
+
 		\& , |  & \&\& , || \\
 		\hline
-		Both arguments should be evaluated always & Second argument evaluation is optional \\
+		Both LHS \& RHS are evaluated & RHS evaluation is optional \\
 		\hline
-		Relatively performance is low & Relatively performance is high \\
+		Performance is low & Performance is high \\
 		\hline
-		Applicable for both boolean and integral types & Applicable only for boolean but not for integral types \\
-		\hline
-		Eg: \newline
-		For x \& y, both x and y will be evaluated. \newline
-		Similarly, \newline
-		For x | y, both x and y will be evaluated. 
-		& 
-		Eg: \newline
-		For x \&\& y, y will be evaluated if and only if x is true i.e if x is false then y wont be evaluated. \newline
-		Similarly, \newline
-		For x || y,  y will be evaluated if and only if x is false i.e if x is true then y wont be evaluated. \\
-		
-		\hline
-		
+		Applicable on boolean \& integral types & Applicable only for boolean. \\		
 		}
 		
-		\bigskip
-		Consider below code showing different behaviour of \&, \&\&, |, ||:
-		\codeblock{
-			int x = 10, y = 15;   \\
-			if(  ++x < 10  \& ++y > 15) \{ \\
-			\s	x++;   \\
-			\}  \\
-			else \{  \\
-			\s	y++;   \\
-			\}  \\
-			System.out.println(x + "..." + y);  //   output: 11...17
-		}
-		\bigskip
-		\codeblock{
-			int x = 10, y = 15;   \\
-			if(  ++x < 10  | ++y > 15) \{ \\
-			\s	x++;   \\
-			\}  \\
-			else \{  \\
-			\s	y++;   \\
-			\}  \\
-			System.out.println(x + "..." + y);  //   output: 12...16
-		}
-		\bigskip
-		\codeblock{
-			int x = 10, y = 15;   \\
-			if(  ++x < 10  \&\& ++y > 15) \{ \\
-			\s	x++;   \\
-			\}  \\
-			else \{  \\
-			\s	y++;   \\
-			\}  \\
-			System.out.println(x + "..." + y);  //   output: 11...16
-		}
-		\bigskip
-				\codeblock{
-			int x = 10, y = 15;   \\
-			if(  ++x < 10  || ++y > 15) \{ \\
-			\s	x++;   \\
-			\}  \\
-			else \{  \\
-			\s	y++;   \\
-			\}  \\
-			System.out.println(x + "..." + y);  //   output: 12...16
-		}
-		\bigskip
-
 	
 \end{flushleft}
 \newpage

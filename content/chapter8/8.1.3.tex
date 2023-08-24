@@ -21,7 +21,7 @@
 			\s \s	Default action	\\
 			\}
 		}
-		\bigskip
+		\newpage
 		\item Curly braces are mandatory.
 		\item \textbf{Case and default are optional}, i.e an empty switch statement is a valid Java syntax.
 		\codeblock{
@@ -46,29 +46,20 @@
 			\}
 		}
 		
-		\item Case argument should be compile-time constant (i.e constant expression).
+		\item Case argument should be compile-time constant or declared as final.
 		\bigskip
 		\codeblock{
 			int x=10; \\
 			int y=20; \\
 			switch(x) \{ \\
-			\s case 10:  \\
-			\s \s System.out.println(10); \\
-			\s \s	break; \\
 			\s case y;    \xmark \s // Compile-time error!   \\         
 			\s \s System.out.println(); \\
 			\s \s	break; \\
 			\} 
 		}
-		\bigskip
-		\noteblock{
-			If y is declared as "final", then there will be no compile-time error.
-		}
-		
 		\newpage
 		
-		\item Switch arguments and case label can be expressions. But, case label should be constant expression.
-		
+		\item Case label should be constant expression.
 		\codeblock{
 			int x = 10; \\
 			switch(x+1) \{ \\
@@ -99,32 +90,12 @@
 			\}
 		}
 		\newpage
-		
-		Eg 2:
-		\codeblock{
-			byte b = 10; \\
-			switch(b+1) \{  // Implicit type-caste to integer \\			 
-			\s case 10: \\
-			\s \s System.out.println(10); \\
-			\s \s break; \\
-			\s case 100: \\
-			\s \s System.out.println(100); \\
-			\s \s break; \\
-			\s case 1000:  \\
-			\s \s System.out.println(1000); \\
-			\s \s break; \\				
-			\}
-		}
-		
 		\item Duplicate case labels are not allowed.
 		\bigskip
 		
 		\codeblock{
 			int x = 10; \\
 			switch(x) \{  \\			 
-			\s case 12: \\
-			\s \s System.out.println(12); \\
-			\s \s break; \\
 			\s case 97: \\
 			\s \s System.out.println(97); \\
 			\s \s break; \\
@@ -135,79 +106,26 @@
 		}
 	\end{itemize}
 	
-	\newpage
 	\textbf{Summary for case-label argument}
 	\begin{itemize}
-		\item It should  be constant expression.
+		\item It should be constant expression.
 		\item The value should be in the range of switch argument type.
 		\item Duplicate case label are not allowed
 	\end{itemize}
 	
-	\bigskip
-	\bigskip
-	\bigskip
-	\textbf{Fall-through inside switch}
+	\item \textbf{Default case:}
 	\begin{itemize}
-		\item Within the switch, if any case is matched, from that case onwards all statements will be executed until break or end of the switch.
-		\item This is called fall-through inside switch.
-		\item The main advantage of fall inside the switch is, we can define common action for multiple cases (code-reuseablilty).
-		\bigskip
-		\syntaxblock{
-			switch(argument) \{  \\
-			\s	case arg-1: \\
-			\s	case arg-2: \\
-			\s	case arg-3: \\
-			\s \s		action; \\
-			\s \s		break; \\
-			\s	case arg-4: \\
-			\s	case arg-5: \\
-			\s	case arg-6: \\
-			\s \s		action; \\
-			\s \s		break; \\
-			\}
-		}
-		\newpage
-		Eg:
-		\codeblock{
-			int x = 0;
-			switch(x) \{ \\
-			\s case 0: \\
-			\s \s System.out.println(0); \\
-			\s case 1: \\
-			\s \s System.out.println(1); \\
-			\s \s break; \\
-			\s case 2: \\
-			\s \s System.out.println(2); \\
-			\s default: \\
-			\s \s System.out.print("default"); \\
-			\}
-		}
-		\bigskip
-		\outputblock{
-			0 \\
-			1
-		}
-		\item \textbf{Default case:}
-		\begin{itemize}
-			\item Within the switch, \textbf{you can take default case at most once}.
 			\item Default case will be executed if and only if, there is no case matched.
-			\item Within the switch, you can write default case anywhere but it is recommended to write as last case. \newline
+			\item You can write default case anywhere but it is recommended to write as last case. \newline
 			Eg:
 			\codeblock{
-				int x = 3;
+				int x = 3; \\
 				switch(x) \{ \\
 				\s	default:  \\
 				\s \s	System.out.println("default") \\
 				\s case 0:  \\
-				\s \s 	System.out.println(0) \\
-				\s case 1: 
-			}
-			\newpage
-			\codecontinue{
-				\s \s	System.out.println(1) \\
-				\s case 2: \\
-				\s \s	System.out.println(2) \\
-				\}
+				\s \s 	System.out.println(0); \\
+				\s \s   break;
 			}
 			\bigskip
 			\outputblock{
@@ -215,12 +133,10 @@
 				0
 			}
 		\end{itemize}
-	\end{itemize}
-	
-	
+ 
 \end{flushleft}
 
-\newpage
+
 
 
 

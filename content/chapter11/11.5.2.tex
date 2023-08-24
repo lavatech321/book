@@ -2,59 +2,39 @@
 \begin{flushleft}
 	
 	\begin{itemize}
-		\item Data hiding refers to encapsulating data within a class and controlling its visibility and accessibility from outside the class. 
-		\item Below code shows data being directly accessible to the objects and it's not data hidiing:
-		
+		\item Data hiding refers to binding attributes within a class.
+		\item It controls data visibility and accessibility from outside the class. 
+		\item Below code shows data not being hidden:
 		\codeblockfull{Test.java}{
 			class Sample \{ \\
 			\s int no; \\
-			\s String name; \\
 			\} \\
 			class Test \{ \\
 			\s public static void main(String[] args) \{ \\
 			\s \s Sample s1 = new Sample(); \\
 			\s \s s1.no = 1;   // \color{red} No Data hiding \\ \color{black}
-			\s \s s1.name = "Apples"; // \color{red} No Data hiding \\
-			\s	\} \\
-			\}
+			\s	\}  \}
 		}
 		\bigskip
-		\item In order to hide the data, the instance variable should be declared as \textbf{private}.
+		\item Data hidding is done using \textbf{private} attributes.
 		
 		\item Eg: You can create public methods \textbf{setter()} and \textbf{getter()} to get and set private instance variables as shown below:
-		
-		\codeblockfull{Test.java}{
+		\bigskip
+		\codeblockfull{Sample.java}{
 			class Sample \{ \\
 			\s private int no; \\
-			\s private String name; \\
-			\s 	public void setter(int no, String name) \{ \\
+			\s 	public void setter(int no) \{ \\
 			\s \s		this.no = no; \\
-			\s \s		this.name = name; \\
-			\s	\} 
-		}
-		\newpage
-		\codecontinue{
-			\s	public void getter() \{ \\
-			\s \s		System.out.println(no + ": " + name); \\
 			\s	\} \\
-			\} \\
-			class Test \{ \\
+			\s	public void getter() \{ \\
+			\s \s		System.out.println(no); \\
+			\s	\} \\
 			\s	public static void main(String[] args) \{ \\
 			\s \s		Sample s1 = new Sample(); \\
-			\s \s		s1.setter(0,"Apple");   // Data hidden \\
-			\s \s		s1.getter(); \\
-			\s	\} \\
-			\}	
+			\s \s		s1.setter(10);   // \textbf{Data hidden} \\
+			\s \s		s1.getter(); // Output: 10 \\
+			\s	\} \}
 		}
-		\bigskip
-		\outputblock{
-		0: Apple
-		}
-	
-		
-		\item It makes variables and methods safe from outside interference and misuse.
-	
-		\item Data encapsulation is closely related to \textbf{data hiding}.
 			
 	\end{itemize}	
 	

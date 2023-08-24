@@ -12,7 +12,6 @@
 		}
 		
 		\item The condition should be of boolean type.
-		\bigskip
 		\noteblock{
 			In Java, "1" is not true or false.
 			\codeblock{
@@ -21,12 +20,8 @@
 				\}
 			}
 		}
-		\bigskip
-		
 		
 		\item Curly braces are optional and without curly you can take only one statement under while, and this statement \textbf{should not be declarative}.
-		
-		\newpage
 		
 		\item Below are some valid and invalid examples of while:
 		\bigskip
@@ -49,8 +44,6 @@
 			\s int int x = 10; \cmark \\
 			\}
 		}
-		
-		\bigskip
 		\item Unreachable statement in while loop also results in compile-time error. Below are some examples showing unreachable statement:
 		\bigskip
 		\codeblock{
@@ -59,25 +52,8 @@
 			\} \\
 			System.out.println("Hi");   \xmark // Compile-time error 
 		}
-		
-		\bigskip
-		\codeblock{
-			while(false) \{ \\
-			\s	System.out.println("Hello");  \\
-			\} \\
-			System.out.println("Hi");   \xmark // Compile-time error 
-		}
-		
-		\bigskip
-		\codeblock{
-			int a=10, b=20; \\
-			while(a<b) \{  \cmark  \\     
-			\s	System.out.println("Hello");  \\
-			\} \\
-			System.out.println("Hi");  
-		}
-		
+				
 	\end{itemize}
 	
 \end{flushleft}
-
+\newpage

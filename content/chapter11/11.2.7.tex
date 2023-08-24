@@ -2,21 +2,15 @@
 \begin{flushleft}
 
 		\begin{itemize}
-			\item \textbf{this()} is used to invoke one constructor from another constructor within the same class. 
-			\item It allows constructors with different parameter lists to call each other and \textbf{reuse initialization code}.
-			\item The this() invocation \textbf{must be the first statement in the constructor body}.
-			\item It is used to \textbf{avoid code duplication when multiple constructors} in a class need to perform common initialization tasks.
+			\item \textbf{this()} invokes one constructor from another constructor. 
+			\item this() needs \textbf{to be first statement in the constructor body}.
 			\item Eg:
-			\bigskip
 			\codeblockfull{Test.java}{
 				class Rectangle \{ \\
 				\s	float l, w, h; \\
 				\s	public Rectangle() \{ \\
 				\s \s		\textbf{this(0,0,0);} \\
-				\} \\
-				\s 	public Rectangle(int width, int height) \{ \\
-				\s \s 	\textbf{this(0,width,height);} \\
-				\s	\} \\
+				\s \} \\
 				\s	public Rectangle(int length, int width, int height) \{ \\
 				\s \s 	this.l = length; \\
 				\s \s 	this.w = width; \\
@@ -27,38 +21,21 @@
 				\s \s 	area = 2*(l*w) + 2*(l*h) + 2*(h*w); \\
 				\s \s 	return area; \\
 				\s	\} \\
+				\s	public static void main(String[] args) \{ \\
+				\s \s 	Rectangle r1 = new Rectangle(3,4,5); \\
+				\s \s 	System.out.println(r1.getArea()); // Output: 94.0 \\
+				\s \s 	Rectangle r2 = new Rectangle(); \\
+				\s \s 	System.out.println(r2.getArea()); // Output: 0.0 \\
+				\s \} \\
 				\} 
 			}
-		
-			\newpage
-			
-			\codecontinue{
-			public class TestRect \{ \\
-			\s	public static void main(String[] args) \{ \\
-			\s \s 	Rectangle r1 = new Rectangle(3,4,5); \\
-			\s \s 	float area; \\
-			\s \s 	area = r1.getArea(); \\
-			\s \s 	System.out.println(area); \\
-			\\
-			\s \s 	Rectangle r2 = new Rectangle(); \\
-			\s \s 	float area2; \\
-			\s \s 	area2 = r2.getArea(); \\
-			\s \s 	System.out.println(area2); \\
-			\s \} \\
-			\}	
-			}
-			\bigskip
-			\outputblock{
-			94.0 \\
-			0.0
-			}
-			
+					
 		\end{itemize}
 	
 		\noteblock{
 			\begin{itemize}
-				\item The first line inside every constructor should be either super() or this() but not both at a time.
-				\item We can use super() or this() only inside constructor.
+				\item Constructor can have super() or this(), not both at a time.
+				\item Use super() or this() only inside constructor.
 			\end{itemize}	
 		}
 		

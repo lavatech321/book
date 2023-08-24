@@ -1,10 +1,132 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
 	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[scale=.6]{content/chapter10/images/hard_soft.png}
-	\end{figure}
+	\begin{itemize}
+		\item A zip file containing group of “.class” files a \textbf{jar} file.
+		\item Mostly, third party software plugins are available as jar file.
+		\item Create a Manifest File in jar file (Optional):
+		\begin{itemize}
+			\item Manifest contains information such as the entry point class and classpath. 
+			\item If you don't specify a manifest, Java will automatically create a default one.
+			\item Eg: Create Manifest.txt, with content like this:
+			\bigskip
+			\codecontinue{
+				Main-Class: classname <press enter>
+			}			
+		\end{itemize}
+		
+		\item Command to create jar file without manifest:
+		\bigskip
+		\syntaxblock{
+			jar -cvf filename.jar code1.class code2.class.... \\
+			jar -cvf filename.jar *.class \\
+			jar -cvf filename.jar *.*
+		}
+	
+		\item Command to create jar file with manifest:
+		\bigskip
+		\syntaxblock{
+			jar -cvfm filename.jar Manifest.txt code1.class code2.class .....
+		}
+		\newpage
+		\item Extract a jar file:
+		\bigskip
+		\syntaxblock{
+			jar -xvf filename.jar
+		}
+		\item Display table of content of jar file:
+		\bigskip
+		\syntaxblock{
+			\$ jar -tvf filename.jar
+		}	
+		\item Execute a jar file:
+		\bigskip
+		\syntaxblock{
+			java -jar filename.jar
+		}
+		\item Eg: Create 2 Java programs with manifest file, compress them in jar file \& execute the jar file:
+		\codeblockfull{A.java}{
+			public class A \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s		B b1 = new B(); \\
+			\s \s	System.out.println(b1.secret); \\
+			\s	\} \\
+			\}	
+		}
+		\bigskip
+		\codeblockfull{B.java}{
+			public class B \{ \\
+			\s	public String secret="Choomantar"; \\
+			\}	
+		}
+		\bigskip
+		\codeblockfull{Manifest.txt}{
+			Main-Class: A	
+		}
+		\newpage
+		Create and execute the jar file:
+		\bigskip
+		\commandblock{
+			\$ javac A.java B.java \\
+			\$ jar -cvfm code.jar Manifest.txt A.class B.class  \\
+			\$ java -jar code.jar  \\
+			Choomantar
+		}
+		
+		\item Eg: Create jar with ".class" files in different packages, source file and Manifest for below directory structure:
+		\newimage{0.5}{content/chapter10/images/new69.png}
+		\bigskip
+		\commandblock{
+			\$ jar -cvfm code.jar Manifest.mf A/B/One.class C/D/Two.class src/*.java \\
+			\$ java -jar code.jar  
+		}
+		
+		
+	\end{itemize}
+	\newpage
+	\textbf{Executing a JAR file from anywhere}
+	\begin{itemize}
+		\item \textbf{Windows}:  \textbf{By creating a batch file.}
+		\begin{itemize}
+			\item A batch file contains a group of commands. 
+			\item You can double click a batch file, to execute commands in it one by one.
+			\item Create a batch file to execute JAR file:
+			\bigskip
+			\codeblockfull{file.bat}{
+				java -jar full-path-of-jar-file$\backslash$code.jar
+			}
+		\end{itemize}
+		\item \textbf{Ubuntu: By creating a shell script.}
+		\begin{itemize}
+			\item Create a shell script to execute JAR file.
+			\bigskip
+			\codeblockfull{file.sh}{
+				\#!/bin/bash \\
+				java -jar /full-path-of-jar-file/code.jar	
+			}
+			\item Set executable permission to JAR file:
+			\bigskip
+			\commandblock{
+				chmod +x file.sh
+			}
+			\item Add script location in the path system variable by adding below code:
+			\bigskip
+			\commandblock{
+				\$ vi ~/.bashrc \\
+				export PATH=<code-location>:\$PATH \\
+				\\
+				\$ source ~/.bashrc
+			}
+			\item Now you can execute file.sh from anywhere:
+			\bigskip
+			\commandblock{
+				\$ file.sh 
+				Choomantar
+			}
+		\end{itemize}
+			
+	\end{itemize}
+	
 	
 \end{flushleft}
 

@@ -6,6 +6,7 @@
 		\newimage{0.6}{content/chapter8/images/for.png}
 		
 		\item Curly braces are optional, without curly braces only one statement is allowed, which should not be declarative statement.
+		\item All 3 parts of for loop are independent of each other and optional.	
 		
 		\item Egs:
 		\bigskip
@@ -26,9 +27,9 @@
 		\begin{itemize}
 			\item \textbf{Initialisation section:}
 			\begin{itemize}
-				\item This section will be executed only once in for loop lifecycle.
-				\item Use to declare and initialise local variables.
-				\item You can declare any number of variables, but should be of the same type. \item If you are trying to declare different datatype variables, then you'll get compile time error.
+				\item This section will be executed only once.
+				\item It declares and initialises local variables.
+				\item Any valid Java statement is allowed in this section.
 				\bigskip
 				\codeblock{
 					for(\textbf{int i = 0}; i < 10; i++) \{\} \cmark \\
@@ -37,72 +38,45 @@
 					for(\textbf{int i = 0, int j = 0}; i < 10; i++) \{\} \xmark 
 				}
 				
-				\item You can take any valid Java statement in this section.
-				\item Eg:
-				\bigskip
-				\codeblock{
-				int i = 0; \\
-				for( \textbf{System.out.println("Hi")}; i < 3; i++ ) \{ \\
-				\s System.out.println("Hello"); \\
-				\}
-				}
-				\bigskip
-				\outputblock{
-					Hi \\
-					Hello \\
-					Hello \\
-					Hello
-				}
+
 			\end{itemize}
 		
 			\item \textbf{Conditional section:}
 			\begin{itemize}
-				\item In this section you can take any valid Java expression, but it should be of the type boolean.
+				\item It contains expression of the type boolean.
+				\item If nothing is added here, the compiler will always place true.
 				\item Eg:
 				\bigskip
 				\codeblock{
 					for(int i = 0; \textbf{true} ; i++)
 				}
-				\item This section is optional, if nothing is added here, the compiler will always place true.
+				
 			\end{itemize}
 		
 			\item \textbf{Increment/decrement section:}
 			\begin{itemize}
-				\item In this section, you can can take any valid Java statement.
+				\item It contains any valid Java statement, mostly increment and decrement operation.
 				\item Eg:
 				\bigskip
 				\codeblock{
-					int i = 0; \\
-					for(\textbf{System.out.println("Hello")}; i < 3; System.out.println("Hi")) \{ \\
-					\s i++; \\
-					\}
+					for(int i=0; i < 3; i++)  \\
+					\s	System.out.print("Hi ");
 				}
-			\bigskip
-			\outputblock{
-				Hello
-				Hi
-				Hi
-				Hi
-			}	
+				\bigskip
+				\outputblock{
+				Hi Hi Hi
+				}
 			\end{itemize}
 		
 		\end{itemize}
 		
-		\bigskip
-		\noteblock{
-			All 3 parts of for loop are independent of each other and optional.	
-		}
-
 		\item Infinite loop examples:
 		\bigskip
 		\codeblock{
-			for(;;) \{ \\ 
+			for(;;) \cmark  \\ 
 			\s System.out.println("Hello"); \\
-			\}
-		}
-		\bigskip
-		\codeblock{
-			for(;;);
+			or \\
+			for(;;); \cmark
 		}
 		
 		\item Unreachable statement in for loop, results in compile-time error. 
@@ -115,13 +89,8 @@
 			\} \\
 			System.out.println("Hello");  \xmark // Unreachable statement
 		}
-		
-		
+				
 	\end{itemize}
-
-		
 	
 \end{flushleft}
-
-\newpage
 

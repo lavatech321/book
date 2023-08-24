@@ -1,55 +1,91 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
-	Commands to display all logs:
-	\begin{itemize}
-		\item \textbf{journalctl}: Shows the full system journal logs.
-		\bigskip
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-			\color{black}
-			\fontdimen2\font=9pt
-			Syntax: journalctl [options]
-			\fontdimen2\font=4pt
-		\end{tcolorbox}
-		Eg: 
-		\begin{figure}[h!]
-			\centering
-			\includegraphics[scale=.35]{content/chapter16/images/journalctl.png}
-			\caption{Sample output}
-			\label{fig:process2346}
-		\end{figure}
-		
-		Options with \textbf{journalctl} command:	
-				
-		\begin{itemize}
-			\item \textbf{-p}: Display logs according to specific priority.
-			\bigskip
-			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-				\color{black}
-				\fontdimen2\font=9pt
-				Syntax: journalctl -p priority
-				\fontdimen2\font=4pt
-			\end{tcolorbox}	
-			Eg: 
-			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-				\color{green}
-				\fontdimen2\font=9pt
-				\#  journalctl -p err
-				\fontdimen2\font=4pt
-			\end{tcolorbox}
 
-			\item \textbf{-b}: Show the log messages since the last boot of the system.
-			\bigskip
-			\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-				\color{black}
-				\fontdimen2\font=9pt
-				Syntax: journalctl -b
-				\fontdimen2\font=4pt
-			\end{tcolorbox}			
-		
+	Exeception handling works using four keywords:
+	
+	\begin{itemize}
+		\item try: 
+		\begin{itemize}
+			\item This block \textbf{contains code with exception}, also called risky code.
 		\end{itemize}
+		
+		\item catch: 
+		\begin{itemize}
+			\item This is optional block from Java 1.7.
+			\item It \textbf{catches exception and handles it}. 
+		\end{itemize}
+		
+		\item finally: 
+		\begin{itemize}
+			\item This is optional block from Java 1.7.
+			\item It \textbf{defines code that executes regardless of exception.}
+			\item Eg: Close open files.
+		\end{itemize}
+		\bigskip
+		\syntaxblock{
+			try \{ \\
+				\s // risky-code here \\
+			\} \\
+			catch(Exception e) \{ \\
+				\s // handling-code here \\
+			\} \\
+			finally \{ \\
+				\s // resource-to-be-closed-here \\
+			\}
+		}
+		
+		\newpage
+		
+		\newimage{0.5}{content/chapter16/images/ex3.png}
+		
+		\item Without try..catch, below code would result in “ArithmeticException: / by zero” exception:
+		
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s		System.out.println(5/0); //  ArithmeticException: / by zero \\
+			\s	\} \\
+			\}
+		}
+			\newpage
+		\item Code handling “ArithmaticException: / by zero” exception:
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s	try \{ \\
+			\s \s \s			System.out.println(5/0); \\
+			\s \s		\} \\
+			\s \s		catch (ArithmeticException e) \{ \\
+			\s \s			System.out.println("Oops! Problem."); \\
+			\s \s		\} \\
+			\s \s		System.out.println("Ending demo"); \\
+			\s	\} \}	
+		}
+		\bigskip
+		\outputblock{
+			Oops! Problem. \\
+			Ending demo
+		}
+		
+		\item Code handling “ArithmaticException: / by zero” using try..catch..finally:
+		\codeblockfull{demo.java}{
+			public class demo \{ \\
+			\s public static void main(String[] args) \{ \\
+			\s \s		try \{ \\
+			\s \s \s			System.out.println(5/0); \\
+			\s \s		\} \\
+			\s \s		catch (ArithmeticException e) \{ \\
+			\s \s \s		   System.out.println(e.getMessage()); \\
+			\s \s		\} \\
+			\s \s		finally \{ \\
+			\s \s \s			System.out.println("Ending demo"); \\
+			\s \s \} \} \}	
+		}
+		\bigskip
+		\outputblock{
+			/ by zero \\
+			Ending demo
+		}
+	\end{itemize}
 
 \end{flushleft}
-
-\newpage
-
-

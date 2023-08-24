@@ -1,72 +1,68 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
 
-\begin{itemize}
-	\item IP address \textbf{consist of 4 numbers (between 0-255)}, separate by \textbf{"."}:
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[scale=0.6]{content/chapter14/images/struct1.png}
-	\end{figure}
-	\item \textbf{But why the range of numbers is 0-255?} \newline Let's see more on this.
-
-\end{itemize}	
-
-
-\bigskip
-\bigskip
-\paragraph{Language of Computer}
-Computer's language is binary. \textbf{Binary language is of bits}:
-\begin{itemize}
-	\item \textbf{A bit is 0 & 1.}
-	\item 0 means \textbf{off bit.}
-	\item 1 means \textbf{on bit.}
-\end{itemize}
-
-\bigskip
-\bigskip
-
-\paragraph{In computer' language, IP address is made of 32 bits as shown: }
-	\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.4]{content/chapter14/images/bits_2.png}
-\end{figure}
-
-\paragraph{Example}
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.6]{content/chapter14/images/ip2.png}
-\end{figure}
-\textbf{How to understand numeric value behind bits?}
-
-\newpage
-
-\paragraph{Calculating numeric form of IP:}
-\begin{itemize}
-	\item Numbers in IP are calculated by bit's position.
-	\item Formula to calculate IP address number if any bit is \color{blue} ON \color{black}:
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[scale=0.5]{content/chapter14/images/ip3.png}
-	\end{figure}
-	\item Formula to calculate IP address number if any bit is \color{red} OFF \color{black}:
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[scale=0.5]{content/chapter14/images/ip4.png}
-	\end{figure}
-
-\end{itemize}
-
-	This is the reason why the structure of IP address is: \textbf{0-255.0-255.0-255.0-255}
-
-\newpage
-\paragraph{Examples of calculating number of IP:}
-	\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.5]{content/chapter14/images/example.png}
-	\caption{Binary to numeric conversion of IP}
-	\label{fig:Ip}
-\end{figure}
-
+	\begin{itemize}
+		\item HashSet class is \textbf{unordered} collection of \textbf{heterogeneous} objects wherein \textbf{duplicates are not allowed} \& \textbf{null insertion is possible only once}.
+		\item  HashSet class implements Set interface.
+		\item Best choice for \textbf{search} operation.		
+		\item Below is an example of \textbf{hash table}.
+		\newimage{0.2}{content/chapter14/images/hash.png}		
+	\end{itemize}
+	
+	\textbf{Ways of initializing HashSet}
+	
+	\begin{itemize}
+		\item Creating an empty HashSet:
+		\bigskip
+		\syntaxblock{
+			HashSet s1 = new HashSet(); 
+		}
+		\bigskip
+		\item \textbf{HashSet capacity \& fill ratio}:
+		\begin{itemize}
+			\item Above syntax will create HashSet with \textbf{default capacity of 16}.
+			\item Default fill ratio is \textbf{0.75}: Fill ratio is after filling 16th element, when 17th element is added, it’s new capacity should be increased by 75\%. Fill ratio is also called Load factor			
+		\end{itemize}		
+		\item Creating am empty HashSet with initial capacity:
+		\bigskip
+		
+		\syntaxblock{
+			HashSet h = new HashSet(int initialcapacity);
+		}
+		\newpage
+		\item Creating an empty HashSet with initial capacity and fill ratio:
+		\bigskip
+		
+		\syntaxblock{
+			HashSet h = new HashSet(int initialcapacity, float fillratio);
+		}
+		Eg:
+		\codeblock{
+			HashSet h = new HashSet(1000, 0.9);
+		}
+	\end{itemize}
+	
+	\textbf{Example Program} \newline
+	Java program to display HashSet operations:
+	\codeblockfull{Test.java}{
+		import java.util.*; \\
+		class one \{  \\
+		\s	public static void main(String[] args) \{ \\
+		\s \s		\textbf{HashSet set = new HashSet()}; \\
+		\s \s		\textbf{set.add("Apple")}; \\
+		\s \s		set.add("Mango"); \\
+		\s \s		set.add("Apple"); \\
+		\s \s		System.out.println(set); \\
+		\s \s		\textbf{set.remove("Mango")}; \\
+		\s \s		System.out.println(set); \\
+		\s	\} \\
+		\}
+	}
+	\bigskip
+	\outputblock{
+		\textbf{[}Apple, Mango\textbf{]} \\
+		\textbf{[}Apple\textbf{]}
+	}
 \end{flushleft}
-
+\newpage
 

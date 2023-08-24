@@ -1,22 +1,31 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
+	
 
-\bigskip
-
-In computing, booting is the process of starting a computer.
-\newline
-Below diagram shows detailed steps involved in boot process:
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.5]{content/chapter17/images/bootprocess.png}
-	\caption{Boot process}
-	\label{fig:boot}
-\end{figure}
-
-Let's see each of these steps in detail.
+	\begin{itemize}
+		\item Creating custom thread:
+		\syntaxblock{
+			class ThreadName \textbf{extends Thread} \{ \\
+			\s	\textbf{public void run()} \{ \\
+			\s \s		// overriding thread code \\
+			\s	\} \} 
+		}
+		\item Creating thread object and starting it:
+		\syntaxblock{
+			ThreadName objname = new ThreadName(); \\
+			\textbf{obj.start()}
+		}
+		\item Eg:
+		\codeblockfull{demo.java}{
+			class DemoThread \textbf{extends Thread} \{\} \\
+			public class demo \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		DemoThread demoThread = new DemoThread(); \\
+			\s	\} \}	
+		}
+	\end{itemize}
 
 \end{flushleft}
-\newpage
+
 
 

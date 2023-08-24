@@ -1,125 +1,40 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
 	
-	\paragraph{}
-	\bigskip
+	\begin{itemize}
+		\item IdentityHashMap class implements Map interface.
+		\item It is same as HashMaps except:
+		\begin{itemize}
+			\item For HashMap, JVM uses \textbf{".equals()"} to identify duplicate keys.
+			\item For IdentityHashMap, JVM uses \textbf{"=="} operator to identify duplicate keys.
+		\end{itemize}
+		
+		\item Notice below code for HashMap:
+		\codeblockfull{Test.java}{
+			import java.util.*; \\
+			class one \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		HashMap h1 = new HashMap(); \\
+			\s \s		h1.put(new Integer(10),"Pawan"); \\
+			\s \s		h1.put(new Integer(10),"Raman"); \\
+			\s \s		System.out.println(h1);  // Output: \{10=Raman\}   \\
+			\s	\} \\
+			\}	
+		}
+		\item Now, notice the same code for IdentityMap:
+		\codeblockfull{Test.java}{
+			import java.util.*; \\
+			class one \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		IdentityHashMap h1 = new IdentityHashMap(); \\
+			\s \s		h1.put(new Integer(10),"Pawan"); \\
+			\s \s		h1.put(new Integer(10),"Raman"); \\
+					System.out.println(h1);  // Output: \{10=Pawan, 10=Raman\} \\
+			\s	\} \\
+			\}
+		}
+		
+	\end{itemize}
 	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[scale=.2]{content/practise.jpg}
-	\end{figure}	
-	\begin{enumerate}
-		
-		\item \textbf{What is the full form of FQDN?}
-		\begin{enumerate}[label=(\alph*)]
-			\item Fully qualified domain name  %correct
-			\item Fully qualified department name
-			\item Fully qualified domain number
-			\item Fully qualified department number
-		\end{enumerate}
-		\bigskip
-		\bigskip
-		
-		\item \textbf{Which of the following is used to assign a hostname to a server?}
-		\begin{enumerate}[label=(\alph*)]
-			\item hostnamectl sethostname FQDN
-			\item hostnamectl set-host FQDN
-			\item hostnamectl hostname FQDN
-			\item hostnamectl set-hostname FQDN  %correct
-		\end{enumerate}
-		\bigskip
-		\bigskip	
-		
-		\item \textbf{Which of the following file stores hostname details in RHEL8?}
-		\begin{enumerate}[label=(\alph*)]
-			\item /etc/hosts
-			\item /etc/passwd
-			\item /etc/fstab   
-			\item /etc/hostname  %correct
-		\end{enumerate}
-		\bigskip
-		\bigskip
-			
-		\newpage
-		\item \textbf{Which of the following command is used to display all LAN card devices? (Select all that applies.)}
-		\begin{enumerate}[label=(\alph*)]
-			\item nmcli con show
-			\item nmcli dev show %correct
-			\item nmcli device show %correct
-			\item nmcli con diplay
-		\end{enumerate}
-		\bigskip
-		\bigskip		
-		
-		\item \textbf{Which of the following command is used to display all network connections? (Select all that applies.)}
-		\begin{enumerate}[label=(\alph*)]
-			\item nmcli con show  %correct
-			\item nmcli connection show %correct
-			\item nmcli connection display %correct
-			\item nmcli con show display
-		\end{enumerate}
-		\bigskip
-		\bigskip		
-
-		\item \textbf{Which of the following directory stores network interface card settings?}
-		\begin{enumerate}[label=(\alph*)]
-			\item /etc/sysconfig/networkscripts/
-			\item /etc/network-scripts/
-			\item /etc/sysconfig/network-scripts/  %correct
-			\item /etc/network-scripts/sysconfig/
-		\end{enumerate}
-		\bigskip
-		\bigskip	
-
-		\item \textbf{Which of the following command is used to add a new connection? (Select all that applies.)}
-		\begin{enumerate}[label=(\alph*)]
-			\item nmcli con add con-name <connection-name> ifname <interface-name> type ethernet  %correct
-			\item nmcli connection add <connection-name> ifname <interface-name> type ethernet    
-			\item nmcli connection add <connection-name> <interface-name> type ethernet  
-			\item nmcli connection add con-name <connection-name> ifname <interface-name> type ethernet    %correct
-		\end{enumerate}
-		\bigskip
-		\bigskip	
-		
-		
-		\item \textbf{Which of the following command is used to set the static IP address to a connection? (Select all that applies.)}
-		\begin{enumerate}[label=(\alph*)]
-			\item nmcli connection mod <connection-name> ipv4.addresses <ip-address> ipv4.method manual   %correct
-			\item nmcli connection modify <connection-name> ipv4.addresses <ip-address> ipv4.method manual  %correct
-			\item nmcli connection add <connection-name> ipv4.addresses <ip-address> ipv4.method manual
-			\item nmcli connection type <connection-name> ipv4.addresses <ip-address> ipv4.method manual
-		\end{enumerate}
-		\bigskip
-		\bigskip	
-		
-
-		\item \textbf{Which of the following command is used to display all open TCP \& UDP ports along with PID?}
-		\begin{enumerate}[label=(\alph*)]
-			\item iostat -c 
-			\item sar  
-			\item netstat -tulpn   %correct
-			\item netstat -r
-		\end{enumerate}
-		\bigskip
-		\bigskip	
-		
-		
-		\item \textbf{Which of the following command is used to display routing table?}
-		\begin{enumerate}[label=(\alph*)]
-			\item iostat -c 
-			\item sar  
-			\item netstat -tulpn   
-			\item netstat -r    %correct
-		\end{enumerate}
-		\bigskip
-		\bigskip	
-		
-		\item \textbf{Which of the following command is used to capture network packets?}
-		\begin{enumerate}[label=(\alph*)]
-			\item iostat
-			\item tcpdump  %correct
-			\item netstat
-			\item vmstat
-		\end{enumerate}
-	\end{enumerate}
 \end{flushleft}
+\newpage

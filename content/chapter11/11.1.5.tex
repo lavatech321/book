@@ -1,34 +1,7 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
 
-	\begin{itemize}
-		\item Final class can’t be inherited 
-		\item You can’t create child class for final class.
-		\item Eg:
-		\bigskip
-		\codeblockfull{Test.java}{
-			final class A \{\} \\
-			class Test \textbf{extends} A \{\}  \xmark
-		}
-		\item Every method present inside final class is always final by default(i.e method cannot be overridden).
-		\item But every variable present inside final class need not be final.
-		
-		\item Advantage of final keyword:
-		\begin{itemize}
-			\item Security
-			\item Unique implementation
-		\end{itemize}
 	
-		\item Disadvantage of final keyword:
-		\begin{itemize}
-			\item Missing inheritance (due to final classes)
-			\item Polymorphism (due to final methods)
-		\end{itemize}
-		
-		\item Hence, if there is no specific requirement, it is not recommended to use final keyword.
-		
-		
-	\end{itemize}	
 	
 \end{flushleft}
 

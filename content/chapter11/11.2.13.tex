@@ -2,12 +2,10 @@
 \begin{flushleft}
 	
 	\begin{itemize}
-		\item Also known as a static initialization block
-		\item Executed only once when the class is loaded into memory. 
-		\item It initialize static variables or perform other one-time initialization tasks.
-		\item It is defined within a class and is marked with the static keyword. 
-		\item Within a class, you can declare any number of static blocks but all these static blocks will be executed from top to bottom
-		\item It does not have a method name and is enclosed within curly braces {}. 
+		\item Static initializer is used to initialize static attributes.
+		\item It is executed only once when the class is loaded into memory. 
+		\item Multiple static blocks are allowed \& will execute from top to bottom.
+		\bigskip
 		\syntaxblock{
 			class Classname \{ \\
 			\s static \{ \\
@@ -20,24 +18,24 @@
 		\codeblockfull{Test.java}{
 			class Test \{ \\
 			\s	static int count; \\
-			\s	static \{  \\
-			\s \s		count = 10; \\
-			\s \s		System.out.println("Count: " + count); \\
-			\s	\} \\
-			\\
+			\s	\textbf{static \{}  \\
+			\s \s		\textbf{count = 10;} \\
+			\s \s		\textbf{System.out.println("Count: " + count);} \\
+			\s	\textbf{\}} \\
 			\s	public static void main(String[] args) \{ \\	
-			\s	\s   System.out.println("Executed after static block"); \\
-			\s	\}
+			\s	\s   System.out.println("End"); \\
+			\s	\} \\
 			\}
 		}
 		\bigskip
 		\outputblock{
 			Count: 10 \\
-			Executed after static block
+			End
 		}
 		
 	\end{itemize}	
-	
+	\newpage
+	\textbf{Did you know?}
 	\quest{Without main method is it possible to print some statements to console?}{
 		\begin{itemize}
 			\item Before Java 1.7, yes by using static blocks.
@@ -52,11 +50,7 @@
 				\}
 			}
 			\item After Java 1.7, this code will result in runtime error.
-		\end{itemize}
-		
-		
+		\end{itemize}		
 	}
 	
 \end{flushleft}
-
-\newpage

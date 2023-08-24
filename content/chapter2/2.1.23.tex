@@ -3,40 +3,41 @@
 \begin{flushleft}
 	
 	\begin{itemize}
-		\item \textbf{main()} serves as the entry point for a Java program. 
-		\item When a Java program is executed, the JVM starts by looking for the main() method in the class specified in the command line arguments, and then executes the code inside it.
+		\item \textbf{main()} is entry point for a Java program. 
+		\item JVM looks for main() in the class \& executes it.
+		\item JVM searches for main() with below prototype:
 		\bigskip
 		\syntaxblock{
 			public static void main(String[] args)
 		}
-		\bigskip
-		\item At runtime, JVM always searches for main method with the above prototype:
+	
 		\begin{itemize}
-			\item \textbf{public:} To call main() from anywhere
-			\item \textbf{static:} without existing object also, JVM has to call this method
-			\item \textbf{void:} main() method wont return anything to JVM
-			\item \textbf{main:} This is the name which is configured inside JVM
+			\item \textbf{public:} Modifier to call main() from anywhere
+			\item \textbf{static:} without any object, JVM can call this method
+			\item \textbf{void:} Return nothing to JVM
+			\item \textbf{main:} Method name JVM calls by default
 			\item \textbf{String[] args:} command line argument
 		\end{itemize}
 		\bigskip
 		\noteblock{
-			The main() syntax is very strict and if we perform any change then we will get runtime error from JVM saying “NoSuchMethodError: main”.
-		}
-		\bigskip
+			\begin{itemize}
+				\item main() syntax is strict \& any change in this will result in runtime error: "NoSuchMethodError: main".
+				\item Compiler does not check Whether class contains main() or not.
+				\item JVM is responsible to check main.
+				\item JVM will throw runtime exception if main() is not declared correctly.
+			\end{itemize}
+			}
 		\item Changes allowed in main():
 		\begin{itemize}
 			\item Order of modifier can be changed:
 			\newline
-			Eg: static public void main(String[] args)
-			\item The command line argument’s string array can have different syntax:
+			Eg: \textbf{static public void main(String[] args)}
+			\item The command line argument’s string array identifier can change:
 			\newline
-			Eg: public static void main(String args[])
-			\item Identifier of the string array can change:
-			\newline
-			Eg: public static void main(String name[])
+			Eg: \textbf{public static void main(String temp[])}
 			\item String array can be taken as var\_arg parameter
 			\newline
-			Eg: public static void main(String… args)
+			Eg: \textbf{public static void main(String… args)}
 			\item main() method can be declared with following modifiers:
 			\begin{itemize}
 				\item final
@@ -53,76 +54,19 @@
 			}
 		\end{itemize}
 		\bigskip
-		\item There can be multiple main() methods (i.e main() method over-loading is possible!). However JVm will always call String[] argument main method only.
+		\item Multiple main() methods i.e method over-loading is possible!. However JVm will always call String[] argument main method only.
 		\bigskip
 		\codeblockfull{New.java}{
 			class New \{ \\
 			\s	public static void main(String[] args)\{ \\
-			\s	\s	System.out.println("Starting"); \\
-			\s	\}
+			\s	\s	System.out.println("Starting");  // Output: Starting \\
+			\s	\} \\
 			\s	public static void main(int[] args)\{ \\
 			\s \s		System.out.println("Sample 2"); \\
-			\s	\}
-			\}
+			\s	\} \}
 		}
-		\bigskip
-		\outputblock{
-			Starting
-		}
-		\newpage
-		\item \textbf{Inheritance:} While executing child class, if child does not contain main(), then parent class main() will be executed.
-		
-		\codeblockfull{New.java}{
-		class New \{ \\
-		\s public static void main(String[] args)\{ \\
-		\s \s System.out.println("Starting"); \\
-		\s \} \\
-		\} \\
-		class C extends New \{\}
-		}
-		\bigskip
-		\commandblock{
-			\$ javac New.java  <- Creates C.class New.clas New.java  \\ 
-			\$ java New \\ 
-			Starting \\ 
-			\$ java C \\
-			Starting
-		}
-		\bigskip
-		\item \textbf{Method hiding}: Child class can override parent class’s main(). This is not method overriding but it is method hiding.
-		\newline
-		Eg:
-		\codeblockfull{New.java}{
-			class New \{ \\
-			\s	public static void main(String[] args)\{ \\
-			\s \s		System.out.println("Starting New"); \\
-			\s	\} \\
-			\} \\
-			class C extends New \{ \\
-			\s	public static void main(String[] args)\{ \\
-			\s \s		System.out.println("Starting C"); \\
-			\s	\} \\
-			\} 
-		}
-		\newpage
-		\commandblock{
-			\$ javac New.java  <- Creates C.class New.clas New.java  \\ 
-			\$ java New \\ 
-			Starting New \\ 
-			\$ java C \\
-			Starting C
-		}
+
 	\end{itemize}
-	
-	
-	
-	\noteblock{
-		\begin{itemize}
-			\item Whether class contains main() method or not, and whether main() method is declared according to requirement or not, \textbf{these things are won’t be checked by compiler}.
-			\item At runtime, \textbf{JVM is responsible to check these things}.
-			\item If JVM unable to find main() method, then will throw runtime exception!
-		\end{itemize}
-	}
 	
 \end{flushleft}
 \newpage

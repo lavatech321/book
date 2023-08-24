@@ -1,64 +1,39 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
-\bigskip
-
-\begin{itemize}
-	\item The \textbf{/etc/hosts} file is used to \textbf{temporarily} resolve host names to IP addresses or the reverse. 
-	\item \textbf{/etc/hosts} \textbf{do not} perform permanent name resolution like DNS server.
-	\item You can resolve your hostname to IP address by adding an entry to this file as shown:
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[scale=.35]{content/chapter14/images/hosts3.png}
-		\caption{Add entry to /etc/hosts file}
-		\label{fig:hosts3}
-	\end{figure}		
 	
-	\item Test host name resolution with the /etc/hosts file using below command:
-	\bigskip
-		\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-		\color{black}
-		\fontdimen2\font=1em
-		Syntax: getent hosts hostname
-		\fontdimen2\font=4pt
-	\end{tcolorbox}
-	If an entry is not found in that file, the \textbf{getent} looks for the information from a DNS
-	nameserver.
-	\newline
-	Eg:
-	\bigskip
-	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=black,colframe=black]
-		\color{green}
-		\fontdimen2\font=1em
-		\# getent hosts server.example.com
-		\newline
-		\color{white}
-		fe80::a00:27ff:fe95:49b4 server.example.com
-		\fontdimen2\font=4pt
-	\end{tcolorbox}
-	\newpage
-	\item Test host name resolution that are resolved only using DNS and not \textbf{/etc/hosts}:
-	\bigskip
-	\begin{tcolorbox}[breakable,notitle,boxrule=-0pt,colback=pink,colframe=pink]
-		\color{black}
-		\fontdimen2\font=1em
-		Syntax: host hostname
-		\fontdimen2\font=4pt
-	\end{tcolorbox}
-	Eg:
-	\bigskip
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[scale=.35]{content/chapter14/images/hosts2.png}
-		\caption{Sample output}
-		\label{fig:hosts2}
-	\end{figure}		
-
+	\begin{itemize}
+		\item SortedMap interface implements Map interface.
+		\item It represent a group of \textbf{key,value pairs according to some sorting order of keys}.
+		\item Sorting is based on the key, \& not on value.
+		
+	\end{itemize}
 	
-\end{itemize}
-
-
-
+	\textbf{SortedMap specific methods:}
+	\begin{itemize}
+		\item Returns the first key of the sorted map.
+		\syntaxblock{
+			Object firstKey()
+		}
+		\bigskip
+		\item Returns the last key of the sorted map.
+		\syntaxblock{
+			Object lastKey()
+		}
+		\bigskip
+		\item Returns all the entries of a map whose keys are less than the specified key.
+		\syntaxblock{
+			SortedMap headMap(Object key)
+		}
+		\bigskip
+		\item Returns all the entries of a map whose keys are greater than or equal to the specified key.
+		\syntaxblock{
+			SortedMap tailMap(Object key)
+		}
+		\bigskip
+		\item Returns all the entries of a map whose keys lies in between key1 and key2 including key1	
+		\syntaxblock{
+			SortedMap subMap(Object key1, Object key2)
+		}
+	\end{itemize}
 \end{flushleft}
 \newpage
-
-

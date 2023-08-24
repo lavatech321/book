@@ -4,12 +4,13 @@
 	\begin{itemize}
 		\item A constructor has the code that runs when you use \textbf{new} operator. 
 		\item Main purpose of constructor is to perform \textbf{initialsation} of an object.	
+		\item Every class has a constructor, even if you don’t write it yourself.
 		\item Rules for creation of constructor:
 		\begin{itemize}
 			\item Constructor has the \textbf{same name as the class.} 
-			\item Access modifiers for constructors allowed are \textbf{public, private, protected and default or default (which means no access modifier at all)}.
+			\item Access modifiers for constructors allowed are \textbf{public, private, protected and default(which means no access modifier at all)}.
 			\item Constructor \textbf{does not have a return type, not even void.}
-			\item Constructors can accept parameters to initialize the object's attributes.
+			\item Constructors can accept parameters.
 			\bigskip
 			\syntaxblock{
 				public/private/protected/default  Classname(args) \{ \\
@@ -25,47 +26,25 @@
 			\s	\textbf{public Test()} \{ \\
 			\s \s		System.out.println("Constructor called"); \\
 			\s	\} \\
-			\\
 			\s	public static void main(String[] args) \{ \\
-			\s \s		\textbf{Test t1 = new Test();} \\
+			\s \s		\textbf{Test t1 = new Test();}  // Output: Constructor called \\
 			\s	\} \\
 			\}
 		}
-		
-		\bigskip
-		\outputblock{
-			Constructor called
-		}
-		
+				
 		\newpage
-		\item Every class has a constructor, even if you don’t write it yourself.
-		
-		\bigskip
-		\quest{But where is the constructor? If we didn’t write it, who did?}
+		\quest{Who write the constructor if you hav'nt?}
 		{
-			\begin{itemize}
-				\item You can write a constructor for your class (we’re about to do
-				that), but if you don’t, \textbf{the compiler writes one for you!}
-				\item The default constructor is always a no-arg constructor as shown below:
+				You can write a constructor for your class, but if you don’t, \textbf{the compiler writes one for you!}. Compiler write a no-arg constructor as shown below:
 				\codeblock{
 					class Test \{ \\
-					\s // No-arg constructor \\
 					\s public Test() \{\} \\
 					\}
 				}
-			\end{itemize}
-		}
-		
-	
-		
+		}		
 	\end{itemize}
 
-	
-	
-	
-
 \end{flushleft}
-\newpage
 
 
 

@@ -2,14 +2,12 @@
 \begin{flushleft}
 	
 	\begin{itemize}
-		\item Polymorphism refers to the ability of objects to take on multiple forms or behaviors. 
-		\item It allows objects of different classes to be treated as objects of a common superclass or interface.
-		\item Eg:
+		\item Polymorphism refers to the ability of objects to take on multiple forms or behaviors. Eg:
 		\codeblockfull{Test.java}{
 			class Animal \{ \\
 			\s	String sound; \\
 			\s	public void makenoise() \{ \\
-			\s \s		System.out.println(sound); \\
+			\s \s		System.out.print(sound); \\
 			\s	\} \} \\
 			class Dog extends Animal \{ \\
 			\s	public Dog(String sound) \{ \\
@@ -18,34 +16,27 @@
 			class Cat extends Animal \{ \\
 			\s	public Cat(String sound) \{ \\
 			\s \s		this.sound = sound; \\
-			\s	\} \} \\
+			\s	\} \\
+			 \} \\
 			\\
 			class Test \{ \\
 			\s	public static void main(String[] args) \{ \\
 			\s \s		\textbf{Animal[] animals = new Animal[2];} \\
-			\s \s		\textbf{animals[0] = new Dog("Baw Baw!");} \\
-			\s \s		\textbf{animals[1] = new Dog("Meow!");}  \\
+			\s \s		\textbf{animals[0] = new Dog("Baw");} \\
+			\s \s		\textbf{animals[1] = new Cat("Meow");}  \\
 			\s \s		for(int i=0; i<animals.length; i++) \{ \\
-			\s \s \s			\textbf{animals[i].makenoise();} \\
-			\s \s		\} \\
-			\s	\} 		\\
+			\s \s			\textbf{animals[i].makenoise();} // Output: Baw Meow  \\
+			\s \s	\}  \\
+			\s \} 	\\
 			\}
 		}
+		
 		\newpage
 		
-		\outputblock{
-			Baw Baw! \\
-			Meow!
-		}
-		
-		\bigskip
-		\item Polymorphism in Java can be achieved through two main mechanisms:
-		
-		\newimage{0.5}{content/chapter11/images/poly.png}
-		
-		
-		Let's see each of these type of polymorphism in detail.
-		
+		\item Polymorphism can be achieved through two main mechanisms:
+		\newimage{0.6}{content/chapter11/images/type2.png}
+		\newline
+		Let's see each of these in detail.
 		
 	\end{itemize}
 	

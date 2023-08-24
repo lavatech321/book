@@ -1,43 +1,32 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
 
-	\begin{itemize}
-		
+	\begin{itemize}	
 		\item All the constructors in an object’s inheritance tree must run when you make a new object.
-		\item This all happens in a process called \textbf{Constructor Chaining}.
+		\item This process is called \textbf{Constructor Chaining}.
 		\bigskip
 		\codeblockfull{Test.java}{
 			class Animal \{ \\
 			\s	public Animal() \{ \\
-			\s \s		System.out.println("This is a Animal"); \\
-			\s	\} \\
+			\s \s		System.out.print("Animal"); \\
+			\s	\}  \\
 			\} \\
 			class Duck extends Animal \{ \\
 			\s	public Duck() \{ \\
-			\s \s		System.out.println("This is a Duck"); \\
-			\s	\} \\
+			\s \s		System.out.print("Duck"); \\
+			\s	\}  \\
 			\} \\
-			\\
 			public class Test \{ \\
 			\s	public static void main(String[] args) \{ \\
-			\s \s		Duck d1 = new Duck(); \\
-			\s	\}	\\
+			\s \s		Duck d1 = new Duck(); // Output: Animal Duck \\
+			\s	\}	 \\
 			\}
 		}
 	
-		\bigskip
-		\outputblock{
-			This is a Animal \\
-			This is a Duck
-		}
-		
-		
-		
-		
 	\end{itemize}
 	
 \end{flushleft}
-\newpage
 
+\newpage
 
 

@@ -1,58 +1,42 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
 	
-	All rules of method hiding are exactly same overriding except the following difference:
-	
+	Method hiding is same overriding except:
 	\tabletwo{
 		\hline
 		Method hiding & Method overriding \\
 		\hline
-		Both parent and child class method should be static & Both parent and child class method should be non-static \\
+		It is like sticking poster on black board & It is like erasing board and writing new content \\
 		\hline
-		Compiler is responsible for method resolution based on reference type & JVM is always responsible for method resolution based on runtime object \\
+		Require static parent and child method & Require non-static parent and child method \\
 		\hline
-		It is also known as compile-time polymorphism or static polymorphism or early binding & It is also known as runtime polymorphism or dynamic polymorphism or late binding \\
+		Compiler does method resolution & JVM does method resolution \\
+		\hline
+		Known as compile-time/static polymorphism or early binding & Known as runtime/dynamic polymorphism or late binding \\
 		\hline
 	}
-	
 	Eg:
 	\codeblockfull{Test.java}{
 		class Parent \{ \\
 		\s public static void m1() \{ \\
 		\s \s	System.out.println("Parent"); \\
-		\s	\} \\
-		\} \\
+		\s	\} \} \\
 		class Child extends Parent \{ \\
 		\s	public static void m1() \{ \\
 		\s \s		System.out.println("Child"); \\
-		\s 	\} \\
-		\}  \\
+		\s 	\} \}  \\
 		class Test \{ \\
 		\s	public static void main(String[] args) \{ \\
 		\s \s		Parent p1 = new Parent(); \\
-			\s \s		p1.m1(); \\
-		\s \s		Child c1 = new Child(); 
+		\s \s		p1.m1();  \s // Output: Parent \\
+		\s \s		Child c1 = new Child();  \\
+		\s \s		c1.m1();  \s // Output: Child \\
+		\s \s		Parent p2 = new Child(); \\
+		\s \s		p2.m1();  \s  // Output: Parent \\
+		\s	\} \\
+		\}
 	}	
-	\newpage
-	\codecontinue{
-	\s \s		c1.m1(); \\
-	\s \s		Parent p2 = new Child(); \\
-	\s \s		p2.m1(); \\
-	\s	\} \\
-	\}
-	}
 	
-	\bigskip
-	\outputblock{
-		Parent \\
-		Child \\
-		Parent
-	}
-
-	\bigskip
-	\noteblock{
-	Method hiding is like sticking poster on black board, while method overriding is like erasing board and writing new content.
-	}
 \end{flushleft}
 
 \newpage

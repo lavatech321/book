@@ -3,14 +3,11 @@
 \begin{flushleft}
 	
 	\begin{itemize}
-			\item Command line arguments are values passed to Java program when it is run from the command line. 
-			\item With these command line arguments, JVM creates an array and pass it to main().
-			\item Command line arguments can be accessed using the args parameter of the main(). 
-			\item Args parameter is an array of String objects.
-			\item You can customise behaviour of main() using command-line argument:
+			\item Command line arguments are \textbf{values passed to Java program from command line}. 
+			\item JVM creates String array out of these arguments named "[]args" and pass it to main().
 			
 			\codecontinue{
-			public static void main(String[] args) //  ← Here, \textbf{String[] args} contains command line args
+			public static void main(\textbf{String[] args}) 
 			}
 		
 			\newimage{0.5}{content/chapter2/images/ans.png}
@@ -20,32 +17,22 @@
 			\codeblockfull{New.java}{
 				class New \{ \\
 				\s	public static void main(String... args) \{  \\
-				\s \s		for(int i = 0; i < args.length; i++) \{ \\
-				\s \s			System.out.println(args[i]); \\
-				\s \s		\} \\
-				\s	\} \\
-				\}
+				\s \s			System.out.println(args[0]+","+args[1]); \\
+				\s \s		\} \} 
 			}
-		
+			\bigskip
 			\commandblock{
-			\$ javac New.java  \\
-			\$ java New 1 23 3 \\
-			1  \\
-			23  \\
-			3 \\
+			\$ \textbf{javac New.java}  \\
+			\$ \textbf{java New 1 23 3} \\
+			1,23  
 			}
 			\bigskip
 			\item Command line arguments are separated by space. To give one argument with space character, using "" :
 			\commandblock{
 				\$ java New "Note Book"
-			}
-			
-							
+			}	
 	\end{itemize}
-	
-	
-\end{flushleft}
-\newpage
 
+\end{flushleft}
 
 

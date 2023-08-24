@@ -43,7 +43,7 @@
 		\bigskip
 		\codeblockfull{Test1.java}{
 			package com.lavatech.www; \\
-			public class Test1 \{  \\
+			\textbf{public class Test1} \{  \\
 			\s	public void message()\{ \\
 			\s \s		System.out.println("Hard work pays off!"); \\
 			\s	\} \\
@@ -52,10 +52,10 @@
 		\bigskip
 		\codeblockfull{Test2.java}{
 			package com.lavatech.info; \\
-			import com.lavatech.www.Test1; \\
+			\textbf{import com.lavatech.www.Test1;} \\
 			public class Test2 \{ \\
 			\s public static void main(String[] args) \{ \\
-			\s \s		Test1 t1 = new Test1(); \\
+			\s \s		\textbf{Test1 t1 = new Test1();} \\
 			\s \s		t1.message(); \\
 			\s	\} \\
 			\}	
@@ -76,7 +76,7 @@
 		\item A default class \textbf{does not have an access modifier} specified. 
 		\item Also known as a \textbf{package-private class} 
 		\item It is accessible \textbf{only within the same package}.
-		\item If no access modifier (such as public, private, or protected) is specified, the class is considered to have default access.
+		\item If no access modifier is specified, the class have default access.
 		\item Eg:
 		\bigskip
 		\codeblockfull{Test1.java}{
@@ -102,27 +102,35 @@
 		}
 	\end{itemize}
 
-	\newpage
-	\textbf{final class}
+	\textbf{final class}:
 	\begin{itemize}
-		\item Final class can’t be inherited 
-		\item You can’t create child class for final class.
-		\item More on final class is mentioned in inheritance section.
-	\end{itemize}
+		\item Final class can’t be inherited. 
+		\item Final class method are always final ie. method cannot be overridden.
+		\item Final class attributes need not be final.
+		\newpage
+		\item Eg:
+		\bigskip
+		\codeblockfull{Test.java}{
+			final class A \{\} \\
+			class Test \textbf{extends} A \{\}  \xmark
+		}
+		\item Disadvantage of final keyword:
+		\begin{itemize}
+			\item Missing inheritance (due to final classes)
+			\item Polymorphism (due to final methods)
+		\end{itemize}
+		
+	\end{itemize}	
 
 	\textbf{abstract class}
 	\begin{itemize}
-		\item Abstract classes can be instantiated.
-		\item You cannot create object of abstract class.
-		\item More on abstract class is mentioned in Abstract class section.
+		\item Abstract classes cannot have any objects.
+		\item More on abstract class is mentioned in Abstract class chapter.
 	\end{itemize}
 
 	\textbf{strictfp class}
 	\begin{itemize}
-		\item strictfp was introduced in Java1.2 version.
-		\item Strictfp class ensures all methods in the class \& its subclasses, adhere to strict floating-point precision rules.
-		\item strictfp is used to ensure that floating points operations give the same result on any platform. 
-		\item As floating points precision may vary from one platform to another. strictfp keyword ensures the consistency across the platforms.
+		\item Introduced in Java1.2 version, strictfp class ensures all methods in the class \& its subclasses provide same result for the floating points operations on any platform. 
 		\item Eg:
 		\codeblockfull{Test.java}{
 		\textbf{strictfp class A} \{ \\
@@ -134,14 +142,8 @@
 		public class Test \{  \\
 		\s	public static void main(String[] args) \{  \\
 		\s \s		A a1 = new A();      \\
-		\s \s		System.out.println("Result: " + a1.calculate()); \\
-		\s	\} \}
-		}
-		\newpage
-		
-		\bigskip
-		\outputblock{
-			Result: 1.0E103	
+		\s 	System.out.println(a1.calculate()); // Output: 1.0E103 \\
+		\s	\}  \}
 		}
 		
 	\end{itemize}

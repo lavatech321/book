@@ -10,10 +10,13 @@
 			switch(x) \{ \\
 			\s case 0: \\
 			\s \s System.out.print(0); \\
+			\s \s break; \\
 			\s case 1: \\
 			\s \s System.out.print(1); \\
+			\s \s break; \\
 			\s case 2: \\
 			\s \s System.out.print(2); \\
+			\s \s break; 
 			\}
 		}
 		
@@ -23,32 +26,25 @@
 		\codeblock{
 			for(int i=0; i < 10; i++) \{ \\
 			\s if(i==5) \\
-			\s \s break;
+			\s \s break; \\
 			\s 	System.out.print(i); \\
 			\}
 		}
 		
 		\item Inside labeled blocks to break block execution based on some condition:
 		\bigskip
-		\codeblockfull{Test.java}{
-			class Test \{ \\
-			\s public static void main(String[] args) \{ \\
-			\s int x = 10;  \\
-			\s l1: \{ \\
+		\codeblock{
+			int x = 10;  \\
+			l1: \{ \\
 			\s \s 	System.out.print("begin"); \\ 
 			\s \s if(x==10) \\
 			\s \s \s	break l1; \\
 			\s \s 	System.out.print("end"); \\
-			\s	\} \\
-			\s \s 	System.out.print("Hello"); \\
-			\s	\} \\
-			\}
+			\} \\
+			System.out.print("Hello"); 
 		}
 		
 		
 	\end{itemize}
 
 \end{flushleft}
-
-\newpage
-

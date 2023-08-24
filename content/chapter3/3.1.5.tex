@@ -1,10 +1,16 @@
 
 \begin{flushleft}
 	
+	Below are available relational operator in Java:
+
+	\newimage{0.5}{content/chapter3/images/relational.png}
+
+	Let's see these in detail.	
+	\newline
+	
+	\textbf{Comparison operators: > , >= , < , <=}
 	\begin{itemize}
-		\item Below are available relational operator in Java:
-		\newimage{0.5}{content/chapter3/images/relational.png}
-		\item We can apply relational operator for every primitive datatype, except boolean datatype.
+		\item Comparison operator is \textbf{applicable for every primitive datatype}, except boolean datatype.
 		\item Eg:
 		\bigskip
 		\codeblock{
@@ -14,18 +20,53 @@
 			//System.out.println(true > false); \xmark
 		}
 	
-		\item We can’t apply relational operators for object types
+		\item Comparison operator is \textbf{not applicable on object types}:
 		\bigskip
 		\codeblock{
 			System.out.println('lava' > 'lavatech');  \xmark
 		}
 	
-		\item Chaining of relational operators is not allowed.
+		\newpage
+		\item Chaining of comparison operators is not allowed.
 		\bigskip
 		\codeblock{
 			System.out.println(10>20>30);  \xmark
 		}
 		
+	\end{itemize}
+
+\textbf{Equality operators: == , !=}
+	\begin{itemize}
+		\item Equality operators are \textbf{applicable on all primitive type}.
+		\bigskip
+		\codeblock{
+			System.out.println(10==20);  // output: fasle \\
+			System.out.println('a' == 'b'); // output: false \\
+			System.out.println('a' == 97.0); // output: true \\
+			System.out.println(false == false); // output: true
+		}
+		
+		\item Equality operators are \textbf{applicable for object types}. Returns true, if both object reference pointing to the same object.
+		\bigskip
+		\codeblock{
+			Thread t1 = new Thread(); \\
+			Thread t2 = new Thread(); \\
+			Thread t3 = t1; \\
+			System.out.println(t1 == t2);   // output: false \\
+			System.out.println(t1 == t3);   // output: true
+		}
+		
+		If child \& parent are not of same type, it will result in compile-time error.
+		\bigskip
+		\codeblock{
+			Thread t1 = new Thread();   \\
+			Object o = new Object();   \\
+			String s = new String("lava");   \\
+			System.out.println(t1==o) ; // output: false    \\
+			System.out.println(o==s); // output: false    \\
+			//System.out.println(s==t1); \xmark
+		}
+				
 	\end{itemize}
 	
 \end{flushleft}

@@ -2,53 +2,28 @@
 \begin{flushleft}
 	
 	\begin{itemize}
-		\item Adapter class is a simple Java class that implements an interface with only empty implementation.
-		\item Using adapter class, you can extend the adapter class and override only the methods they need, instead of implementing all the methods of the interface.
+		\item Adapter class implements an interface with only empty implementation.
+		\item You can extend the adapter class and override only the methods they need, instead of implementing all the methods of the interface.
 		\item Eg:
 		\bigskip
-		\codeblockfull{AudioPlayer.java}{
-			public interface MediaPlayer \{ \\
-			\s void play(); \\
-			\s	void pause(); \\
-			\s	void stop(); \\
+		\codeblockfull{Dog.java}{
+			interface Animal \{ \\
+			\s	public abstract void sound(); \\
+			\s	public abstract void move(); \\
 			\} \\
-			\\
-			abstract class MediaPlayerAdapter implements  MediaPlayer \{ \\
-			\s @Override \\
-			\s	public void play() \{ \\
-			\s \s		// Default implementation \\
+			class Cannian implements Animal \{ \\
+			\s	public void sound() \{\} \\
+			\s	public void move() \{\} \\
+			\} \\
+			class Dog extends Cannian \{ \\
+			\s	public void sound() \{ \\
+			\s \s		System.out.println("Bow"); \\
 			\s	\} \\
-				\\
-			\s	@Override \\
-			\s	public void pause() \{ \\
-			\s \s		// Default implementation \\
-			\s	\} 
-		}
-	
-		\newpage
-		\codecontinue{
-		\s 	@Override \\
-		\s	public void stop() \{ \\
-		\s \s		// Default implementation \\
-		\s	\} \\
-		\} \\
-		\\
-		public class AudioPlayer extends MediaPlayerAdapter \{ \\
-		\s	@Override \\
-		\s	public void play() \{ \\
-		\s \s		// Implementation specific to AudioPlayer  \\
-		\s \s	System.out.println("Playing audio."); \\
-		\s	\} \\
-		\s	public static void main(String[] args) \{ \\
-		\s \s		AudioPlayer player = new AudioPlayer(); \\
-		\s \s		player.play(); \\
-		\s	\} \\
-		\}
-		}
-		
-		\bigskip
-		\outputblock{
-			Playing audio.	
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Dog d1 = new Dog(); \\
+			\s \s		d1.sound();  // Output: Bow \\
+			\s	\} \\
+			\}
 		}
 		
 	\end{itemize}

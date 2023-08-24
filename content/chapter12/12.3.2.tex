@@ -2,55 +2,25 @@
 \begin{flushleft}
 	
 	\begin{itemize}
-		\item Implementing an interface requires implementing each method of interface.
-		\item Interface methods should always by declared as \textbf{public}.
-		\item Interface methods are abstract whether we are declaring or not.			
-		\item Hence inside interface the ofllowing method declaration are equal:
-		\bigskip
+		\item Interface methods are always \textbf{public} \& \textbf{abstract} (even without declaring it explicitly). Below all declaration are valid:
 		\codeblock{
-			void m1(); \\
-			public void m1(); \\
-			abstract void m1(); \\
-			public abstract void m1();
+			\textbf{void m1();} or \textbf{public void m1();} \\
+			\textbf{abstract void m1();}  or  \textbf{public abstract void m1();} 
 		}
-		
 		\item Eg:
-		\codeblockfull{Circle.java}{
-			public interface Drawable \{ \\
-			\s void draw(); \\
-			\s	double calculateArea(); \\
+		\codeblockfull{Dog.java}{
+			\textbf{interface} Animal \{ \\
+			\s	void sound(); \\
 			\} \\
-			public class Circle implements Drawable \{ \\
-			\s	private double radius; \\
-				\\
-			\s	public Circle(double radius) \{ \\
-			\s \s		this.radius = radius; \\
-			\s	\}  \\
-					\s	@Override \\
-			\s	public void draw() \{ \\
-			\s \s		System.out.println("Drawing a circle."); \\
-			\s	\} \\
-									\s	@Override \\
-			\s	public double calculateArea() \{ 
+			\textbf{class Dog implements Animal} \{ \\
+			\s	public void sound() \{ \\
+			\s \s		System.out.println("Bow"); 	\} \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Dog dog = new Dog(); \\
+			\s \s		dog.sound(); // Output: Bow \\
+			\} \}
 		}
 		
-		\newpage
-		\codecontinue{
-			\s \s		return Math.PI * radius * radius; \\
-			\s	\} \\
-		\s public static void main(String[] args) \{ \\
-		\s \s	Circle circle = new Circle(4); \\
-		\s \s	circle.draw(); \\
-		\s \s	System.out.println(circle.calculateArea()); \\
-		\s \} \\
-		\}
-		}
-	
-		\bigskip
-		\outputblock{
-			Drawing a circle. \\
-			50.26548245743669
-		}
 	\end{itemize}
 
 	

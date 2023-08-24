@@ -1,24 +1,13 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
 
-	\begin{itemize}
-		\item Java package groups related classes and method can be grouped into a single unit.
-		\item Eg: All classes and interfaces for File I/O operations are group into \textbf{java.io} package.
-		\item Advantage of package:
-		\begin{itemize}
-			\item \textbf{Resolve naming conflict}
-			\item \textbf{Modularity:} Modularises the application
-			\item \textbf{Maintainability:} Improves application maintainability.
-			\item \textbf{Security:} Provides security for our components
-		\end{itemize}
+	Package is group of Java ".class" files in a folder.
 
-	\end{itemize}
-
-	\textbf{Naming for Package}
+	\textbf{Package naming convention}
 	\begin{itemize}
-		\item There is one universally accepted naming convention for packages, i.e to use internet domain name in reverse:
-		\newline
-		Eg:
+		\item Universally accepted naming convention for packages is \textbf{internet domain name in reverse}.
+		\item Eg: For domain name \textbf{www.lavatech.com}, package name is \textbf{com.lavatech.www}.
+		\item Eg: Create program with package name \textbf{com.lavatech.www}:
 		\codeblockfull{Test.java}{
 			package com.lavatech.www; \\
 			class Test \{ \\
@@ -28,55 +17,44 @@
 			\s	\} \\
 			\}
 		}
+		\item Command to create package and place compiled ".class" file in it:
 		\bigskip
+		\syntaxblock{
+			\$ javac -d <location> <filename.java>
+		}
+		Eg:
+		\commandblock{
+			\# Create package in current location \\
+			\$ javac -d . Test.java    \\
+			\\
+			\# Create package under "D:" location \\
+			\$ javac -d D: Test.java   
+		}
 		
- 		\item Below command can be used to directory structure at valid location.
- 		\bigskip
- 		\syntaxblock{
- 			\$ javac -d <location> <filename.java>
- 		}
- 		\newpage
- 		Eg:
- 		\commandblock{
- 			\# To create directory structure in current location \\
- 			\$ javac -d . Test.java    \\
- 			\\
- 			\# To create directory structure under "D:" location \\
- 			\$ javac -d D: Test.java   
- 		}
- 		
 		Above command will create below directory structure:
-		\newimage{0.8}{content/chapter10/images/mew.png}
+		\newimage{0.6}{content/chapter10/images/mew.png}
 		
-		\item While running, make sure that you provide fully qualified name:
+		\item While executing, use package name and class name:
 		\bigskip
 		\commandblock{
-		\$ java com.lavatech.www.Test  \\
-		10	
+			\$ java com.lavatech.www.Test  \\
+			10	
 		}
 		
 	\end{itemize}
 
-\newpage
 
 \textbf{Important pointers:}
 \begin{itemize}
 	\item There can be utmost one package statement in any Java source file.
 	\newline
-	Eg 1:
+	Eg:
 	\bigskip
 	\codeblock{
-		package pack1; \\
+		package pack1;  \cmark \\
 		package pack2;  \xmark \s \# Result in compile-time error \\
-		public class A {} 	
-	}
-	Eg 2:
-	\bigskip
-	\codeblock{
-		package pack1; \cmark \\
 		public class A \{\} 	
 	}
-
 	\item The first non comment statement should be package statement (if it is available), otherwise we will get compile-time error.
 	\bigskip
 	\codeblock{
@@ -93,37 +71,155 @@
 		import statements;  $\leftarrow$ Any number		\\
 		class | interface | enum declarations   $\leftarrow$ Any number
 	}
+
 	
-	\item An empty source file is a valid java program. Hence the following are valid java source files:
-	\bigskip
-	\codeblockfull{Test.java}{
-	\# Empty file	
-	}
-
-	\bigskip
-	\codeblockfull{Test.java}{
-	pacakge pack1;
-	}	
-
-	\bigskip
-	\codeblockfull{Test.java}{
-		import java.util.*;
-	}
-
-	\bigskip
-	\codeblockfull{Test.java}{
-		package pack1; \\
-		import java.util.*;
-	}
-
-	\bigskip
-	\codeblockfull{Test.java}{
-		class Test \{\}
-	}
 \end{itemize}
 
+	\newpage
+	
+	\textbf{Example of creating and importing package}:
+	\begin{itemize}
+		\item Eg 1: Create "Test.class" in package \textbf{com.lavatech.www}.
+		\codeblockfull{Test.java}{
+			package com.lavatech.www; \\
+			public class Test \{ \\
+			\s	public int i=23; \\
+			\}	
+		}
+		Create program named \textbf{Apply.java} that would import \textbf{com.lavatech.www.Test}:
+		\codeblockfull{Apply.java}{
+			import com.lavatech.www.Test; \\
+			public class Apply \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		Test t1 = new Test(); \\
+			\s \s		System.out.println(t1.i); \\
+			\s	\} \\
+			\}	
+		}
+		Compile both \textbf{Test.java} and \textbf{Apply.java}:
+		\commandblock{
+			\$ javac -d . Test.java  \\
+			\$ javac Apply.java
+		}
+		Execute the \textbf{Apply.java} file:
+		\commandblock{
+			\$ java Apply  \\
+			23
+		}
+	\end{itemize}
+	
+	\newpage	
+	\textbf{Example of Java code importing internally in package}
+	\begin{itemize}
+		\item Eg2: Create below directory structure with 2 empty programs \textbf{App1.java} and \textbf{App2.java} as shown  below:
+		\newimage{0.8}{content/chapter10/images/new.png}
+		\item Create program \textbf{App1.java}:
+		\codeblockfull{App1.java}{
+			package com.lavatech.www; \\
+			public class App1 \{ \\
+			\s	public String name="Lavatech-App1"; \\
+			\}
+		}
+		\item Create program \textbf{App2.java}:
+		\codeblockfull{App2.java}{
+			package com.lavatech.www; \\
+			public class App2 \{ \\
+			\s	public String name="Lavatech-App2"; \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		App1 app1 = new App1(); \\
+			\s \s		System.out.println(app1.name); \\
+			\s	\} \\
+			\}
+		}
+		\item Compile the \textbf{App1.java} \& \textbf{App2.java}
+		\commandblock{
+			\$ javac com/lavatech/www/App1.java  \\
+			\$ javac com/lavatech/www/App2.java 
+		}
+		\newpage
+		\item Execute \textbf{App2.java}:
+		\commandblock{
+			\$ java com.lavatech.www.App2 \\
+			Lavatech-App1
+		}
+		
+		\item Create \textbf{apply.java} outside the \textbf{com/lavatech/www} package:
+		\newimage{0.9}{content/chapter10/images/new2.png}
+		\codeblockfull{apply.java}{
+			import com.lavatech.www.App1; \\
+			public class apply \{ \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		App1 app = new App1(); \\
+			\s \s		System.out.println(app.name); \\
+			\s	\}  \\
+			\}
+		}
+		\item Execute \textbf{apply.java}:
+		\commandblock{
+			\$ javac apply.java  \\
+			\$ java apply  \\
+			Lavatech-App1
+		}
+	\end{itemize}
+	
+	\newpage	
+	\textbf{Example of using classpath and having Java code in different directory structure:}
+	
+	\begin{itemize}
+		\item Create 3 empty folders and 3 java code as shown below:
+		\newimage{1}{content/chapter10/images/struct.png}
+		
+		\item Content of A.java should be:
+		\bigskip
+		\codeblockfull{A.java}{
+			package level1.level2; \\
+			public class A \{ \\
+			\s	public int a=10; \\
+			\}	
+		}
+		
+		Content of B.java should be:
+		\bigskip
+		\codeblockfull{B.java}{
+			package level3.level4; \\
+			public class B \{ \\
+			\s	public int b=20; \\
+			\}	
+		}
+		\newpage
+		Content of C.java should be:
+		\codeblockfull{C.java}{
+			package level5.level6; \\
+			import level1.level2.A; \\
+			import level3.level4.B; \\
+			public class C \{ \\
+			\s	public static void main(String[] args)\{ \\
+			\s \s		A a1 = new A(); \\
+			\s \s		B b1 = new B(); \\
+			\s \s		System.out.println(a1.a); \\
+			\s \s		System.out.println(b1.b); \\
+			\s	\}
+			\}	
+		}
+	
+		\item Compile all the 3 codes such that "A.class" file is placed under folder1, "B.class" file is placed under folder2, "C.class" file is placed under folder3.
+		\bigskip
+		\commandblock{
+			\$ \textbf{javac -d folder1 A.java}  \\
+			\$ \textbf{javac -d folder2 B.java}  \\
+			\$ \textbf{javac -d folder3 -cp folder1:folder2 C.java}
+		}
+		Above commands should create below directory structure:
+		\newimage{0.7}{content/chapter10/images/struct2.png}
+		\newpage
+		\item Execute class "C"  by setting classpath as shown:
+		\bigskip
+		\commandblock{
+		\$ \textbf{java -cp folder1:folder2:folder3 level5.level6.C }\\
+		10 \\
+		20
+		}
+		
+	\end{itemize}
 	
 \end{flushleft}
-
-\newpage
-

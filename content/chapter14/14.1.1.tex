@@ -1,73 +1,142 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
 
-\bigskip
-\textbf{What is a network?}
-\newline
-A network \textbf{consists of two or more computers that are linked in order to share resources (such as printers and CDs)}, exchange files, or allow electronic communications.
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.6]{content/chapter14/images/networking.png}
-	\caption{Network of device}
-	\label{fig:network}
-\end{figure}
-
-\newpage
-
-\textbf{Let's see the types of network available:}
-
-\begin{figure}[h!]
-	\centering
-	\includegraphics[scale=0.6]{content/chapter14/images/network_types.png}
-\end{figure}
-
-\begin{itemize}
-	\item \textbf{Local Area Network (LAN)}:
 	\begin{itemize}
-		\item \textbf{Connect computers across short distances}(like group of buildings close to each other) to share information/resources.
-		\item \textbf{Companies uses LANs}.
+		\item ArrayList are \textbf{ordered \& indexed} collection of \textbf{hetrogenous objects} wherein \textbf{duplicate objects \& null} is allowed.
+		\newimage{0.5}{content/chapter14/images/list3.png}
+		\item ArrayList class implements List interface.
 	\end{itemize}
-	\bigskip\bigskip
-	\item \textbf{Wireless Local Area Network (WLAN)}:
+	
+	\textbf{Ways of initializing ArrayList}
+	
 	\begin{itemize}
-		\item Functions like a LAN.
-		\item WLANs make use of wireless network technology, such as Wi-Fi.
+		\item Creating am empty ArrayList:
+		\bigskip
+		\syntaxblock{
+			// To create ArrayList of hetrogenous elements: \\
+			ArrayList list = new ArrayList(); \\
+			\\
+			// To create ArrayList of homogenous elements: \\
+			ArrayList<ClassName> list = new ArrayList<ClassName>(); 
+		}
+		Eg:
+		\codeblock{
+			ArrayList list = new ArrayList(); \\
+			ArrayList<String> list = new ArrayList()<String>; 
+		}
+	
+		\bigskip
+		\item \textbf{ArrayList capacity}:
+		\begin{itemize}
+			\item Above syntax will create ArrayList with \textbf{default capacity of 10}.
+			\item Once 10 objects are added, then a new array list object will be created with new capacity as shown below:
+			\bigskip
+			\codecontinue{
+				\textbf{New capacity = (current capacity * 3/2) + 1}
+			}
+			\item Hence ArrayList capacity would be 10, 16, 25, 38,....
+			\bigskip
+			\noteblock{
+				There is no method to check default initial capacity.
+			}
+			
+		\end{itemize}
+		
+		\item Creating am empty ArrayList with initial capacity:
+		\bigskip
+		
+		\syntaxblock{
+			// To create ArrayList of hetrogenous elements: \\
+			ArrayList numbers = new ArrayList(capacity); \\
+			\\
+			// To create ArrayList of homogenous elements: \\
+			ArrayList<ClassName> list = new ArrayList<ClassName>(capacity); 
+		}
+		Eg:
+		\codeblock{
+			ArrayList numbers = new ArrayList(20); \\
+			ArrayList<Integer> list = new ArrayList<Integer>(20); 
+		}
+			
+		\newpage
+		\item Initialization with data:
+		\begin{itemize}
+			\item Using \textbf{Arrays.asList()} method:
+			\bigskip
+			\codeblock{
+			import java.util.*; \\ 
+			String[] namesArray = \{"Jim", "Jane", "Alice"\}; \\
+			ArrayList<String> namesList = new ArrayList<>(Arrays.asList(namesArray)); 
+			}
+			
+			\item Using \textbf{List.of} method:
+			\bigskip
+			\codeblock{
+			ArrayList<String> colors = new ArrayList<>(List.of("Red", "Green", "Blue"));
+			}
+			
+			\item Using \textbf{"var"} and \textbf{"List.of"}: 
+			\bigskip
+			\codeblock{
+				var fruits = new ArrayList<>(List.of("Apple", "Banana", "Orange"));
+			}
+			
+		\end{itemize}
+	
 	\end{itemize}
-	\bigskip\bigskip
-		\item \textbf{Wide Area Network (WAN)}:
+
+	\textbf{Where ArrayList is best choice:}
 	\begin{itemize}
-		\item Connects computers together across longer physical distances.
-		\item Eg: The Internet
-		\item Maintained by multiple administrators or the public.
+		\item For retrieval operations, because ArrayList implements RandomAccess interface.
 	\end{itemize}
-	\bigskip\bigskip
-	\item \textbf{Metropolitan Area Network (MAN)}:
+	
+	\textbf{Where ArrayList is worst choice:}
 	\begin{itemize}
-		\item Larger than LANs but smaller than WANs.
-		\item Span an \textbf{entire geographic area} (eg. town or city).
-		\item Handled by single person or company.
+		\item For insertion or deletion operation in the middle.
+		\item For this, LinkedList is best choice.
 	\end{itemize}
-	\bigskip\bigskip
-	\item \textbf{Storage-Area Network (SAN)}:
+	
+		
+	\newpage
+	
+	\textbf{Example:}
+	
 	\begin{itemize}
-		\item \textbf{Connects shared pools of storage devices to several servers}.
-		\item \textbf{SAN doesn't rely on a LAN or WAN}.
-		\item Storage resources are placed into high-performance network.
-	\end{itemize}
-	\bigskip\bigskip
-	\item \textbf{Virtual Private Network (VPN)}:
-	\begin{itemize}
-		\item \textbf{Private network across the Internet}.
-		\item Lets its users send and receive data over private network using Internet.
+		\item Java program to create an empty ArrayList and perform add, remove operation and display it's size:
+		
+		\codeblockfull{Test.java}{
+			import java.util.ArrayList; \\
+			class Test \{  \\
+			\s	public static void main(String[] args) \{ \\
+			\s \s		\textbf{ArrayList l1 = new ArrayList();} \\
+			\s \s		\textbf{l1.add("Jack");} \\
+			\s \s		l1.add(10); \\
+			\s \s		l1.add('A'); \\
+			\s \s		\textbf{l1.add(null);} \\
+			\s \s		l1.add("Jim"); \\
+			\s \s		System.out.println(l1); \\
+			\s \s		l1.remove("Jack"); \\
+			\s \s		System.out.println(l1); \\
+			\s \s		l1.add(2,"Jimmy"); \\
+			\s \s		System.out.println(l1); \\
+			\s \s		System.out.println("ArrayList size: "+\textbf{l1.size()}); \\	
+			\s \s 		boolean ans = \textbf{l1.contains("Jack")}; \\
+			\s \s		System.out.println("Jack is present in ArrayList: "+ans);	 \\
+			\s	\} 	\}
+		}
+		\bigskip
+		\outputblock{
+		\textbf{[} Jack, 10, A, null, Jim \textbf{]} \\
+		\textbf{[} 10, A, null, Jim \textbf{]}  \\
+		\textbf{[} 10, A, Jimmy, null, Jim \textbf{]} \\
+		ArrayList size: 5 \\
+		Jack is present in ArrayList: false
+		}
 	\end{itemize}
 
 
-
-\end{itemize}
-
-
+	
+	
+	
 \end{flushleft}
-\newpage
-
 

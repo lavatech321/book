@@ -1,36 +1,22 @@
 \setlength{\columnsep}{3pt}
 \begin{flushleft}
 	
-	\begin{itemize}
-		\item Allows multiple methods with the same name but different parameters to coexist within the same class. 
-		\item When an overloaded method is called, the compiler determines the appropriate method to execute based on the arguments provided.
-		
-		\item Key aspects of method overloading:
-		\bigskip
 		\begin{itemize}
-			\item \textbf{Method signature:} 
-			\begin{itemize}
-				\item Consists of the method name and the parameter list. 
-				\bigskip
-				\syntaxblock{
-					modifier returnType \textbf{methodName(type1 arg1, type2 arg2, ..)}
-				}
-				\bigskip
-				\item Overloaded methods must have the same name but different parameter lists. \item The parameter lists can differ in terms of the number of parameters, their types, or both.
-				\item Compiler will use method signature while resolving method calls
-			\end{itemize}
+			\item Method overloading means multiple methods with the \textbf{same name but different arguments} in a class.
+			\item Compiler will use method signature while resolving method calls.
+			\item Method signature:
+			\bigskip
+			\syntaxblock{
+				modifier returnType \textbf{methodName(type arg, ...)}
+			}	
 			\bigskip
 			\noteblock{
-			\begin{itemize}
-				\item Method \textbf{returnType} and \textbf{modifier} are not considered as part of method signature and won't affect method overloading.
-				\item Within a class 2 methods with same signature not allowed
-			\end{itemize}
-			}			
-						
-		\end{itemize}
-		\newpage
+				\begin{itemize}
+					\item Method \textbf{returnType} and \textbf{modifier} are not  part of method signature and won't affect method overloading.
+					\item Within a class two methods with same signature not allowed.
+				\end{itemize}
+			}				
 			\item Eg:
-			
 			\codeblockfull{Calculate.java}{
 				class Calculate \{ \\
 				\s	public int add(int a, int b) \{ \\
@@ -39,34 +25,16 @@
 				\s	public double add(double a, double b) \{ \\
 				\s \s		return a + b; \\
 				\s	\} \\
-				\s	public int add(int a, int b, int c) \{ \\
-				\s \s		return a + b + c; \\
-				\s	\} \\
-				\s	public String add(String str1, String str2) \{ \\
-				\s \s		return str1 + str2; \\
-				\s	\} \\
-				\\
 				\s	public static void main(String[] args) \{ \\
 				\s \s		Calculate math = new Calculate(); \\
 				\s \s		int sum1 = math.add(5, 10); \\
 				\s \s		double sum2 = math.add(2.5, 3.7); \\
-				\s \s		int sum3 = math.add(1, 2, 3); \\
-				\s \s		String concatenated = math.add("Hello", "World"); \\
-				\s \s		System.out.println("Sum1: " + sum1); \\
-				\s \s		System.out.println("Sum2: " + sum2);  \\
-				\s \s		System.out.println("Sum3: " + sum3);  \\
-				\s \s		System.out.println("Concatenated: " + concatenated);  \\
-				\s	\} \\
-				\}
+				\s		System.out.println("Sum1: " + sum1); // Output: 15 \\
+				\s		System.out.println("Sum2: " + sum2);  // Output: 6.2 \\
+				\s	\} \}
 			}
-			\newpage
-			\outputblock{
-				Sum1: 15 \\
-				Sum2: 6.2 \\
-				Sum3: 6 \\
-				Concatenated: HelloWorld	
-			}
-	\end{itemize}
-	
+			
+		\end{itemize}
+		
 \end{flushleft}
 
